@@ -1,7 +1,5 @@
-class Sun extends Celesties{
-  ArrayList<Planet> planets = new ArrayList<Planet>();
-  
-  public Sun(float x, float y, float radius){
+class Planet extends Celesties{
+  public Planet(float x, float y, float radius){
     this.centerX = x;
     this.centerY = y;
     this.radius = radius;
