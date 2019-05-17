@@ -20,7 +20,7 @@ abstract class Celesties{
   }
   
   float getRotate(){
-    return rotate;
+    return rotateF;
   }
   
   float getSpeed(){
@@ -50,5 +50,11 @@ abstract class Celesties{
   void changeSize(float s){
     this.radius = s;
   }
+}
+
+void setup(){
+  size(1440, 900, P3D);
+  Sun sun = new Sun(720, 450, 54.02125);
+  sun.display();
 }
     
