@@ -1,11 +1,11 @@
 class Sun extends Celesties{
-  ArrayList<Planet> planets = new ArrayList<Planet>();
+  public ArrayList<Planet> planets;
   
   public Sun(float x, float y, float radius){
     this.centerX = x;
     this.centerY = y;
     this.radius = radius;
-    
+    planets = new ArrayList<Planet>();
   }
   
   void display(){

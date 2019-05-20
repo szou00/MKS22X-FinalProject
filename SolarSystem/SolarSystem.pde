@@ -58,31 +58,36 @@ void setup(){
   sun.display();
   
   Planet mercury = new Planet(800, 450, 2);
-  mercury.display();
+  sun.planets.add(mercury);
   
   Planet venus = new Planet(832, 450, 5);
-  venus.display();
+  sun.planets.add(venus);
   
   Planet earth = new Planet(875, 450, 5.6);
-  earth.display();
+  sun.planets.add(earth);
   
   Planet mars = new Planet(920, 450, 3);
-  mars.display();
+  sun.planets.add(mars);
   
   Planet jupiter = new Planet(1000, 450, 28);
-  jupiter.display();
+  sun.planets.add(jupiter);
   
   Planet saturn = new Planet(1080, 450, 20);
-  saturn.display();
+  sun.planets.add(saturn);
   
   Planet uranus = new Planet(1150, 450, 11);
-  uranus.display();
+  sun.planets.add(uranus);
   
   Planet neptune = new Planet(1200, 450, 10);
-  neptune.display();
+  sun.planets.add(neptune);
   
   Planet pluto = new Planet(1260, 450, 1);
-  pluto.display();
+  sun.planets.add(pluto);
+  
+  for(int i = 0; i < sun.planets.size(); i++){
+    Planet p = sun.planets.get(i);
+    p.display();
+  }
   
 }
     
