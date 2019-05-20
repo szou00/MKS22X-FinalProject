@@ -13,5 +13,6 @@ class Sun extends Celesties{
     lights();
     translate(centerX, centerY, 0);
     sphere(radius);
+    translate(-centerX, -centerY, 0);
   }
 }
