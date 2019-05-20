@@ -64,6 +64,8 @@ void setup(){
   sun.planets.add(venus);
   
   Planet earth = new Planet(875, 450, 5.6, 875-720);
+  Moon newMoon = new Moon(875,460,1.5,875-720);
+  earth.addMoon(newMoon);
   sun.planets.add(earth);
   
   Planet mars = new Planet(920, 450, 3, 920-720);
