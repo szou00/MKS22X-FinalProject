@@ -1,8 +1,11 @@
 class Planet extends Celesties{
-  public Planet(float x, float y, float radius){
+  float orbit;
+  
+  public Planet(float x, float y, float radius, float orbit){
     this.centerX = x;
     this.centerY = y;
     this.radius = radius;
+    this.orbit = orbit;
     
   }
   
