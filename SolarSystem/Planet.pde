@@ -16,4 +16,10 @@ class Planet extends Celesties{
     sphere(radius);
     translate(-centerX, -centerY, 0);
   }
+  
+  void orbitSun(){
+    float t = millis()/1000.0f;
+    this.centerX = (int)(720+ orbit * cos(t));
+    this.centerY = (int)(450+ orbit * sin(t));
+  }
 }
