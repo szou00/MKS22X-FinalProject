@@ -54,13 +54,35 @@ abstract class Celesties{
 
 void setup(){
   size(1440, 900, P3D);
-  Sun sun = new Sun(720, 450, 55);
+  Sun sun = new Sun(720, 450, 70);
   sun.display();
+  
+  Planet mercury = new Planet(800, 450, 2);
+  mercury.display();
+  
+  Planet venus = new Planet(832, 450, 5);
+  venus.display();
+  
+  Planet earth = new Planet(875, 450, 5.6);
+  earth.display();
+  
+  Planet mars = new Planet(920, 450, 3);
+  mars.display();
+  
+  Planet jupiter = new Planet(1000, 450, 28);
+  jupiter.display();
+  
+  Planet saturn = new Planet(1080, 450, 20);
+  saturn.display();
+  
+  Planet uranus = new Planet(1150, 450, 11);
+  uranus.display();
+  
+  Planet neptune = new Planet(1200, 450, 10);
+  neptune.display();
   
   Planet pluto = new Planet(1260, 450, 1);
   pluto.display();
   
-  Planet mercury = new Planet(780, 450, 2);
-  mercury.display();
 }
     
