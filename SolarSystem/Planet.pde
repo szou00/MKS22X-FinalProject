@@ -1,11 +1,17 @@
 class Planet extends Celesties{
   float orbit;
+  ArrayList<Moon> moons;
   
   public Planet(float x, float y, float radius, float orbit){
     this.centerX = x;
     this.centerY = y;
     this.radius = radius;
     this.orbit = orbit;
+  }
+  
+  public void createMoon(float x, float y, float radius, float orbit) {
+    Moon newMoon = new Moon(x,y,radius,orbit,this);
+    moons.add(newMoon);
   }
   
   void display(){
