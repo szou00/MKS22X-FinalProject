@@ -6,7 +6,6 @@ class Planet extends Celesties{
     this.centerY = y;
     this.radius = radius;
     this.orbit = orbit;
-    
   }
   
   void display(){
