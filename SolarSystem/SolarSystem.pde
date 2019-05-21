@@ -15,7 +15,13 @@ void setup(){
   planets.add(venus);
   
   Planet earth = new Planet(875, 450, 5.6, 875-720);
+<<<<<<< HEAD
   planets.add(earth);
+=======
+  Moon newMoon = new Moon(875,460,1.5,875-720);
+  earth.addMoon(newMoon);
+  sun.planets.add(earth);
+>>>>>>> e6c703a48b6dc2e9e65a0dfee220dbbf25bda9c7
   
   Planet mars = new Planet(920, 450, 3, 920-720);
   planets.add(mars);
@@ -55,3 +61,7 @@ void draw(){
 void mouseClicked(){
   move = !move;
 }
+<<<<<<< HEAD
+=======
+    
+>>>>>>> e6c703a48b6dc2e9e65a0dfee220dbbf25bda9c7
