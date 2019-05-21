@@ -28,7 +28,7 @@ class Planet extends Celesties{
   
   public void displayEach() {
     for (int i = 0; i < moons.size(); i++) {
-      display();
+      moons.get(i).display();
     }
   }
   

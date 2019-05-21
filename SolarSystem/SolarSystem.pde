@@ -15,7 +15,7 @@ void setup(){
   planets.add(venus);
   
   Planet earth = new Planet(875, 450, 5.6, 875-720);
-  Moon newMoon = new Moon(875,460,5,875-720);
+  Moon newMoon = new Moon(875,460,1.5,875-720);
   earth.addMoon(newMoon);
   planets.add(earth);
   
@@ -44,7 +44,7 @@ void draw(){
     Planet p = planets.get(i);
     p.display();
     if (p.hasMoon()) {
-      displayEach();
+      p.displayEach();
     }
   }
   

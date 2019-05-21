@@ -11,7 +11,6 @@ class Moon extends Celesties {
   }
   
   void display(){
-    fill(0,255,0);
     noStroke();
     lights();
     translate(centerX, centerY, 0);
