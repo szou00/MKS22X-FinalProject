@@ -57,7 +57,7 @@ void setup(){
   planets.add(neptune);
   
   Planet pluto = new Planet(1260, 450, 1, 1260-720);
-  sun.planets.add(pluto);
+  planets.add(pluto);
   
 }
 
