@@ -1,6 +1,7 @@
 class Planet extends Celesties{
   float orbit;
   ArrayList<Moon> moons = new ArrayList<Moon>();
+  private boolean hMoon = false;
   
   public Planet(float x, float y, float radius, float orbit){
     this.centerX = x;
@@ -18,6 +19,10 @@ class Planet extends Celesties{
     moons.add(newMoon);
   }
   
+  public boolean hasMoon {
+    hMoon = true;
+  }
+  
   void display(){
     noStroke();
     lights();
@@ -25,7 +30,6 @@ class Planet extends Celesties{
     sphere(radius);
     translate(-centerX, -centerY, 0);
   }
-<<<<<<< HEAD
   
   void orbitSun(){
     float t = millis()/1000.0f;
@@ -33,6 +37,3 @@ class Planet extends Celesties{
     this.centerY = (int)(450+ orbit * sin(t));
   }
 }
-=======
-}
->>>>>>> e6c703a48b6dc2e9e65a0dfee220dbbf25bda9c7
