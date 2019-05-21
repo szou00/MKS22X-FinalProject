@@ -44,7 +44,8 @@ void draw(){
     Planet p = planets.get(i);
     p.display();
     if (p.hasMoon()) {
-      for (int i = 0; i < p
+      displayEach();
+    }
   }
   
   //if(move){

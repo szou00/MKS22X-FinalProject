@@ -19,8 +19,17 @@ class Planet extends Celesties{
     moons.add(newMoon);
   }
   
-  public boolean hasMoon {
-    hMoon = true;
+  public boolean hasMoon() {
+    if (moons.size() > 0) {
+      return true;
+    }
+    return false;
+  }
+  
+  public void displayEach() {
+    for (int i = 0; i < moons.size(); i++) {
+      display();
+    }
   }
   
   void display(){
