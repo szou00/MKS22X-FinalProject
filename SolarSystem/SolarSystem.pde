@@ -1,3 +1,4 @@
+ArrayList<Celesties> notPlanets = new ArrayList<Celesties>();
 ArrayList<Planet> planets = new ArrayList<Planet>();
 boolean move = false;
 
@@ -7,6 +8,7 @@ void setup(){
   
   Sun sun = new Sun(720, 450, 70);
   sun.display();
+  notPlanets.add(sun);
   
   Planet mercury = new Planet(800, 450, 2, 800-720);
   planets.add(mercury);
@@ -59,9 +61,6 @@ void setup(){
   Planet pluto = new Planet(1260, 450, 1, 1260-720);
   planets.add(pluto);
   
-}
-
-void draw(){
   for(int i = 0; i < planets.size(); i++){
     Planet p = planets.get(i);
     p.display();
@@ -70,9 +69,19 @@ void draw(){
     }
   }
   
+  
+}
+
+void draw(){
   if(move){
+    background(51);
+    for(int i = 0; i < notPlanets.size(); i++){
+      Celesties c = notPlanets.get(i);
+      c.display();
+    }
     for(int i = 0; i < planets.size(); i++){
       Planet p = planets.get(i);
+      p.display();
       p.orbitSun();
     }
   }

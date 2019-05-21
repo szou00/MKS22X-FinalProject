@@ -50,4 +50,6 @@ abstract class Celesties{
   void changeSize(float s){
     this.radius = s;
   }
+  
+  abstract void display();
 }
