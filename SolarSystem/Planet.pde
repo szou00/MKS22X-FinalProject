@@ -11,13 +11,12 @@ class Planet extends Celesties{
     this.angle = atan2(720-centerX, 450-centerY);
   }
   
-  //public void createMoon(float x, float y, float radius, float orbit) {
-  //  Moon newMoon = new Moon(x,y,radius,orbit);
-  //  moons.add(newMoon);
-  //}
-  
   public void addMoon(Moon newMoon) {
     moons.add(newMoon);
+  }
+  
+  public float resize(float radius) {
+    return radius/(6173.85714286);
   }
   
   public boolean hasMoon() {
