@@ -21,8 +21,8 @@ class Moon extends Celesties {
   }
   
   void orbitPlanet(){
-    this.centerX = (planet.getCenterX() + orbit * cos(angle));
-    this.centerY = (planet.getCenterY() + orbit * sin(angle));
+    this.centerX = (planet.getCenterX() + orbit * cos(2 * angle - PI/2));
+    this.centerY = (planet.getCenterY() + orbit * sin(2 * angle - PI/2));
     angle += PI/120;
   }
   

@@ -86,7 +86,6 @@ void draw(){
       if(p.hasMoon()){
         p.displayEach();
       }
-      //p.orbitSun();
     }
   }
   
