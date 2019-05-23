@@ -82,10 +82,11 @@ void draw(){
     for(int i = 0; i < planets.size(); i++){
       Planet p = planets.get(i);
       p.display();
-      //p.orbitSun();
+      p.orbitSun();
       if(p.hasMoon()){
         p.displayEach();
       }
+      //p.orbitSun();
     }
   }
   
