@@ -3,7 +3,7 @@ ArrayList<Planet> planets = new ArrayList<Planet>();
 boolean move = false;
 
 public float resize(float radius) {
-    return radius/(6173.85714286);
+    return radius/(4321.7/7);
   }
 
 void setup(){
@@ -14,18 +14,18 @@ void setup(){
   sun.display();
   notPlanets.add(sun);
   
-  Planet mercury = new Planet(800, 450, 2, 800-720);
+  Planet mercury = new Planet(800, 450, resize(1516), 800-720);
   planets.add(mercury);
 
-  Planet venus = new Planet(832, 450, 5, 832-720);
+  Planet venus = new Planet(832, 450, resize(3760.4), 832-720);
   planets.add(venus);
   
-  Planet earth = new Planet(875, 450, 5.6, 875-720);
+  Planet earth = new Planet(875, 450, resize(3958.8), 875-720);
   planets.add(earth);
-  Moon earthMoon = new Moon(875,460,1.5,460-450,2);
+  Moon earthMoon = new Moon(875,460,resize(1079.4),460-450,2);
   earth.addMoon(earthMoon);
   
-  Planet mars = new Planet(920, 450, 3, 920-720);
+  Planet mars = new Planet(920, 450, resize(2106.1), 920-720);
   planets.add(mars);
   Moon phobos = new Moon(920,460,0.6,460-450,3);
   Moon deimos = new Moon(920, 440, 0.5, 450-440,3);
