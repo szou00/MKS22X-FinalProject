@@ -15,10 +15,6 @@ class Planet extends Celesties{
     moons.add(newMoon);
   }
   
-  public float resize(float radius) {
-    return radius/(6173.85714286);
-  }
-  
   public boolean hasMoon() {
     if (moons.size() > 0) {
       return true;

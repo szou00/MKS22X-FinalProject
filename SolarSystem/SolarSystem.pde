@@ -2,6 +2,10 @@ ArrayList<Celesties> notPlanets = new ArrayList<Celesties>();
 ArrayList<Planet> planets = new ArrayList<Planet>();
 boolean move = false;
 
+public float resize(float radius) {
+    return radius/(6173.85714286);
+  }
+
 void setup(){
   size(1440, 900, P3D);
   background(51);
