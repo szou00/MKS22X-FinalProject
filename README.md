@@ -18,5 +18,9 @@
     <td>Today we worked on the Moon class and getting the moons to orbit around the planets. We resolved the issue of the trailing planet paths and successfully managed to display the moons. But, we had trouble making the moons orbit correctly. 
   </td>
   </tr>
+    <td>5/22/19</td>
+    <td>Today we worked on getting the moons to orbit correctly again. We tried using pushMatrix and popMatrix but can't get it to work exactly. We created a branch rotateMoon to experiment with this.
+  </td>
+  </tr>
   
     
