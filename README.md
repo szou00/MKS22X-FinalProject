@@ -30,7 +30,7 @@
   <th>Descriptions</th>
   <tr>
     <td>Orbit Speed</td>
-    <td>sda</td>
+    <td>Scale Factor (taken from diameter of actual sun : diameter of our sun): 12347.7142857 </td>
   </tr>
   
   
