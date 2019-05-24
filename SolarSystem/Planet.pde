@@ -9,6 +9,16 @@ class Planet extends Celesties{
     this.radius = radius;
     this.orbit = orbit;
     this.angle = atan2(720-centerX, 450-centerY);
+    this.speed = PI/120;
+  }
+  
+  public Planet(float x, float y, float radius, float orbit, float speed){
+    this.centerX = x;
+    this.centerY = y;
+    this.radius = radius;
+    this.orbit = orbit;
+    this.angle = atan2(720-centerX, 450-centerY);
+    this.speed = speed;
   }
   
   public void addMoon(Moon newMoon) {
@@ -26,7 +36,7 @@ class Planet extends Celesties{
     for (int i = 0; i < moons.size(); i++) {
       moons.get(i).display();
       if(move) {
-        moons.get(i).orbitPlanet();
+        moons.get(i).orbitPlanetSpeed();
       }
     }
   }
@@ -41,7 +51,13 @@ class Planet extends Celesties{
   
   void orbitSun(){
     this.centerX = (720 + orbit * cos(angle + PI/2));
-    this.centerY = (450 + orbit * sin(angle +PI/2));
+    this.centerY = (450 + orbit * sin(angle + PI/2));
     angle += PI/120;
+  }
+  
+  void orbitSunSpeed(){
+    this.centerX = (720 + orbit * cos(angle + PI/2));
+    this.centerY = (450 + orbit * sin(angle + PI/2));
+    angle += speed;
   }
 }
