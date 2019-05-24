@@ -26,7 +26,7 @@ void setup(){
   Planet venus = new Planet(832, 450, resize(3760.4), 832-720);
   planets.add(venus);
   
-  Planet earth = new Planet(875, 450, resize(3958.8), 875-720, (24/180) * PI);
+  Planet earth = new Planet(875, 450, resize(3958.8), 875-720);
   planets.add(earth);
   Moon earthMoon = new Moon(875, 460, resize(1079.4), 460-450, 2);
   earth.addMoon(earthMoon);
@@ -97,29 +97,26 @@ void draw(){
       Celesties c = notPlanets.get(i);
       c.display();
     }
-    //for(int i = 0; i < planets.size(); i++){
-    //  Planet p = planets.get(i);
+    for(int i = 0; i < planets.size(); i++){
+      Planet p = planets.get(i);
+      p.display();
+      p.orbitSunSpeed();
+      if(p.hasMoon()){
+        p.displayEach();
+      }
+    }
+    
+    //for(int i = 0; i < testing.size(); i++){
+    //  Planet p = testing.get(i);
     //  p.display();
-    //  p.orbitSunSpeed();
-    //  if(p.hasMoon()){
-    //    p.displayEach();
-    //  }
+    //  p.orbitSun();
     //}
     
-    for(int i = 0; i < testing.size(); i++){
-      Planet p = testing.get(i);
-      p.display();
-      p.orbitSun();
-    }
-<<<<<<< HEAD
-    
-    int passedTime = millis() - time;
-=======
+    //int passedtime = millis() - time;
     totaltime = millis() - difference + passedtime;
->>>>>>> a733830447271e2350c132ae7a9d277255cc72b8
     fill(255);
     //totaltime = totaltime/1000;
-    text("Days passed: " + totaltime/1000/*totaltime*1/365*/,100,200);
+    text("Seconds passed: " + totaltime/1000/*totaltime*1/365*/,100,200);
   }
   //stoppedtime = millis();
   
