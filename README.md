@@ -22,6 +22,14 @@
     <td>Today we worked on getting the moons to orbit correctly again. We tried using pushMatrix and popMatrix but can't get it to work exactly. We created a branch rotateMoon to experiment with this.
   </td>
   </tr>
+    <td>5/23/19</td>
+    <td>Today, we managed to get the moons to orbit with the planets. The moons orbit at different speeds in order to stand out against the orbit of the planets. We also created a proper scaling system for the celestial bodies.
+  </td>
+  </tr>
+    <td>5/24/19</td>
+    <td>Today, we tried implementing the correct orbit speeds for the planets, but we had a hard time doing it. We did successfully manage to create a timer system with seconds displayed on the screen. The timer only counts while the solar system is active. We are hoping to make 15 seconds represent 1 year.
+  </td>
+  </tr>
 </table>
 
 ## Formulas
