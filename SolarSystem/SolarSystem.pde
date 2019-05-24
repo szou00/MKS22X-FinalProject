@@ -1,14 +1,17 @@
 ArrayList<Celesties> notPlanets = new ArrayList<Celesties>();
 ArrayList<Planet> planets = new ArrayList<Planet>();
 boolean move = false;
+int time;
+int stoppedtime;
 
 public float resize(float radius) {
     return radius/(4321.7/7);
   }
 
 void setup(){
-  size(1440, 900, P3D);
+  size(1400, 750, P3D);
   background(51);
+  time = millis();
   
   Sun sun = new Sun(720, 450, 70);
   sun.display();
@@ -72,12 +75,12 @@ void setup(){
       p.displayEach();
     }
   }
-  
-  
+  time = millis();
 }
 
 void draw(){
   if(move){
+    stoppedtime = millis();
     background(51);
     for(int i = 0; i < notPlanets.size(); i++){
       Celesties c = notPlanets.get(i);
@@ -91,6 +94,9 @@ void draw(){
         p.displayEach();
       }
     }
+    int passedTime = millis() - time;
+    fill(255);
+    text("Seconds passed: " + passedTime/1000,100,200);
   }
   
 }
