@@ -15,7 +15,7 @@
     <td>Today, Tiffany added Planet objects for all of the planets and Pluto. They line up and orbit the Sun, but they leave behind a trail which is something we have to fix. In addition, Sharon started the Moon class for the moons of the planets, on a separate branch. </td>
   </tr>
     <td>5/21/19</td>
-    <td>Today we worked on the Moon class and getting the moons to orbit around the planets. We resolved the issue of the trailing planet paths and successfully managed to display the moons. But, we had trouble making the moons orbit correctly. 
+    <td>Today we worked on the Moon class and getting the moons to orbit around the planets. We resolved the issue of the trailing planet paths and successfully managed to display the moons. But, we had trouble making the moons orbit correctly.
   </td>
   </tr>
     <td>5/22/19</td>
@@ -30,6 +30,9 @@
     <td>Today, we tried implementing the correct orbit speeds for the planets, but we had a hard time doing it. We did successfully manage to create a timer system with seconds displayed on the screen. The timer only counts while the solar system is active. We are hoping to make 15 seconds represent 1 year.
   </td>
   </tr>
+    <td>Today, we fixed the problem of the planets, finally making them orbit at different speeds. We used a factor of 1 Earth year is equal to 8 seconds to make the orbits of the other planets (not Earth) proportional; however, this was impossible for the farthest planets and dwarf planet (from Uranus to Pluto) because they were just too far away, and their orbit periods were too large, so we assigned arbitrarily small periods for those (dwarf) planets. The next step would be to fix all the speeds of the moons.
+  </td>
+  </tr>
 </table>
 
 ## Formulas
@@ -38,9 +41,6 @@
   <th>Descriptions</th>
   <tr>
     <td>Orbit Speed</td>
-    <td>Scale Factor (taken from diameter of actual sun : diameter of our sun): 12347.7142857 </td>
+    <td>Scale Factor (taken from diameter of actual sun : diameter of our sun): 12347.7142857
+    1 year : 8 seconds</td>
   </tr>
-  
-  
-  
-    
