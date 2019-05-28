@@ -20,10 +20,10 @@ void setup(){
   sun.display();
   notPlanets.add(sun);
   
-  Planet mercury = new Planet(800, 450, resize(1516), 800-720);
+  Planet mercury = new Planet(800, 450, resize(1516), 800-720, 1);
   planets.add(mercury);
 
-  Planet venus = new Planet(832, 450, resize(3760.4), 832-720);
+  Planet venus = new Planet(832, 450, resize(3760.4), 832-720, 0.4);
   planets.add(venus);
   
   Planet earth = new Planet(875, 450, resize(3958.8), 875-720, 0.25);
