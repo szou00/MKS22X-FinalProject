@@ -10,7 +10,7 @@ class Moon extends Celesties {
     this.orbit = neworbit;
     this.planet = planets.get(planetNum);
     this.angle = atan2(planet.getCenterX()-centerX, planet.getCenterY()-centerY);
-    this.speed = PI/120;
+    this.speed = 2;
   }
   
   public Moon(float x, float y, float radius, float neworbit, int planetNum, float speed) {
@@ -40,9 +40,9 @@ class Moon extends Celesties {
   }
   
   void orbitPlanetSpeed(){
-    this.centerX = (planet.getCenterX() + orbit * cos(2 * angle - PI/2));
-    this.centerY = (planet.getCenterY() + orbit * sin(2 * angle - PI/2));
-    angle += speed;
+    this.centerX = (planet.getCenterX() + orbit * cos(speed * angle - PI/2));
+    this.centerY = (planet.getCenterY() + orbit * sin(speed * angle - PI/2));
+    angle += PI/120;
   }
   
 }

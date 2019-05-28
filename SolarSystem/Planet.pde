@@ -9,7 +9,7 @@ class Planet extends Celesties{
     this.radius = radius;
     this.orbit = orbit;
     this.angle = atan2(720-centerX, 450-centerY);
-    this.speed = PI/120;
+    this.speed = 1;
   }
   
   public Planet(float x, float y, float radius, float orbit, float speed){
@@ -56,8 +56,8 @@ class Planet extends Celesties{
   }
   
   void orbitSunSpeed(){
-    this.centerX = (720 + orbit * cos(angle + PI/2));
-    this.centerY = (450 + orbit * sin(angle + PI/2));
-    angle += speed;
+    this.centerX = (720 + orbit * cos((speed * angle) + PI/2));
+    this.centerY = (450 + orbit * sin((speed * angle) + PI/2));
+    angle += PI/120;
   }
 }

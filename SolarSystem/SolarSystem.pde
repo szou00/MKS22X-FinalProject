@@ -26,7 +26,7 @@ void setup(){
   Planet venus = new Planet(832, 450, resize(3760.4), 832-720);
   planets.add(venus);
   
-  Planet earth = new Planet(875, 450, resize(3958.8), 875-720);
+  Planet earth = new Planet(875, 450, resize(3958.8), 875-720, 0.25);
   planets.add(earth);
   Moon earthMoon = new Moon(875, 460, resize(1079.4), 460-450, 2);
   earth.addMoon(earthMoon);
