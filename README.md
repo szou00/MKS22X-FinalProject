@@ -42,6 +42,6 @@
   <th>Descriptions</th>
   <tr>
     <td>Orbit Speed</td>
-    <td>Scale Factor (taken from diameter of actual sun : diameter of our sun): 12347.7142857
-    1 year : 8 seconds</td>
+    <td>Scale Factor (taken from diameter of actual sun : diameter of our sun): 12347.7142857</td>
+    <td>1 year : 8 seconds</td>
   </tr>
