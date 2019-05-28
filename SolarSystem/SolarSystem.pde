@@ -28,47 +28,47 @@ void setup(){
   
   Planet earth = new Planet(875, 450, resize(3958.8), 875-720, 0.25 * 2);
   planets.add(earth);
-  Moon earthMoon = new Moon(875, 460, resize(1079.4), 460-450, 2);
+  Moon earthMoon = new Moon(875, 460, resize(1079.4), 460-450, 2, 4);
   earth.addMoon(earthMoon);
   
   Planet mars = new Planet(920, 450, resize(2106.1), 920-720, 0.138 * 2);
   planets.add(mars);
-  Moon phobos = new Moon(920,  460, 0.6, 460-450, 3);
-  Moon deimos = new Moon(920, 440, 0.5, 450-440, 3);
+  Moon phobos = new Moon(920,  460, 0.6, 460-450, 3, 10);
+  Moon deimos = new Moon(920, 440, 0.5, 450-440, 3, 9);
   mars.addMoon(phobos);
   mars.addMoon(deimos);
   
   Planet jupiter = new Planet(1000, 450, 28, 1000-720, 0.021 * 2);
   planets.add(jupiter);
-  Moon lo = new Moon(1000,410,1.7,450-410,4);
-  Moon europa = new Moon(1000, 490, 1.2, 490-450, 4, 3);
-  Moon ganymede = new Moon(960, 450, 2.4, 1000-960, 4, 2);
-  Moon callisto = new Moon(1040, 450, 2.2, 1040-1000, 4, 4);
-  jupiter.addMoon(lo);
+  Moon io = new Moon(1000, 410, 1.7, 450-410, 4, 8.9);
+  Moon europa = new Moon(1000, 490, 1.2, 490-450, 4, 8.8);
+  Moon ganymede = new Moon(960, 450, 2.4, 1000-960, 4, 8.5);
+  Moon callisto = new Moon(1040, 450, 2.2, 1040-1000, 4, 8);
+  jupiter.addMoon(io);
   jupiter.addMoon(europa);
   jupiter.addMoon(ganymede);
   jupiter.addMoon(callisto);
   
   Planet saturn = new Planet(1080, 450, 20, 1080-720, 0.0175);
   planets.add(saturn);
-  Moon titan = new Moon(1080, 480, 2.4, 30, 5);
-  Moon dione = new Moon(1080, 420, .5, 30, 5);
+  Moon titan = new Moon(1080, 480, 2.4, 30, 5, 8);
+  Moon dione = new Moon(1080, 420, .5, 30, 5, 8.8);
   saturn.addMoon(titan);
   saturn.addMoon(dione);
   
-  Planet uranus = new Planet(1150, 450, 11, 1150-720, 0.01);
+  Planet uranus = new Planet(1150, 450, 11, 1150-720, 0.0065);
   planets.add(uranus);
-  Moon miranda = new Moon(1150, 435, .4, 450-435, 6);
-  Moon ariel = new Moon(1150, 470, .5, 20, 6);
+  Moon miranda = new Moon(1150, 435, .4, 450-435, 6, 8.85);
+  Moon ariel = new Moon(1150, 470, .5, 20, 6, 8.8);
   uranus.addMoon(miranda);
   uranus.addMoon(ariel);
   
-  Planet neptune = new Planet(1200, 450, 10, 1200-720, 0.005);
+  Planet neptune = new Planet(1200, 450, 10, 1200-720, 0.0035);
   planets.add(neptune);
-  Moon triton = new Moon(1200, 435, 1.3, 15, 7);
+  Moon triton = new Moon(1200, 435, 1.3, 15, 7, 8.6);
   neptune.addMoon(triton);
   
-  Planet pluto = new Planet(1260, 450, 1, 1260-720, 0.0035);
+  Planet pluto = new Planet(1260, 450, 1, 1260-720, 0.0025);
   planets.add(pluto);
   
   for(int i = 0; i < planets.size(); i++){
