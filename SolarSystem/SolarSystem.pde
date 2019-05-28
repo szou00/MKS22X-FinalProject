@@ -20,25 +20,25 @@ void setup(){
   sun.display();
   notPlanets.add(sun);
   
-  Planet mercury = new Planet(800, 450, resize(1516), 800-720, 1);
+  Planet mercury = new Planet(800, 450, resize(1516), 800-720, 1 * 2);
   planets.add(mercury);
 
-  Planet venus = new Planet(832, 450, resize(3760.4), 832-720, 0.4);
+  Planet venus = new Planet(832, 450, resize(3760.4), 832-720, 0.4 * 2);
   planets.add(venus);
   
-  Planet earth = new Planet(875, 450, resize(3958.8), 875-720, 0.25);
+  Planet earth = new Planet(875, 450, resize(3958.8), 875-720, 0.25 * 2);
   planets.add(earth);
   Moon earthMoon = new Moon(875, 460, resize(1079.4), 460-450, 2);
   earth.addMoon(earthMoon);
   
-  Planet mars = new Planet(920, 450, resize(2106.1), 920-720);
+  Planet mars = new Planet(920, 450, resize(2106.1), 920-720, 0.138 * 2);
   planets.add(mars);
   Moon phobos = new Moon(920,  460, 0.6, 460-450, 3);
   Moon deimos = new Moon(920, 440, 0.5, 450-440, 3);
   mars.addMoon(phobos);
   mars.addMoon(deimos);
   
-  Planet jupiter = new Planet(1000, 450, 28, 1000-720);
+  Planet jupiter = new Planet(1000, 450, 28, 1000-720, 0.021 * 2);
   planets.add(jupiter);
   Moon lo = new Moon(1000,410,1.7,450-410,4);
   Moon europa = new Moon(1000, 490, 1.2, 490-450, 4);
@@ -49,7 +49,7 @@ void setup(){
   jupiter.addMoon(ganymede);
   jupiter.addMoon(callisto);
   
-  Planet saturn = new Planet(1080, 450, 20, 1080-720);
+  Planet saturn = new Planet(1080, 450, 20, 1080-720, 0.0175);
   planets.add(saturn);
   Moon titan = new Moon(1080, 480, 2.4, 30, 5);
   Moon dione = new Moon(1080, 420, .5, 30, 5);
