@@ -6,18 +6,19 @@ int time;
 int totaltime = 0;
 int passedtime = 0;
 int difference = 0;
+PImage sunImage;
 
 public float resize(float radius) {
     return radius/(4321.7/7);
   }
 
 void setup(){
+  sunImage = loadImage("sun.png");
   size(1440, 900, P3D);
   background(51);
   time = millis();
   
-  Sun sun = new Sun(720, 450, 70);
-  sun.display();
+  Sun sun = new Sun(740, 450, 70, sunImage);
   notPlanets.add(sun);
   
   Planet mercury = new Planet(800, 450, resize(1516), 800-720, 1 * 2);
@@ -87,6 +88,8 @@ void setup(){
 }
 
 void draw(){
+  notPlanets.get(0).display();
+  circle(740,450,70);
   if (!move) {
     passedtime = totaltime;
     difference = millis();

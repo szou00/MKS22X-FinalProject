@@ -56,8 +56,8 @@ class Planet extends Celesties{
   }
   
   void orbitSunSpeed(){
-    this.centerX = (720 + orbit * cos((speed * angle) + PI/2));
-    this.centerY = (450 + orbit * sin((speed * angle) + PI/2));
+    this.centerX = (720 + orbit * cos((speed * (angle + PI/2))));
+    this.centerY = (450 + orbit * sin((speed * (angle + PI/2))));
     angle += PI/120;
   }
 }
