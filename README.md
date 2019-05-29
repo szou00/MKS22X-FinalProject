@@ -1,6 +1,6 @@
 # Solar System Model
 
-##Instructions
+## Instructions
   This is a simulation of the solar system, with all the planets and Pluto, as well as the major moons of the planets. The timer system works to represent one year for every 8 seconds, and the planets' orbital period in terms of seconds in the simulation is proportional their orbital period in reality.
 
   To start the movement of the solar system, press the SPACE bar. To stop the movement, press the SPACE bar again.
@@ -41,6 +41,15 @@
   </tr>
     <td>5/28/19</td>
     <td>Today, Tiffany made all the moons orbit at the correct speeds around the planets. We also managed to make the planets start at the same position. Sharon started to import photos of the planets to implement them, but she had trouble with placing the images in the 3D planes, because they would not appear where we wanted them to.
+  </td>
+    <td>5/29/19</td>
+    <td>Tiffany:
+        - tried implementing a reset system, to make all planets and moons go back to their original positions
+        - changed the "move" button from the mouse click to the space bar
+        Sharon:
+        - tried implementing a perspective change where you can choose a planet to "shadow" and follow its path
+        - managed to add the actual images of the celestial bodies (except the moons) to the spheres
+        - she experimented with making the planets the center of the world but failed
   </td>
   </tr>
 </table>
