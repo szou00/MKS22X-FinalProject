@@ -18,11 +18,8 @@ void setup(){
   background(51);
   time = millis();
   
-  Sun sun = new Sun(720, 450, 70);
-  sunImage = loadImage("sun.png");
-  shape = createShape(SPHERE,200);
-  shape.setTexture(sunImage);
-  sun.imageTexture(sunImage);
+  sunImage = loadImage("sun.jpg");
+  Sun sun = new Sun(720, 450, 70,sunImage);
   notPlanets.add(sun);
   
   Planet mercury = new Planet(800, 450, resize(1516), 800-720, 1 * 2);
