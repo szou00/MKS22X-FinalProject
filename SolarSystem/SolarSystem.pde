@@ -99,7 +99,6 @@ void setup(){
 }
 
 void draw(){
-<<<<<<< HEAD
   if(reset){
     background(51);
     for(int i = 0; i < notPlanets.size(); i++){
@@ -117,11 +116,9 @@ void draw(){
     move = false;
     reset = false;
   }
-=======
-  pushMatrix();
+  //pushMatrix();
   //translate(notPlanets.get(0).getCenterX(),notPlanets.get(0).getCenterY());
   //circle(740,450,70);
->>>>>>> 0dc2e0e36bca192467a8c4f21a2345b4838ab745
   if (!move) {
     passedtime = totaltime;
     difference = millis();
@@ -154,12 +151,7 @@ void draw(){
     text("Seconds passed: " + totaltime/1000/*totaltime*1/365*/,100,200);
   }
   //stoppedtime = millis();
-<<<<<<< HEAD
-  
-  
-=======
-  popMatrix();
->>>>>>> 0dc2e0e36bca192467a8c4f21a2345b4838ab745
+  //popMatrix();
 }
 
 void keyPressed(){
