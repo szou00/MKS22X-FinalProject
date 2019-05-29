@@ -18,7 +18,7 @@ void setup(){
   background(51);
   time = millis();
   
-  Sun sun = new Sun(740, 450, 70, sunImage);
+  Sun sun = new Sun(740, 450, 70);
   notPlanets.add(sun);
   
   Planet mercury = new Planet(800, 450, resize(1516), 800-720, 1 * 2);
