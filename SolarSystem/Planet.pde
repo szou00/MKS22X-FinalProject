@@ -4,6 +4,7 @@ class Planet extends Celesties{
   float orbit;
   float angle;
   ArrayList<Moon> moons = new ArrayList<Moon>();
+  PShape shape;
   
   public Planet(float x, float y, float radius, float orbit){
     this.centerX = x;
@@ -23,6 +24,20 @@ class Planet extends Celesties{
     this.orbit = orbit;
     this.angle = atan2(720-centerX, 450-centerY);
     this.speed = speed;
+  }
+  
+   public Planet(float x, float y, float radius, float orbit, float speed, PImage newImage){
+    this.centerX = x;
+    this.centerY = y;
+    this.radius = radius;
+    this.orbit = orbit;
+    this.angle = atan2(720-centerX, 450-centerY);
+    this.speed = speed;
+    
+    noStroke();
+    noFill();
+    shape = createShape(SPHERE, radius);
+    shape.setTexture(newImage);
   }
   
   public void addMoon(Moon newMoon) {
@@ -57,7 +72,7 @@ class Planet extends Celesties{
     noStroke();
     lights();
     translate(centerX, centerY, 0);
-    sphere(radius);
+    shape(shape);
     translate(-centerX, -centerY, 0);
   }
   
@@ -68,8 +83,8 @@ class Planet extends Celesties{
   }
   
   void orbitSunSpeed(){
-    this.centerX = (720 + orbit * cos(speed * (angle + PI/2)));
-    this.centerY = (450 + orbit * sin(speed * (angle + PI/2)));
+    this.centerX = (720 + orbit * cos((speed * (angle + PI/2))));
+    this.centerY = (450 + orbit * sin((speed * (angle + PI/2))));
     angle += PI/120;
   }
 }
