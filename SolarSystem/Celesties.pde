@@ -6,6 +6,8 @@ abstract class Celesties{
   float speed;
   float mass;
   float gravity;
+  //PShape shape;
+  PImage image;
   
   float getRadius(){
     return radius;
@@ -33,6 +35,10 @@ abstract class Celesties{
   
   float getGravity(){
     return gravity;
+  }
+  
+  void storeImage(PImage newimage) {
+    image = newimage;
   }
   
   void move(float x, float y){
