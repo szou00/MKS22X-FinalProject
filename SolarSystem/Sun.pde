@@ -3,6 +3,12 @@ class Sun extends Celesties{
   //PImage image;
   PShape shape;
   
+  public Sun(float x, float y, float radius){
+    this.centerX = x;
+    this.centerY = y;
+    this.radius = radius; 
+  }
+  
   public Sun(float x, float y, float radius, PImage newImage){
     this.centerX = x;
     this.centerY = y;
