@@ -13,12 +13,13 @@ public float resize(float radius) {
   }
 
 void setup(){
-  sunImage = loadImage("sun.png");
   size(1440, 900, P3D);
   background(51);
   time = millis();
   
   Sun sun = new Sun(740, 450, 70);
+  sunImage = loadImage("sun.png");
+  sun.imageTexture(sunImage);
   notPlanets.add(sun);
   
   Planet mercury = new Planet(800, 450, resize(1516), 800-720, 1 * 2);

@@ -1,5 +1,7 @@
 class Sun extends Celesties{
   public ArrayList<Planet> planets;
+  PImage image;
+  PShape shape;
   
   public Sun(float x, float y, float radius){
     this.centerX = x;
@@ -9,11 +11,17 @@ class Sun extends Celesties{
     planets = new ArrayList<Planet>();
   }
   
+  void imageTexture(PImage newimage) {
+    image = newimage;
+  }
+  
+  
   void display(){
     noStroke();
     lights();
     translate(centerX, centerY, 0);
-    image(this.img, 0,0,radius,radius);
+    sphere(radius);
+    //shape.setTexture(image);
     translate(-centerX, -centerY, 0);
   }
 }
