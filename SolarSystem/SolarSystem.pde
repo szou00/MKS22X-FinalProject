@@ -7,6 +7,7 @@ int totaltime = 0;
 int passedtime = 0;
 int difference = 0;
 PImage sunImage;
+PShape shape;
 
 public float resize(float radius) {
     return radius/(4321.7/7);
@@ -17,8 +18,10 @@ void setup(){
   background(51);
   time = millis();
   
-  Sun sun = new Sun(740, 450, 70);
+  Sun sun = new Sun(720, 450, 70);
   sunImage = loadImage("sun.png");
+  shape = createShape(SPHERE,200);
+  shape.setTexture(sunImage);
   sun.imageTexture(sunImage);
   notPlanets.add(sun);
   
