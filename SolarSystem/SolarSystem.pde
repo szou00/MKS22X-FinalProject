@@ -2,6 +2,7 @@ ArrayList<Celesties> notPlanets = new ArrayList<Celesties>();
 ArrayList<Planet> planets = new ArrayList<Planet>();
 ArrayList<Planet> testing = new ArrayList<Planet>();
 boolean move = false;
+boolean reset = false;
 int time;
 int totaltime = 0;
 int passedtime = 0;
@@ -87,6 +88,23 @@ void setup(){
 }
 
 void draw(){
+  if(reset){
+    background(51);
+    for(int i = 0; i < notPlanets.size(); i++){
+      Celesties c = notPlanets.get(i);
+      c.display();
+    }
+    for(int i = 0; i < planets.size(); i++){
+      Planet p = planets.get(i);
+      p.reset();
+      p.display();
+      if (p.hasMoon()) {
+        p.displayEach();
+      }
+    }
+    move = false;
+    reset = false;
+  }
   if (!move) {
     passedtime = totaltime;
     difference = millis();
@@ -120,10 +138,15 @@ void draw(){
   }
   //stoppedtime = millis();
   
+  
 }
 
 void keyPressed(){
   if(key == ' '){
     move = !move;
   }
+  if(key == 'r'){
+    reset = !reset;
+  }
 }
+    

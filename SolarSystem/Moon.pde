@@ -1,10 +1,14 @@
 class Moon extends Celesties {
+  float originalX;
+  float originalY;
   private float orbit;
   private float angle;
   private Planet planet;
   
   public Moon(float x, float y, float radius, float neworbit, int planetNum) {
     this.centerX = x;
+    originalX = x;
+    originalY = y;
     this.centerY = y;
     this.radius = radius;
     this.orbit = neworbit;
@@ -32,6 +36,13 @@ class Moon extends Celesties {
     //translate(-centerX, -centerY, 0);
     popMatrix();
   }
+  
+  void reset(){
+    this.centerX = originalX;
+    this.centerY = originalY;
+    this.angle = atan2(planet.getCenterX()-centerX, planet.getCenterY()-centerY);
+  }
+    
   
   void orbitPlanet(){
     this.centerX = (planet.getCenterX() + orbit * cos(2 * angle - PI/2));

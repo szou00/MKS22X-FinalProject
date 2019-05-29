@@ -1,10 +1,14 @@
 class Planet extends Celesties{
+  float originalX;
+  float originalY;
   float orbit;
   float angle;
   ArrayList<Moon> moons = new ArrayList<Moon>();
   
   public Planet(float x, float y, float radius, float orbit){
     this.centerX = x;
+    originalX = x;
+    originalY = y;
     this.centerY = y;
     this.radius = radius;
     this.orbit = orbit;
@@ -32,10 +36,18 @@ class Planet extends Celesties{
     return false;
   }
   
+  void reset(){
+    this.centerX = originalX;
+    this.centerY = originalY;
+    this.angle = atan2(720-centerX, 450-centerY);
+  }
+  
   public void displayEach() {
     for (int i = 0; i < moons.size(); i++) {
+      //if(reset){
+      //  moons.get(i).reset();
       moons.get(i).display();
-      if(move) {
+      if(move){
         moons.get(i).orbitPlanetSpeed();
       }
     }
