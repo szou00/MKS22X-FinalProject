@@ -47,6 +47,7 @@
     <td>Tiffany:
         - tried implementing a reset system, to make all planets and moons go back to their original positions
         - changed the "move" button from the mouse click to the space bar
+        
         Sharon:
         - tried implementing a perspective change where you can choose a planet to "shadow" and follow its path
         - managed to add the actual images of the celestial bodies (except the moons) to the spheres
