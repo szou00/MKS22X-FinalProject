@@ -62,37 +62,23 @@ void setup(){
   Moon dione = new Moon(1080, 420, .5, 30, 5, 8.8);
   saturn.addMoon(titan);
   saturn.addMoon(dione);
-<<<<<<< HEAD
-  
-  Planet uranus = new Planet(1150, 450, 11, 1150-720, 0.0065);
-=======
 
   PImage uranusImage = loadImage("uranus.jpg");
   Planet uranus = new Planet(1150, 450, 11, 1150-720, 0.01,uranusImage);
->>>>>>> importImages
   planets.add(uranus);
   Moon miranda = new Moon(1150, 435, .4, 450-435, 6, 8.85);
   Moon ariel = new Moon(1150, 470, .5, 20, 6, 8.8);
   uranus.addMoon(miranda);
   uranus.addMoon(ariel);
   
-<<<<<<< HEAD
-  Planet neptune = new Planet(1200, 450, 10, 1200-720, 0.0035);
-=======
   PImage neptuneImage = loadImage("neptune.jpg");
   Planet neptune = new Planet(1200, 450, 10, 1200-720, 0.005,neptuneImage);
->>>>>>> importImages
   planets.add(neptune);
   Moon triton = new Moon(1200, 435, 1.3, 15, 7, 8.6);
   neptune.addMoon(triton);
-<<<<<<< HEAD
-  
-  Planet pluto = new Planet(1260, 450, 1, 1260-720, 0.0025);
-=======
 
   PImage plutoImage = loadImage("pluto.jpg");
   Planet pluto = new Planet(1260, 450, 1, 1260-720, 0.0035,plutoImage);
->>>>>>> importImages
   planets.add(pluto);
   
   notPlanets.get(0).display();
@@ -113,7 +99,7 @@ void setup(){
 
 void draw(){
   pushMatrix();
-  //translate(planets.get(1).getCenterX(),planets.get(1).getCenterY());
+  translate(notPlanets.get(0).getCenterX(),notPlanets.get(0).getCenterY());
   //circle(740,450,70);
   if (!move) {
     passedtime = totaltime;
