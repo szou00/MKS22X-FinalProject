@@ -42,6 +42,7 @@
     <td>5/28/19</td>
     <td>Today, Tiffany made all the moons orbit at the correct speeds around the planets. We also managed to make the planets start at the same position. Sharon started to import photos of the planets to implement them, but she had trouble with placing the images in the 3D planes, because they would not appear where we wanted them to.
   </td>
+  </tr>
     <td>5/29/19</td>
     <td>Tiffany:
         - tried implementing a reset system, to make all planets and moons go back to their original positions
