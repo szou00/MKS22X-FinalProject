@@ -99,7 +99,7 @@ void setup(){
 
 void draw(){
   pushMatrix();
-  translate(notPlanets.get(0).getCenterX(),notPlanets.get(0).getCenterY());
+  //translate(notPlanets.get(0).getCenterX(),notPlanets.get(0).getCenterY());
   //circle(740,450,70);
   if (!move) {
     passedtime = totaltime;
