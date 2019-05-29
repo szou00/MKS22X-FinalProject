@@ -34,6 +34,10 @@
     <td>Today, we fixed the problem of the planets, finally making them orbit at different speeds. We used a factor of 1 Earth year is equal to 8 seconds to make the orbits of the other planets (not Earth) proportional; however, this was impossible for the farthest planets and dwarf planet (from Uranus to Pluto) because they were just too far away, and their orbit periods were too large, so we assigned arbitrarily small periods for those (dwarf) planets. The next step would be to fix all the speeds of the moons.
   </td>
   </tr>
+    <td5/28/19</td>
+    <td>Today, we made all the moons orbit at the correct speeds around the planets. We also managed to make the planets start at the same position. Sharon started to import photos of the planets to implement them, but she had trouble with placing the images in the 3D planes, because they would not appear where we wanted them to.
+  </td>
+  </tr>
 </table>
 
 ## Formulas
