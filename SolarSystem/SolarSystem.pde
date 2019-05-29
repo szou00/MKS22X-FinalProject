@@ -122,6 +122,8 @@ void draw(){
   
 }
 
-void mouseClicked(){
-  move = !move;
+void keyPressed(){
+  if(key == ' '){
+    move = !move;
+  }
 }
