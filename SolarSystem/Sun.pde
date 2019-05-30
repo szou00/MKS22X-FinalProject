@@ -45,9 +45,10 @@ class Sun extends Celesties{
   
   void infoText(){
     //pushMatrix();
-    if(clicked){
+    if(mX >= centerX - radius && mX <= centerX + radius
+      && mY >= centerY - radius && mY <= centerY + radius){
       
-    String s = "Sun\nDiameter: 1.4 million km\nAge: 4.5 billion years";
+    String s = "Sun\nDiameter: 864,340 miles\nAge: 4.5 billion years";
     fill(255);
     text(s, 100, 700, 200, 100);
     }

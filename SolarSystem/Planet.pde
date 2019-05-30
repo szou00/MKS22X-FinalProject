@@ -73,6 +73,12 @@ class Planet extends Celesties{
     }
   }
   
+  public void infoEach() {
+    for (int i = 0; i < moons.size(); i++) {
+      moons.get(i).infoText();
+    }
+  }
+  
   void display(){
     noStroke();
     lights();
@@ -96,11 +102,16 @@ class Planet extends Celesties{
     angle += PI/120;
   }
   
-  void infoText(){
-    //
+  void setInfo(String s){
+    this.info = s;
   }
   
-  //void rotating(){
-  //  gravity = 0;
-  //}
+  void infoText(){
+    if(mX >= centerX - radius && mX <= centerX + radius
+      && mY >= centerY - radius && mY <= centerY + radius){
+      
+    fill(255);
+    text(info, 100, 700, 200, 100);
+    }
+  }
 }

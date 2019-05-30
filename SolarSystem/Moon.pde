@@ -78,8 +78,17 @@ class Moon extends Celesties {
     angle += PI/120;
   }
   
+  void setInfo(String s){
+    this.info = s;
+  }
+  
   void infoText(){
-    //
+    if(mX >= centerX - radius && mX <= centerX + radius
+      && mY >= centerY - radius && mY <= centerY + radius){
+      
+    fill(255);
+    text(info, 100, 700, 200, 100);
+    }
   }
   
   //void rotating(){
