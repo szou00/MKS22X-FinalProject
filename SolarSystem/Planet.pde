@@ -76,9 +76,12 @@ class Planet extends Celesties{
   void display(){
     noStroke();
     lights();
+    pushMatrix();
     translate(centerX, centerY, 0);
+    rotate(rotateF += PI/120);
     shape(shape);
     translate(-centerX, -centerY, 0);
+    popMatrix();
   }
   
   void orbitSun(){

@@ -30,13 +30,17 @@ class Sun extends Celesties{
   void display(){
     noStroke();
     lights();
+    pushMatrix();
     translate(centerX, centerY, 0);
+    rotate(rotateF += PI/120);
     shape(shape);
+    //popMatrix();
     //rotateZ(PI/8);
     //sphere(radius);
     //shape = createShape(sphereradius);
     //shape.setTexture(image);
     translate(-centerX, -centerY, 0);
+    popMatrix();
   }
   
   //void rotating(){

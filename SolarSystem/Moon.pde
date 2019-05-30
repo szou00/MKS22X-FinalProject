@@ -34,8 +34,9 @@ class Moon extends Celesties {
     lights();
     pushMatrix();
     translate(centerX, centerY, 0);
+    rotate(rotateF += PI/120);
     sphere(radius);
-    //translate(-centerX, -centerY, 0);
+    translate(-centerX, -centerY, 0);
     popMatrix();
   }
   
