@@ -20,6 +20,8 @@ class Planet extends Celesties{
   public Planet(float x, float y, float radius, float orbit, float speed){
     this.centerX = x;
     this.centerY = y;
+    originalX = x;
+    originalY = y;
     this.radius = radius;
     this.orbit = orbit;
     this.angle = atan2(720-centerX, 450-centerY);
@@ -29,6 +31,8 @@ class Planet extends Celesties{
    public Planet(float x, float y, float radius, float orbit, float speed, PImage newImage){
     this.centerX = x;
     this.centerY = y;
+    originalX = x;
+    originalY = y;
     this.radius = radius;
     this.orbit = orbit;
     this.angle = atan2(720-centerX, 450-centerY);
@@ -59,8 +63,9 @@ class Planet extends Celesties{
   
   public void displayEach() {
     for (int i = 0; i < moons.size(); i++) {
-      //if(reset){
-      //  moons.get(i).reset();
+      if(reset){
+        moons.get(i).reset();
+      }
       moons.get(i).display();
       if(move){
         moons.get(i).orbitPlanetSpeed();

@@ -20,6 +20,8 @@ class Moon extends Celesties {
   public Moon(float x, float y, float radius, float neworbit, int planetNum, float speed) {
     this.centerX = x;
     this.centerY = y;
+    originalX = x;
+    originalY = y;
     this.radius = radius;
     this.orbit = neworbit;
     this.planet = planets.get(planetNum);
