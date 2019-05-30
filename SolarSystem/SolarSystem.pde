@@ -21,6 +21,7 @@ void setup(){
   sunImage = loadImage("sun.jpg");
   Sun sun = new Sun(720, 450, 70,sunImage);
   notPlanets.add(sun);
+  sun.infoText();
   
   PImage mercuryImage = loadImage("mercury.jpeg");
   Planet mercury = new Planet(800, 450, resize(1516), 800-720, 1 * 2,mercuryImage);
@@ -106,6 +107,7 @@ void draw(){
     for(int i = 0; i < notPlanets.size(); i++){
       Celesties c = notPlanets.get(i);
       c.display();
+      c.infoText();
     }
     for(int i = 0; i < planets.size(); i++){
       Planet p = planets.get(i);
@@ -131,6 +133,7 @@ void draw(){
     for(int i = 0; i < notPlanets.size(); i++){
       Celesties c = notPlanets.get(i);
       c.display();
+      c.infoText();
       //c.rotating();
     }
     for(int i = 0; i < planets.size(); i++){

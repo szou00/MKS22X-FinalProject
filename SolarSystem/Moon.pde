@@ -78,6 +78,10 @@ class Moon extends Celesties {
     angle += PI/120;
   }
   
+  void infoText(){
+    //
+  }
+  
   //void rotating(){
   //  gravity = 0;
   //}

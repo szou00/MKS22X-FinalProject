@@ -43,6 +43,19 @@ class Sun extends Celesties{
     popMatrix();
   }
   
+  void infoText(){
+    //pushMatrix();
+    if(clicked){
+      
+    String s = "Sun\nDiameter: 1.4 million km\nAge: 4.5 billion years";
+    fill(255);
+    text(s, 100, 700, 200, 100);
+    }
+  }
+  
+  //void mouseClicked(){
+  //  clicked = true;
+  //}
   //void rotating(){
   //  rotateZ(rotateF += PI/8);
   //}

@@ -8,6 +8,7 @@ abstract class Celesties{
   float gravity;
   //PShape shape;
   PImage image;
+  boolean clicked;
   
   float getRadius(){
     return radius;
@@ -57,6 +58,7 @@ abstract class Celesties{
     this.radius = s;
   }
   
+  abstract void infoText();
   //abstract void rotating();
     
   abstract void display();
