@@ -121,15 +121,14 @@ void draw(){
     move = false;
     reset = false;
   }
-  //pushMatrix();
-  //translate(notPlanets.get(0).getCenterX(),notPlanets.get(0).getCenterY());
-  //circle(740,450,70);
   if (!move) {
     passedtime = totaltime;
     difference = millis();
   }
   if(move){
     background(51);
+    //pushMatrix();
+    //translate(planets.get(0).getCenterX()-500,planets.get(0).getCenterY()-500);
     for(int i = 0; i < notPlanets.size(); i++){
       Celesties c = notPlanets.get(i);
       c.display();
@@ -144,21 +143,13 @@ void draw(){
         p.displayEach();
       }
     }
-    
-    //for(int i = 0; i < testing.size(); i++){
-    //  Planet p = testing.get(i);
-    //  p.display();
-    //  p.orbitSun();
-    //}
-    
-    //int passedtime = millis() - time;
+    //text("CenterX and centerY: " + notPlanets.get(0).getCenterX() + " " + notPlanets.get(0).getCenterY(),100,220);
+
     totaltime = millis() - difference + passedtime - temp;
-    fill(255);
-    //totaltime = totaltime/1000;
     text("Seconds passed: " + totaltime/1000/*totaltime*1/365*/,100,200);
+    //popMatrix();
   }
   //stoppedtime = millis();
-  //popMatrix();
 }
 
 void keyPressed(){
