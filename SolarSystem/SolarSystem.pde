@@ -2,7 +2,7 @@ ArrayList<Celesties> notPlanets = new ArrayList<Celesties>();
 ArrayList<Planet> planets = new ArrayList<Planet>();
 ArrayList<Planet> testing = new ArrayList<Planet>();
 boolean move = false;
-boolean reset = false;
+boolean reset = true;
 int time;
 int totaltime = 0;
 int passedtime = 0;
@@ -30,27 +30,28 @@ void setup(){
   Planet venus = new Planet(832, 450, resize(3760.4), 832-720, 0.4 * 2,venusImage);
   planets.add(venus);
   
-  PImage earthImage = loadImage("earth.png");
+  PImage earthImage = loadImage("earth.jpeg");
+  PImage moonImage = loadImage("moon.jpeg");
   Planet earth = new Planet(875, 450, resize(3958.8), 875-720, 0.25 * 2,earthImage);
   planets.add(earth);
-  Moon earthMoon = new Moon(875, 460, resize(1079.4), 460-450, 2, 4);
+  Moon earthMoon = new Moon(875, 460, resize(1079.4), 460-450, 2, 4,moonImage);
   earth.addMoon(earthMoon);
   
   PImage marsImage = loadImage("mars.jpeg");
   Planet mars = new Planet(920, 450, resize(2106.1), 920-720, 0.138 * 2,marsImage);
   planets.add(mars);
-  Moon phobos = new Moon(920,  460, 0.6, 460-450, 3, 10);
-  Moon deimos = new Moon(920, 440, 0.5, 450-440, 3, 9);
+  Moon phobos = new Moon(920,  460, 0.6, 460-450, 3, 10,moonImage);
+  Moon deimos = new Moon(920, 440, 0.5, 450-440, 3, 9,moonImage);
   mars.addMoon(phobos);
   mars.addMoon(deimos);
  
   PImage jupiterImage = loadImage("jupiter.jpeg");
   Planet jupiter = new Planet(1000, 450, 28, 1000-720, 0.021 * 2,jupiterImage);
   planets.add(jupiter);
-  Moon io = new Moon(1000, 410, 1.7, 450-410, 4, 8.9);
-  Moon europa = new Moon(1000, 490, 1.2, 490-450, 4, 8.8);
-  Moon ganymede = new Moon(960, 450, 2.4, 1000-960, 4, 8.5);
-  Moon callisto = new Moon(1040, 450, 2.2, 1040-1000, 4, 8);
+  Moon io = new Moon(1000, 410, 1.7, 450-410, 4, 8.9,moonImage);
+  Moon europa = new Moon(1000, 490, 1.2, 490-450, 4, 8.8,moonImage);
+  Moon ganymede = new Moon(960, 450, 2.4, 1000-960, 4, 8.5,moonImage);
+  Moon callisto = new Moon(1040, 450, 2.2, 1040-1000, 4, 8,moonImage);
   jupiter.addMoon(io);
   jupiter.addMoon(europa);
   jupiter.addMoon(ganymede);
@@ -59,23 +60,23 @@ void setup(){
   PImage saturnImage = loadImage("saturn.jpg");
   Planet saturn = new Planet(1080, 450, 20, 1080-720, 0.0175,saturnImage);
   planets.add(saturn);
-  Moon titan = new Moon(1080, 480, 2.4, 30, 5, 8);
-  Moon dione = new Moon(1080, 420, .5, 30, 5, 8.8);
+  Moon titan = new Moon(1080, 480, 2.4, 30, 5, 8,moonImage);
+  Moon dione = new Moon(1080, 420, .5, 30, 5, 8.8,moonImage);
   saturn.addMoon(titan);
   saturn.addMoon(dione);
 
   PImage uranusImage = loadImage("uranus.jpg");
   Planet uranus = new Planet(1150, 450, 11, 1150-720, 0.01,uranusImage);
   planets.add(uranus);
-  Moon miranda = new Moon(1150, 435, .4, 450-435, 6, 8.85);
-  Moon ariel = new Moon(1150, 470, .5, 20, 6, 8.8);
+  Moon miranda = new Moon(1150, 435, .4, 450-435, 6, 8.85,moonImage);
+  Moon ariel = new Moon(1150, 470, .5, 20, 6, 8.8,moonImage);
   uranus.addMoon(miranda);
   uranus.addMoon(ariel);
   
   PImage neptuneImage = loadImage("neptune.jpg");
   Planet neptune = new Planet(1200, 450, 10, 1200-720, 0.005,neptuneImage);
   planets.add(neptune);
-  Moon triton = new Moon(1200, 435, 1.3, 15, 7, 8.6);
+  Moon triton = new Moon(1200, 435, 1.3, 15, 7, 8.6,moonImage);
   neptune.addMoon(triton);
 
   PImage plutoImage = loadImage("pluto.jpg");

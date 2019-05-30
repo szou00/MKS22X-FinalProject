@@ -4,6 +4,7 @@ class Moon extends Celesties {
   private float orbit;
   private float angle;
   private Planet planet;
+  PShape shape;
   
   public Moon(float x, float y, float radius, float neworbit, int planetNum) {
     this.centerX = x;
@@ -29,13 +30,31 @@ class Moon extends Celesties {
     this.speed = speed;
   }
   
+  public Moon(float x, float y, float radius, float neworbit, int planetNum, float speed, PImage newImage) {
+    this.centerX = x;
+    this.centerY = y;
+    originalX = x;
+    originalY = y;
+    this.radius = radius;
+    this.orbit = neworbit;
+    this.planet = planets.get(planetNum);
+    this.angle = atan2(planet.getCenterX()-centerX, planet.getCenterY()-centerY);
+    this.speed = speed;
+    
+    noStroke();
+    noFill();
+    shape = createShape(SPHERE, radius);
+    shape.setTexture(newImage);
+  }
+  
+  
   void display(){
     noStroke();
     lights();
     pushMatrix();
     translate(centerX, centerY, 0);
     rotate(rotateF += PI/120);
-    sphere(radius);
+    shape(shape);
     translate(-centerX, -centerY, 0);
     popMatrix();
   }
