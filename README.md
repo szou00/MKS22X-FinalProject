@@ -46,6 +46,7 @@
     <td>5/29/19</td>
     <td>Tiffany:
   - tried implementing a reset system, to make all planets and moons go back to their original positions.
+  - implemented reset successfully, as well as reset the timer system.
   - changed the "move" button from the mouse click to the space bar.
 Sharon:
   - tried implementing a perspective change where you can choose a planet to "shadow" and follow its path.
