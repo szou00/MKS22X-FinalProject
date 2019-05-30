@@ -98,6 +98,7 @@ void setup(){
   //testing.add(y);
 }
 
+int temp = 0;
 void draw(){
   if(reset){
     background(51);
@@ -113,6 +114,7 @@ void draw(){
         p.displayEach();
       }
     }
+    temp = totaltime;
     move = false;
     reset = false;
   }
@@ -145,7 +147,7 @@ void draw(){
     //}
     
     //int passedtime = millis() - time;
-    totaltime = millis() - difference + passedtime;
+    totaltime = millis() - difference + passedtime - temp;
     fill(255);
     //totaltime = totaltime/1000;
     text("Seconds passed: " + totaltime/1000/*totaltime*1/365*/,100,200);
