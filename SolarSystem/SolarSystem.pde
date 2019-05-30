@@ -130,6 +130,7 @@ void draw(){
     for(int i = 0; i < notPlanets.size(); i++){
       Celesties c = notPlanets.get(i);
       c.display();
+      //c.rotating();
     }
     for(int i = 0; i < planets.size(); i++){
       Planet p = planets.get(i);

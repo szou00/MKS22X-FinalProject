@@ -45,7 +45,7 @@ abstract class Celesties{
     //
   }
   
-  void rotate(float r){
+  void setRotate(float r){
     this.rotateF = r;
   }
   
@@ -57,5 +57,7 @@ abstract class Celesties{
     this.radius = s;
   }
   
+  //abstract void rotating();
+    
   abstract void display();
 }

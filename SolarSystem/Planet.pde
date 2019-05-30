@@ -92,4 +92,8 @@ class Planet extends Celesties{
     this.centerY = (450 + orbit * sin((speed * (angle + PI/2))));
     angle += PI/120;
   }
+  
+  //void rotating(){
+  //  gravity = 0;
+  //}
 }

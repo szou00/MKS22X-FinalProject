@@ -13,6 +13,7 @@ class Sun extends Celesties{
     this.centerX = x;
     this.centerY = y;
     this.radius = radius;
+    rotateF = 0;
     
     noStroke();
     noFill();
@@ -31,9 +32,14 @@ class Sun extends Celesties{
     lights();
     translate(centerX, centerY, 0);
     shape(shape);
+    //rotateZ(PI/8);
     //sphere(radius);
     //shape = createShape(sphereradius);
     //shape.setTexture(image);
     translate(-centerX, -centerY, 0);
   }
+  
+  //void rotating(){
+  //  rotateZ(rotateF += PI/8);
+  //}
 }
