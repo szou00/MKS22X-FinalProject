@@ -14,7 +14,8 @@ int totaltime = 0;
 int passedtime = 0;
 int difference = 0;
 PImage sunImage;
-float mX, mY;
+float mX = 720;
+float mY = 450;
 
 public float resize(float radius) {
     return radius/(4321.7/7);
@@ -178,18 +179,20 @@ void draw(){
   if(move){
     if (in) {
       scaleFactor += 0.1;
+      mX = -mouseX;
+      mY = -mouseY;
       in=false;
     }
     if (out) {
       scaleFactor -= 0.1;
+      mX = -mouseX;
+      mY = -mouseY;
       out=false;
     }
     //pushMatrix();
-    if (clicked) {
-       translate(mouseX,mouseY);
-    }
-    scale(scaleFactor);
     background(51);
+    translate(mX, mY);
+    scale(scaleFactor);
     //popMatrix();
     //pushMatrix();
     //translate(planets.get(0).getCenterX(),planets.get(0).getCenterY());
@@ -272,15 +275,14 @@ void keyPressed(){
 }
 
 void mouseClicked(){
-  //if (clicked) {
-    mX = mouseX;
-    mY = mouseY;
-  //}
+  clicked = true;
+  mX = mouseX;
+  mY = mouseY;
 }
 
-void mouseReleased() {
-  clicked = false;
-}
+//void mouseReleased() {
+//  clicked = false;
+//}
 
 
 
