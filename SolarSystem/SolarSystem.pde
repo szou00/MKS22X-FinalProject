@@ -43,8 +43,9 @@ void setup(){
   
   PImage earthImage = loadImage("earth.jpeg");
   PImage moonImage = loadImage("moon.jpeg");
-  Planet earth = new Planet(875, 450, resize(3958.8), 875-720, 0.25 * 2, earthImage, true);
+  Planet earth = new Planet(875, 450, resize(3958.8), 875-720, 0.25 * 2, earthImage);
   earth.setInfo("Earth\nDiameter: 7926 miles\nDistance from the Sun: 93 million miles\nPeriod of Orbit: 365 Earth days");
+  //earth.camera = true;
   planets.add(earth);
   Moon earthMoon = new Moon(875, 460, resize(1079.4), 460-450, 2, 4,moonImage);
   earthMoon.setInfo("Moon\nDiameter: 2159 miles\nDistance from Earth: 238,900 miles\nPeriod of Orbit: 27 Earth days");
@@ -116,6 +117,9 @@ void setup(){
   notPlanets.get(0).display();
   for(int i = 0; i < planets.size(); i++){
     Planet p = planets.get(i);
+    if(p.camera == true){
+      camera(p.centerX-200, p.centerY-200, 0, p.centerX, p.centerY, 0, 1.0, 1.0, 1.0);
+    }
     p.display();
     if (p.hasMoon()) {
       p.displayEach();
@@ -229,11 +233,15 @@ void draw(){
     if(scaleD){
     for(int i = 0; i < notPlanets.size(); i++){
       Celesties c = notPlanets.get(i);
-      c.setScale(c.scale - 1);
+      if(c.scale > 1){
+        c.setScale(c.scale - 1);
+      }
     }
     for(int i = 0; i < planets.size(); i++){
       Planet p = planets.get(i);
-      p.setScale(p.scale - 1);
+      if(p.scale > 1){
+        p.setScale(p.scale - 1);
+      }
       if(p.hasMoon()){
         p.scaleEachDown();
       }

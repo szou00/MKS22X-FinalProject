@@ -11,6 +11,7 @@ abstract class Celesties{
   String info;
   boolean clicked = true;
   float scale = 1;
+  boolean camera;
   
   float getRadius(){
     return radius;

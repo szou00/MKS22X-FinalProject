@@ -53,9 +53,7 @@ class Planet extends Celesties{
     this.orbit = orbit;
     this.angle = atan2(720-centerX, 450-centerY);
     this.speed = speed;
-    //if(camera){
-    //  camera(centerX-200, centerY-200, 0, centerX, centerY, 0, 1.0, 1.0, 1.0);
-    //}
+    this.camera = camera;
     noStroke();
     noFill();
     shape = createShape(SPHERE, radius);
@@ -105,7 +103,10 @@ class Planet extends Celesties{
   
   public void scaleEachDown() {
     for (int i = 0; i < moons.size(); i++) {
-      moons.get(i).setScale(moons.get(i).scale - 1);
+      Moon m = moons.get(i);
+      if(m.scale > 1){
+        m.setScale(moons.get(i).scale - 1);
+      }
     }
   }
   
@@ -122,6 +123,7 @@ class Planet extends Celesties{
     translate(centerX, centerY, 0);
     rotate(rotateF += PI/120);
     scale(this.scale);
+    
     shape(shape);
     translate(-centerX, -centerY, 0);
     popMatrix();
