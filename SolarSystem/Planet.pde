@@ -44,6 +44,24 @@ class Planet extends Celesties{
     shape.setTexture(newImage);
   }
   
+  public Planet(float x, float y, float radius, float orbit, float speed, PImage newImage, boolean camera){
+    this.centerX = x;
+    this.centerY = y;
+    originalX = x;
+    originalY = y;
+    this.radius = radius;
+    this.orbit = orbit;
+    this.angle = atan2(720-centerX, 450-centerY);
+    this.speed = speed;
+    if(camera){
+      camera(centerX-200, centerY-200, 0, centerX, centerY, 0, 1.0, 1.0, 1.0);
+    }
+    noStroke();
+    noFill();
+    shape = createShape(SPHERE, radius);
+    shape.setTexture(newImage);
+  }
+  
   public void addMoon(Moon newMoon) {
     moons.add(newMoon);
   }
@@ -79,9 +97,21 @@ class Planet extends Celesties{
     }
   }
   
-  public void scaleEach() {
+  public void scaleEachUp() {
     for (int i = 0; i < moons.size(); i++) {
       moons.get(i).setScale(moons.get(i).scale + 1);
+    }
+  }
+  
+  public void scaleEachDown() {
+    for (int i = 0; i < moons.size(); i++) {
+      moons.get(i).setScale(moons.get(i).scale - 1);
+    }
+  }
+  
+  public void scaleEach(float s) {
+    for (int i = 0; i < moons.size(); i++) {
+      moons.get(i).setScale(s);
     }
   }
   

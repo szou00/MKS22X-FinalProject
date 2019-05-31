@@ -3,7 +3,8 @@ ArrayList<Planet> planets = new ArrayList<Planet>();
 ArrayList<Planet> testing = new ArrayList<Planet>();
 boolean move = false;
 boolean reset = true;
-boolean scaleF = false;
+boolean scaleU = false;
+boolean scaleD = false;
 int time;
 int totaltime = 0;
 int passedtime = 0;
@@ -37,7 +38,7 @@ void setup(){
   
   PImage earthImage = loadImage("earth.jpeg");
   PImage moonImage = loadImage("moon.jpeg");
-  Planet earth = new Planet(875, 450, resize(3958.8), 875-720, 0.25 * 2,earthImage);
+  Planet earth = new Planet(875, 450, resize(3958.8), 875-720, 0.25 * 2, earthImage, true);
   earth.setInfo("Earth\nDiameter: 7926 miles\nDistance from the Sun: 93 million miles\nPeriod of Orbit: 365 Earth days");
   planets.add(earth);
   Moon earthMoon = new Moon(875, 460, resize(1079.4), 460-450, 2, 4,moonImage);
@@ -129,15 +130,18 @@ void draw(){
     background(51);
     for(int i = 0; i < notPlanets.size(); i++){
       Celesties c = notPlanets.get(i);
+      c.setScale(1);
       c.display();
       c.infoText();
     }
     for(int i = 0; i < planets.size(); i++){
       Planet p = planets.get(i);
       p.reset();
+      p.setScale(1);
       p.display();
       if (p.hasMoon()) {
         p.displayEach();
+        p.scaleEach(1);
       }
     }
     totaltime = 0;
@@ -188,7 +192,7 @@ void draw(){
     //popMatrix();
   }
   //stoppedtime = millis();
-  if(scaleF){
+  if(scaleU){
     for(int i = 0; i < notPlanets.size(); i++){
       Celesties c = notPlanets.get(i);
       c.setScale(c.scale + 1);
@@ -197,10 +201,24 @@ void draw(){
       Planet p = planets.get(i);
       p.setScale(p.scale + 1);
       if(p.hasMoon()){
-        p.scaleEach();
+        p.scaleEachUp();
       }
     }
-    scaleF = false;
+    scaleU = false;
+  }
+    if(scaleD){
+    for(int i = 0; i < notPlanets.size(); i++){
+      Celesties c = notPlanets.get(i);
+      c.setScale(c.scale - 1);
+    }
+    for(int i = 0; i < planets.size(); i++){
+      Planet p = planets.get(i);
+      p.setScale(p.scale - 1);
+      if(p.hasMoon()){
+        p.scaleEachDown();
+      }
+    }
+    scaleD = false;
   }
 }
 
@@ -212,7 +230,10 @@ void keyPressed(){
     reset = !reset;
   }
   if(key == 'u'){
-    scaleF = !scaleF;
+    scaleU = !scaleU;
+  }
+  if(key == 'd'){
+    scaleD = !scaleD;
   }
 }
 
