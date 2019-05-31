@@ -79,12 +79,19 @@ class Planet extends Celesties{
     }
   }
   
+  public void scaleEach() {
+    for (int i = 0; i < moons.size(); i++) {
+      moons.get(i).setScale(moons.get(i).scale + 1);
+    }
+  }
+  
   void display(){
     noStroke();
     lights();
     pushMatrix();
     translate(centerX, centerY, 0);
     rotate(rotateF += PI/120);
+    scale(this.scale);
     shape(shape);
     translate(-centerX, -centerY, 0);
     popMatrix();

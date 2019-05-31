@@ -10,6 +10,7 @@ abstract class Celesties{
   PImage image;
   String info;
   boolean clicked = true;
+  float scale = 1;
   
   float getRadius(){
     return radius;
@@ -57,6 +58,10 @@ abstract class Celesties{
   
   void changeSize(float s){
     this.radius = s;
+  }
+  
+  void setScale(float s){
+    this.scale = s;
   }
   
   abstract void infoText();

@@ -3,6 +3,7 @@ ArrayList<Planet> planets = new ArrayList<Planet>();
 ArrayList<Planet> testing = new ArrayList<Planet>();
 boolean move = false;
 boolean reset = true;
+boolean scaleF = false;
 int time;
 int totaltime = 0;
 int passedtime = 0;
@@ -186,6 +187,20 @@ void draw(){
     //popMatrix();
   }
   //stoppedtime = millis();
+  if(scaleF){
+    for(int i = 0; i < notPlanets.size(); i++){
+      Celesties c = notPlanets.get(i);
+      c.setScale(c.scale + 1);
+    }
+    for(int i = 0; i < planets.size(); i++){
+      Planet p = planets.get(i);
+      p.setScale(p.scale + 1);
+      if(p.hasMoon()){
+        p.scaleEach();
+      }
+    }
+    scaleF = false;
+  }
 }
 
 void keyPressed(){
@@ -194,6 +209,9 @@ void keyPressed(){
   }
   if(key == 'r'){
     reset = !reset;
+  }
+  if(key == 'u'){
+    scaleF = !scaleF;
   }
 }
 

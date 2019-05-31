@@ -54,6 +54,7 @@ class Moon extends Celesties {
     pushMatrix();
     translate(centerX, centerY, 0);
     rotate(rotateF += PI/120);
+    scale(this.scale);
     shape(shape);
     translate(-centerX, -centerY, 0);
     popMatrix();

@@ -33,6 +33,7 @@ class Sun extends Celesties{
     pushMatrix();
     translate(centerX, centerY, 0);
     rotate(rotateF += PI/120);
+    scale(this.scale);
     shape(shape);
     //popMatrix();
     //rotateZ(PI/8);
