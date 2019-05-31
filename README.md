@@ -49,7 +49,7 @@ Sharon: tried implementing a perspective change where you can choose a planet to
   </td>
   </tr>
     <td>5/30/19</td>
-    <td>Tiffany: worked on rotating the celestial bodies in the z direction to make the simulation seem more three dimensional. This was successful; she then started to add information to the bodies.
+    <td>Tiffany: worked on rotating the celestial bodies in the z direction to make the simulation seem more three dimensional. She then started to add information to the bodies.
         Sharon: made the moons the the actual moon texture. Tried to zoom in and follow a celestial body again. The zooming in feature does work and the screen moves, however, it just doesn't zoom in on the right spot. 
   </td>
   </tr>
