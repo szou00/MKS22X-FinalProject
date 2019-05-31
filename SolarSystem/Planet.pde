@@ -53,9 +53,9 @@ class Planet extends Celesties{
     this.orbit = orbit;
     this.angle = atan2(720-centerX, 450-centerY);
     this.speed = speed;
-    if(camera){
-      camera(centerX-200, centerY-200, 0, centerX, centerY, 0, 1.0, 1.0, 1.0);
-    }
+    //if(camera){
+    //  camera(centerX-200, centerY-200, 0, centerX, centerY, 0, 1.0, 1.0, 1.0);
+    //}
     noStroke();
     noFill();
     shape = createShape(SPHERE, radius);

@@ -5,6 +5,10 @@ boolean move = false;
 boolean reset = true;
 boolean scaleU = false;
 boolean scaleD = false;
+boolean in = false;
+boolean out = false;
+boolean clicked = false;
+float scaleFactor;
 int time;
 int totaltime = 0;
 int passedtime = 0;
@@ -20,6 +24,7 @@ void setup(){
   size(1440, 900, P3D);
   background(51);
   time = millis();
+  scaleFactor = 1;
   
   sunImage = loadImage("sun.jpg");
   Sun sun = new Sun(720, 450, 70,sunImage);
@@ -127,6 +132,7 @@ void setup(){
 //int temp = 0;
 void draw(){
   if(reset){
+    scale(scaleFactor);
     background(51);
     for(int i = 0; i < notPlanets.size(); i++){
       Celesties c = notPlanets.get(i);
@@ -166,10 +172,24 @@ void draw(){
     }
   }
   if(move){
+    if (in) {
+      scaleFactor += 0.1;
+      in=false;
+    }
+    if (out) {
+      scaleFactor -= 0.1;
+      out=false;
+    }
+    //pushMatrix();
+    if (clicked) {
+       translate(mouseX,mouseY);
+    }
+    scale(scaleFactor);
     background(51);
+    //popMatrix();
     //pushMatrix();
     //translate(planets.get(0).getCenterX(),planets.get(0).getCenterY());
-    planets.get(0).zoom();
+    //planets.get(0).zoom();
     for(int i = 0; i < notPlanets.size(); i++){
       Celesties c = notPlanets.get(i);
       c.display();
@@ -235,10 +255,31 @@ void keyPressed(){
   if(key == 'd'){
     scaleD = !scaleD;
   }
+  if (key == 'i') {
+    in = !in;
+  }
+  if (key == 'o') {
+    out = !out;
+  }
 }
 
 void mouseClicked(){
-  mX = mouseX;
-  mY = mouseY;
+  //if (clicked) {
+    mX = mouseX;
+    mY = mouseY;
+  //}
 }
-    
+
+void mouseReleased() {
+  clicked = false;
+}
+
+
+
+
+
+//void mouseWheel(MouseEvent e) {
+//  translateX = translateX-e.getAmount()*(mouseX)/100;
+//  translateY = translateY-e.getAmount()*(mouseY)/100;
+//  scaleFactor += e.getAmount()/100;
+//}
