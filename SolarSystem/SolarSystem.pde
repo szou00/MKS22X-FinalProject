@@ -164,7 +164,8 @@ void draw(){
   if(move){
     background(51);
     //pushMatrix();
-    //translate(planets.get(0).getCenterX()-500,planets.get(0).getCenterY()-500);
+    //translate(planets.get(0).getCenterX(),planets.get(0).getCenterY());
+    planets.get(0).zoom();
     for(int i = 0; i < notPlanets.size(); i++){
       Celesties c = notPlanets.get(i);
       c.display();
@@ -180,7 +181,7 @@ void draw(){
         p.displayEach();
       }
     }
-    //text("CenterX and centerY: " + notPlanets.get(0).getCenterX() + " " + notPlanets.get(0).getCenterY(),100,220);
+    //text("CenterX and centerY: " + planets.get(0).getCenterX() + " " + planets.get(0).getCenterY(),100,220);
 
     totaltime = millis() - difference + passedtime;
     text("Seconds passed: " + totaltime/1000/*totaltime*1/365*/,100,200);

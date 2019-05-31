@@ -121,4 +121,10 @@ class Planet extends Celesties{
     text(info, 100, 700, 200, 100);
     }
   }
+  
+  void zoom() {
+    pushMatrix();
+    scale(2.5, 2.5, 2.5);
+    popMatrix();
+  }
 }

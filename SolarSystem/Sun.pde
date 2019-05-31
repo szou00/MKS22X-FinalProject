@@ -55,6 +55,10 @@ class Sun extends Celesties{
     }
   }
   
+  void zoom() {
+     scale(2.5, 2.5, 2.5);
+  }
+  
   //void mouseClicked(){
   //  clicked = true;
   //}
