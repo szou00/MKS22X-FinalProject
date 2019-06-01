@@ -65,6 +65,9 @@ abstract class Celesties{
     this.scale = s;
   }
   
+  //void zoomIn(float z) {
+  //  translate(width>>1, height>>1, zoom, zoom);
+  
   abstract void infoText();
   //abstract void rotating();
     

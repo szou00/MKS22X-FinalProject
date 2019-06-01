@@ -5,15 +5,23 @@ boolean move = false;
 boolean reset = true;
 boolean scaleU = false;
 boolean scaleD = false;
+<<<<<<< HEAD
 int zoomNum = -1;
 boolean pushed = false;
+=======
+boolean in = false;
+boolean out = false;
+boolean clicked = false;
+float scaleFactor;
+>>>>>>> 21272468629e6b5d4c540192ae0380f2f07a2646
 int time;
 int totaltime = 0;
 int passedtime = 0;
 int difference = 0;
 String keyStuff;
 PImage sunImage;
-float mX, mY;
+float mX = 720;
+float mY = 450;
 
 public float resize(float radius) {
     return radius/(4321.7/7);
@@ -23,6 +31,7 @@ void setup(){
   size(1440, 900, P3D);
   background(51);
   time = millis();
+  scaleFactor = 1;
   
   sunImage = loadImage("sun.jpg");
   Sun sun = new Sun(720, 450, 70,sunImage);
@@ -158,11 +167,15 @@ void draw(){
     zoomNum = -1;
   }
   if(reset){
+<<<<<<< HEAD
     if(pushed && zoomNum >= 0){
       popMatrix();
       pushed = false;
       zoomNum = -1;
     }
+=======
+    scale(scaleFactor);
+>>>>>>> 21272468629e6b5d4c540192ae0380f2f07a2646
     background(51);
     for(int i = 0; i < notPlanets.size(); i++){
       Celesties c = notPlanets.get(i);
@@ -202,10 +215,26 @@ void draw(){
     }
   }
   if(move){
+    if (in) {
+      scaleFactor += 0.1;
+      mX = -mouseX;
+      mY = -mouseY;
+      in=false;
+    }
+    if (out) {
+      scaleFactor -= 0.1;
+      mX = -mouseX;
+      mY = -mouseY;
+      out=false;
+    }
+    //pushMatrix();
     background(51);
+    translate(mX, mY);
+    scale(scaleFactor);
+    //popMatrix();
     //pushMatrix();
     //translate(planets.get(0).getCenterX(),planets.get(0).getCenterY());
-    planets.get(0).zoom();
+    //planets.get(0).zoom();
     for(int i = 0; i < notPlanets.size(); i++){
       Celesties c = notPlanets.get(i);
       c.display();
@@ -289,16 +318,41 @@ void keyPressed(){
   if(key == 'd'){
     scaleD = !scaleD;
   }
+<<<<<<< HEAD
   if(key == CODED){
     if(keyCode == RIGHT){
       zoomNum++;
     }
+=======
+  if (key == 'i') {
+    in = !in;
+  }
+  if (key == 'o') {
+    out = !out;
+>>>>>>> 21272468629e6b5d4c540192ae0380f2f07a2646
   }
 }
 
 void mouseClicked(){
+  clicked = true;
   mX = mouseX;
   mY = mouseY;
 }
 
+<<<<<<< HEAD
     
+=======
+//void mouseReleased() {
+//  clicked = false;
+//}
+
+
+
+
+
+//void mouseWheel(MouseEvent e) {
+//  translateX = translateX-e.getAmount()*(mouseX)/100;
+//  translateY = translateY-e.getAmount()*(mouseY)/100;
+//  scaleFactor += e.getAmount()/100;
+//}
+>>>>>>> 21272468629e6b5d4c540192ae0380f2f07a2646
