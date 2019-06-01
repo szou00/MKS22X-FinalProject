@@ -179,14 +179,14 @@ void draw(){
   if(move){
     if (in) {
       scaleFactor += 0.1;
-      mX = -mouseX;
-      mY = -mouseY;
+      mX = mouseX-720;
+      mY = mouseY-450;
       in=false;
     }
     if (out) {
       scaleFactor -= 0.1;
-      mX = -mouseX;
-      mY = -mouseY;
+      mX = mouseX-720;
+      mY = mouseY-450;
       out=false;
     }
     //pushMatrix();
