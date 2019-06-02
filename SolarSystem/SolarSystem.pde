@@ -1,6 +1,7 @@
 ArrayList<Celesties> notPlanets = new ArrayList<Celesties>();
 ArrayList<Planet> planets = new ArrayList<Planet>();
 ArrayList<Planet> testing = new ArrayList<Planet>();
+ArrayList<Star> stars = new ArrayList<Star>();
 boolean move = false;
 boolean reset = true;
 boolean scaleU = false;
@@ -17,8 +18,7 @@ int passedtime = 0;
 int difference = 0;
 String keyStuff;
 PImage sunImage;
-float mX = 720;
-float mY = 450;
+float mX,mY;
 
 public float resize(float radius) {
     return radius/(4321.7/7);
@@ -126,6 +126,12 @@ void setup(){
   pluto.setInfo("Pluto\nDiameter: 1413 miles\nDistance from the Sun: 3674.5 million miles\nPeriod of Orbit: 248 Earth years");
   planets.add(pluto);
   
+  PImage starImage = loadImage("star.png");
+  for (int i = 0; i < 40; i++) {
+    Star newStar = new Star();
+    stars.add(newStar);
+  }
+  
   Celesties c = notPlanets.get(0);
   //pushMatrix();
   //if(c.camera == true){
@@ -156,6 +162,9 @@ void setup(){
         p.displayEach();
         p.scaleEach(1);
       }
+    }
+    for (int i = 0; i < stars.size(); i++) {
+      stars.get(i).display();
     }
   time = millis();
   
@@ -209,6 +218,9 @@ void draw(){
         p.displayEach();
         p.scaleEach(1);
       }
+    }
+    for (int i = 0; i < stars.size(); i++) {
+      stars.get(i).display();
     }
     //infoBox();
     totaltime = 0;
