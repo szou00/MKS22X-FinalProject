@@ -315,41 +315,18 @@ void keyPressed(){
   if(key == 'd'){
     scaleD = !scaleD;
   }
-<<<<<<< HEAD
-  if(key == CODED){
-    if(keyCode == RIGHT){
-      zoomNum++;
-    }
-=======
   if (key == 'i') {
     in = !in;
   }
   if (key == 'o') {
     out = !out;
->>>>>>> 21272468629e6b5d4c540192ae0380f2f07a2646
   }
+ 
 }
+
 
 void mouseClicked(){
   clicked = true;
   mX = mouseX;
   mY = mouseY;
 }
-
-<<<<<<< HEAD
-    
-=======
-//void mouseReleased() {
-//  clicked = false;
-//}
-
-
-
-
-
-//void mouseWheel(MouseEvent e) {
-//  translateX = translateX-e.getAmount()*(mouseX)/100;
-//  translateY = translateY-e.getAmount()*(mouseY)/100;
-//  scaleFactor += e.getAmount()/100;
-//}
->>>>>>> 21272468629e6b5d4c540192ae0380f2f07a2646
