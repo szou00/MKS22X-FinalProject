@@ -154,7 +154,7 @@ class Planet extends Celesties{
       && mouseY >= centerY - radius && mouseY <= centerY + radius){
       
     fill(255);
-    text(info, 100, 350, 200, 100);
+    text(info, 100, 500, 200, 100);
     }
   }
   

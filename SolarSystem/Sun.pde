@@ -52,7 +52,7 @@ class Sun extends Celesties{
       
     String s = "Sun\nDiameter: 864,340 miles\nAge: 4.5 billion years";
     fill(255);
-    text(s, -100, 500, 200, 100);
+    text(s, 100, 500, 200, 100);
     }
   }
   
