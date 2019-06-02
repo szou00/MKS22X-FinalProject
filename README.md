@@ -4,6 +4,13 @@
   This is a simulation of the solar system, with all the planets and Pluto, as well as the major moons of the planets. The timer system works to represent one year for every 8 seconds, and the planets' orbital period in terms of seconds in the simulation is proportional their orbital period in reality.
 
   To start the movement of the solar system, press the SPACE bar. To stop the movement, press the SPACE bar again.
+  To increase the sizes of the celestial bodies in the solar system, press 'u'.
+  To decrease the sizes of the celestial bodies in the solar system, press 'd'.
+  To dive into the 3D view of the planets' orbits and switch between the different planets to "follow" them, press the RIGHT arrow. This will switch between the planets and eventually go back to the original bird's-eye view.
+  To zoom in, press 'i'. 
+  To zoom out, press 'o'.
+  To access general information about the celestial bodies, CLICK on the object. Information will appear on the left-hand side. Keep in mind that information can only be seen when in the bird's-eye view of the solar system.
+  To reset to the original, unmoving solar system, press 'r'.
 
 ## Development Log
 <table>
@@ -51,6 +58,11 @@ Sharon: tried implementing a perspective change where you can choose a planet to
     <td>5/30/19</td>
     <td>Tiffany: worked on rotating the celestial bodies in the z direction to make the simulation seem more three dimensional. She then started to add information to the bodies.
         Sharon: made the moons the the actual moon texture. Tried to zoom in and follow a celestial body again. The zooming in feature does work and the screen moves, however, it just doesn't zoom in on the right spot. 
+  </td>
+  </tr>
+    <td>5/31/19</td>
+    <td>Tiffany: worked on following the planets in the 3D dimensions using the camera function; users can now swtich between the planet orbit they are following; also created a scale up and scale down system in order to play with the sizes of the celestial bodies. 
+       Sharon: worked on creating a zoom in and zoom out feature of the solar system and successfully applied that; worked on zooming in and out based on where the user clicks (mouse).
   </td>
   </tr>
 </table>
