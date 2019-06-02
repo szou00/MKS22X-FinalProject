@@ -57,17 +57,20 @@
   </tr>
     <td>5/29/19</td>
     <td>Tiffany: tried implementing a reset system, to make all planets and moons go back to their original positions; implemented reset successfully, as well as reset the timer system; changed the "move" button from the mouse click to the space bar; made objects rotate on its own axis.
+
 Sharon: tried implementing a perspective change where you can choose a planet to "shadow" and follow its path; managed to add the actual images of the celestial bodies (except the moons) to the spheres; she experimented with making the planets the center of the world but failed.
   </td>
   </tr>
     <td>5/30/19</td>
     <td>Tiffany: worked on rotating the celestial bodies in the z direction to make the simulation seem more three dimensional. She then started to add information to the bodies.
-        Sharon: made the moons the the actual moon texture. Tried to zoom in and follow a celestial body again. The zooming in feature does work and the screen moves, however, it just doesn't zoom in on the right spot. 
+        
+Sharon: made the moons the the actual moon texture. Tried to zoom in and follow a celestial body again. The zooming in feature does work and the screen moves, however, it just doesn't zoom in on the right spot. 
   </td>
   </tr>
     <td>5/31/19</td>
     <td>Tiffany: worked on following the planets in the 3D dimensions using the camera function; users can now swtich between the planet orbit they are following; also created a scale up and scale down system in order to play with the sizes of the celestial bodies. 
-       Sharon: worked on creating a zoom in and zoom out feature of the solar system and successfully applied that; worked on zooming in and out based on where the user clicks (mouse).
+
+Sharon: worked on creating a zoom in and zoom out feature of the solar system and successfully applied that; worked on zooming in and out based on where the user clicks (mouse).
   </td>
   </tr>
 </table>
