@@ -221,7 +221,6 @@ void draw(){
     }
     //pushMatrix();
     background(51);
-    translate(720,450);
     scale(scaleFactor);
     //notPlanets.get(0).display();
     //popMatrix();
@@ -233,6 +232,7 @@ void draw(){
       c.display();
       c.infoText();
     }
+    translate(720,450);
     for(int i = 0; i < planets.size(); i++){
       Planet p = planets.get(i);
       p.display();
