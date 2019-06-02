@@ -170,6 +170,7 @@ void draw(){
       zoomNum = -1;
     }
     //pushMatrix();
+    scaleFactor = 1;
     scale(scaleFactor);
     background(51);
     for(int i = 0; i < notPlanets.size(); i++){
