@@ -144,7 +144,6 @@ void setup(){
 }
 
 void draw(){
-  //translate(720,450);
   if(!pushed && zoomNum >= 0){
     pushed = true;
     pushMatrix();
@@ -223,8 +222,8 @@ void draw(){
     //pushMatrix();
     background(51);
     translate(720,450);
-    scale(scaleFactor); 
-    notPlanets.get(0).display();
+    scale(scaleFactor);
+    //notPlanets.get(0).display();
     //popMatrix();
     //pushMatrix();
     //translate(planets.get(0).getCenterX(),planets.get(0).getCenterY());
