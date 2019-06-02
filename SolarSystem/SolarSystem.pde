@@ -170,7 +170,9 @@ void draw(){
     }
     //pushMatrix();
     scaleFactor = 1;
+    translate(width/2,height/2);
     scale(scaleFactor);
+    translate(-width/2,-height/2);
     background(51);
     for(int i = 0; i < notPlanets.size(); i++){
       Celesties c = notPlanets.get(i);
