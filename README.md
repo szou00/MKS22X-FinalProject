@@ -4,12 +4,17 @@
   This is a simulation of the solar system, with all the planets and Pluto, as well as the major moons of the planets. The timer system works to represent one year for every 8 seconds, and the planets' orbital period in terms of seconds in the simulation is proportional their orbital period in reality.
 
   To start the movement of the solar system, press the SPACE bar. To stop the movement, press the SPACE bar again.
+  
   To increase the sizes of the celestial bodies in the solar system, press 'u'.
+  
   To decrease the sizes of the celestial bodies in the solar system, press 'd'.
+  
   To dive into the 3D view of the planets' orbits and switch between the different planets to "follow" them, press the RIGHT arrow. This will switch between the planets and eventually go back to the original bird's-eye view.
-  To zoom in, press 'i'. 
-  To zoom out, press 'o'.
+  
+  To zoom in, press 'i'. To zoom out, press 'o'.
+  
   To access general information about the celestial bodies, CLICK on the object. Information will appear on the left-hand side. Keep in mind that information can only be seen when in the bird's-eye view of the solar system.
+  
   To reset to the original, unmoving solar system, press 'r'.
 
 ## Development Log
