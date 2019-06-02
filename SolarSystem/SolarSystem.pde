@@ -23,6 +23,13 @@ float mY = 450;
 public float resize(float radius) {
     return radius/(4321.7/7);
   }
+  
+  void infoBox() {
+    fill(255,200,200);
+    rect(70,450,200,100);
+    fill(0);//set the text color to black
+    text("Information", 90, 470);  
+  }
 
 void setup(){
   size(1440, 900, P3D);
@@ -120,21 +127,36 @@ void setup(){
   planets.add(pluto);
   
   Celesties c = notPlanets.get(0);
-  pushMatrix();
-  if(c.camera == true){
-    camera(c.centerX-200, c.centerY-200, 0, c.centerX, c.centerY, 0, 1.0, 1.0, 1.0);
-  }
-  for(int i = 0; i < planets.size(); i++){
-    Planet p = planets.get(i);
-    if(p.camera == true){
-      camera(p.centerX-200, p.centerY-200, 0, p.centerX, p.centerY, 0, 1.0, 1.0, 1.0);
+  //pushMatrix();
+  //if(c.camera == true){
+  //  camera(c.centerX-200, c.centerY-200, 0, c.centerX, c.centerY, 0, 1.0, 1.0, 1.0);
+  //}
+  //for(int i = 0; i < planets.size(); i++){
+  //  Planet p = planets.get(i);
+  //  if(p.camera == true){
+  //    camera(p.centerX-200, p.centerY-200, 0, p.centerX, p.centerY, 0, 1.0, 1.0, 1.0);
+  //  }
+  //  p.display();
+  //  if (p.hasMoon()) {
+  //    p.displayEach();
+  //  }
+  //}
+  //popMatrix();
+  for(int i = 0; i < notPlanets.size(); i++){
+      c.setScale(1);
+      c.display();
+      c.infoText();
     }
-    p.display();
-    if (p.hasMoon()) {
-      p.displayEach();
+    for(int i = 0; i < planets.size(); i++){
+      Planet p = planets.get(i);
+      p.reset();
+      p.setScale(1);
+      p.display();
+      if (p.hasMoon()) {
+        p.displayEach();
+        p.scaleEach(1);
+      }
     }
-  }
-  popMatrix();
   time = millis();
   
   //Planet x = new Planet(875, 450, resize(3958.8), 875-720, (24/180) * PI);
@@ -162,12 +184,12 @@ void draw(){
     pushed = false;
     zoomNum = -1;
   }
-  if(reset){
-    if(pushed && zoomNum >= 0){
-      popMatrix();
-      pushed = false;
-      zoomNum = -1;
-    }
+  if (reset) {
+    //if(pushed && zoomNum >= 0){
+  //    popMatrix();
+  //    pushed = false;
+  //    zoomNum = -1;
+  //  }
     //pushMatrix();
     scaleFactor = 1;
     scale(scaleFactor);
@@ -188,13 +210,14 @@ void draw(){
         p.scaleEach(1);
       }
     }
+    //infoBox();
     totaltime = 0;
     passedtime = 0;
     difference = 0;
     move = false;
     reset = false;
     //popMatrix();
-  }
+   }
   if (!move) {
     passedtime = totaltime;
     difference = millis();
@@ -219,22 +242,16 @@ void draw(){
       scaleFactor -= 0.1;
       out=false;
     }
-    //pushMatrix();
     background(51);
     translate(width/2,height/2);
     scale(scaleFactor);
     translate(-width/2,-height/2);
-    //notPlanets.get(0).display();
-    //popMatrix();
-    //pushMatrix();
-    //translate(planets.get(0).getCenterX(),planets.get(0).getCenterY());
-    //planets.get(0).zoom();
     for(int i = 0; i < notPlanets.size(); i++){
       Celesties c = notPlanets.get(i);
       c.display();
       c.infoText();
     }
-    translate(720,450);
+    translate(width/2,height/2);
     for(int i = 0; i < planets.size(); i++){
       Planet p = planets.get(i);
       p.display();
@@ -247,11 +264,10 @@ void draw(){
     //text("CenterX and centerY: " + planets.get(0).getCenterX() + " " + planets.get(0).getCenterY(),100,220);
 
     totaltime = millis() - difference + passedtime;
-    text("Seconds passed: " + totaltime/1000/*totaltime*1/365*/,100,200);
+    translate(-width/2,-height/2);
+    text("Years passed: " + totaltime/1000/8/*totaltime*1/365*/,100,450);
     text("" + zoomNum, 100, 300);
-    //popMatrix();
   }
-  //stoppedtime = millis();
   if(scaleU){
     for(int i = 0; i < notPlanets.size(); i++){
       Celesties c = notPlanets.get(i);
