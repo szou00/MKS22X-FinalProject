@@ -72,9 +72,12 @@ class Planet extends Celesties{
   }
   
   void reset(){
+    //pushMatrix();
+    //translate(-720,-450);
     this.centerX = originalX;
     this.centerY = originalY;
     this.angle = atan2(720-centerX, 450-centerY);
+    //popMatrix();
   }
   
   public void displayEach() {

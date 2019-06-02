@@ -144,6 +144,7 @@ void setup(){
 }
 
 void draw(){
+  //translate(720,450);
   if(!pushed && zoomNum >= 0){
     pushed = true;
     pushMatrix();
@@ -168,9 +169,9 @@ void draw(){
       pushed = false;
       zoomNum = -1;
     }
+    //pushMatrix();
     scale(scaleFactor);
     background(51);
-    translate(720,450);
     for(int i = 0; i < notPlanets.size(); i++){
       Celesties c = notPlanets.get(i);
       c.setScale(1);
@@ -192,6 +193,7 @@ void draw(){
     difference = 0;
     move = false;
     reset = false;
+    //popMatrix();
   }
   if (!move) {
     passedtime = totaltime;
@@ -211,14 +213,10 @@ void draw(){
   if(move){
     if (in) {
       scaleFactor += 0.1;
-      mX = mouseX-720;
-      mY = mouseY-450;
       in=false;
     }
     if (out) {
       scaleFactor -= 0.1;
-      mX = mouseX-720;
-      mY = mouseY-450;
       out=false;
     }
     //pushMatrix();
@@ -226,7 +224,6 @@ void draw(){
     translate(720,450);
     scale(scaleFactor); 
     notPlanets.get(0).display();
-
     //popMatrix();
     //pushMatrix();
     //translate(planets.get(0).getCenterX(),planets.get(0).getCenterY());
