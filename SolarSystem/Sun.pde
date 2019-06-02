@@ -31,7 +31,7 @@ class Sun extends Celesties{
     noStroke();
     lights();
     pushMatrix();
-    translate(centerX, centerY, 0);
+    //translate(centerX, centerY, 0);
     rotate(rotateF += PI/120);
     scale(this.scale);
     shape(shape);
@@ -40,18 +40,19 @@ class Sun extends Celesties{
     //sphere(radius);
     //shape = createShape(sphereradius);
     //shape.setTexture(image);
-    translate(-centerX, -centerY, 0);
+    //translate(-centerX, -centerY, 0);
     popMatrix();
   }
   
   void infoText(){
     //pushMatrix();
-    if(mX >= centerX - radius && mX <= centerX + radius
-      && mY >= centerY - radius && mY <= centerY + radius){
+    text("" + mouseX + " " + mouseY + "center" + " " + centerX + " " + centerY, -200, 300);
+    if(mouseX >= centerX - radius && mouseX <= centerX + radius
+      && mouseY >= centerY - radius && mouseY <= centerY + radius){
       
     String s = "Sun\nDiameter: 864,340 miles\nAge: 4.5 billion years";
     fill(255);
-    text(s, 100, 700, 200, 100);
+    text(s, -100, 500, 200, 100);
     }
   }
   

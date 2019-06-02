@@ -130,14 +130,14 @@ class Planet extends Celesties{
   }
   
   void orbitSun(){
-    this.centerX = (720 + orbit * cos(angle + PI/2));
-    this.centerY = (450 + orbit * sin(angle + PI/2));
+    this.centerX = (orbit * cos(angle + PI/2));
+    this.centerY = (orbit * sin(angle + PI/2));
     angle += PI/120;
   }
   
   void orbitSunSpeed(){
-    this.centerX = (720 + orbit * cos((speed * (angle + PI/2))));
-    this.centerY = (450 + orbit * sin((speed * (angle + PI/2))));
+    this.centerX = (orbit * cos((speed * (angle + PI/2))));
+    this.centerY = (orbit * sin((speed * (angle + PI/2))));
     angle += PI/120;
   }
   
@@ -146,11 +146,12 @@ class Planet extends Celesties{
   }
   
   void infoText(){
-    if(mX >= centerX - radius && mX <= centerX + radius
-      && mY >= centerY - radius && mY <= centerY + radius){
+    //text("" + mouseX + " " + mouseY + "center" + " " + centerX + " " + centerY, -200, 300);
+    if(mouseX >= centerX - radius && mouseX <= centerX + radius
+      && mouseY >= centerY - radius && mouseY <= centerY + radius){
       
     fill(255);
-    text(info, 100, 700, 200, 100);
+    text(info, 100, 350, 200, 100);
     }
   }
   

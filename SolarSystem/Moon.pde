@@ -84,11 +84,12 @@ class Moon extends Celesties {
   }
   
   void infoText(){
-    if(mX >= centerX - radius && mX <= centerX + radius
-      && mY >= centerY - radius && mY <= centerY + radius){
+    //text("" + mouseX + " " + mouseY + "center" + " " + centerX + " " + centerY, -200, 300);
+    if(mouseX >= centerX+720 - radius && mouseX <= centerX+720 + radius
+      && mouseY >= centerY+450 - radius && mouseY <= centerY+450 + radius){
       
     fill(255);
-    text(info, 100, 700, 200, 100);
+    text(info, -700,-450, 200, 100);
     }
   }
   

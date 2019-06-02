@@ -120,7 +120,6 @@ void setup(){
   planets.add(pluto);
   
   Celesties c = notPlanets.get(0);
-  c.display();
   pushMatrix();
   if(c.camera == true){
     camera(c.centerX-200, c.centerY-200, 0, c.centerX, c.centerY, 0, 1.0, 1.0, 1.0);
@@ -164,16 +163,14 @@ void draw(){
     zoomNum = -1;
   }
   if(reset){
-<<<<<<< HEAD
     if(pushed && zoomNum >= 0){
       popMatrix();
       pushed = false;
       zoomNum = -1;
     }
-=======
     scale(scaleFactor);
->>>>>>> 21272468629e6b5d4c540192ae0380f2f07a2646
     background(51);
+    translate(720,450);
     for(int i = 0; i < notPlanets.size(); i++){
       Celesties c = notPlanets.get(i);
       c.setScale(1);
@@ -226,8 +223,10 @@ void draw(){
     }
     //pushMatrix();
     background(51);
-    translate(mX, mY);
-    scale(scaleFactor);
+    translate(720,450);
+    scale(scaleFactor); 
+    notPlanets.get(0).display();
+
     //popMatrix();
     //pushMatrix();
     //translate(planets.get(0).getCenterX(),planets.get(0).getCenterY());
@@ -286,19 +285,6 @@ void draw(){
     }
     scaleD = false;
   }
-  //if(zoomNum >= 0){
-  //  if(zoom) pushMatrix();
-  //  zoom = false;
-  //  if(zoomNum == 9){
-  //    camera(notPlanets.get(0).centerX-200, notPlanets.get(0).centerY-200, 0, notPlanets.get(0).centerX, notPlanets.get(0).centerY, 0, 1.0, 1.0, 1.0);
-  //  }else if (zoomNum == 10){
-  //    zoomNum = 0;
-  //    popMatrix();
-  //  }else{
-  //    Planet p = planets.get(zoomNum);
-  //    camera(p.centerX-200, p.centerY-200, 0, p.centerX, p.centerY, 0, 1.0, 1.0, 1.0);
-  //  }
-  //}
 }
 
 void keyPressed(){
@@ -314,6 +300,11 @@ void keyPressed(){
   }
   if(key == 'd'){
     scaleD = !scaleD;
+  }
+  if(key == CODED){
+    if(keyCode == RIGHT){
+      zoomNum++;
+    }
   }
   if (key == 'i') {
     in = !in;
