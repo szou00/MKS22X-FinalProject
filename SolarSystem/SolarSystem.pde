@@ -5,15 +5,12 @@ boolean move = false;
 boolean reset = true;
 boolean scaleU = false;
 boolean scaleD = false;
-<<<<<<< HEAD
 int zoomNum = -1;
 boolean pushed = false;
-=======
 boolean in = false;
 boolean out = false;
 boolean clicked = false;
 float scaleFactor;
->>>>>>> 21272468629e6b5d4c540192ae0380f2f07a2646
 int time;
 int totaltime = 0;
 int passedtime = 0;
@@ -167,15 +164,12 @@ void draw(){
     zoomNum = -1;
   }
   if(reset){
-<<<<<<< HEAD
     if(pushed && zoomNum >= 0){
       popMatrix();
       pushed = false;
       zoomNum = -1;
     }
-=======
     scale(scaleFactor);
->>>>>>> 21272468629e6b5d4c540192ae0380f2f07a2646
     background(51);
     for(int i = 0; i < notPlanets.size(); i++){
       Celesties c = notPlanets.get(i);
@@ -289,19 +283,6 @@ void draw(){
     }
     scaleD = false;
   }
-  //if(zoomNum >= 0){
-  //  if(zoom) pushMatrix();
-  //  zoom = false;
-  //  if(zoomNum == 9){
-  //    camera(notPlanets.get(0).centerX-200, notPlanets.get(0).centerY-200, 0, notPlanets.get(0).centerX, notPlanets.get(0).centerY, 0, 1.0, 1.0, 1.0);
-  //  }else if (zoomNum == 10){
-  //    zoomNum = 0;
-  //    popMatrix();
-  //  }else{
-  //    Planet p = planets.get(zoomNum);
-  //    camera(p.centerX-200, p.centerY-200, 0, p.centerX, p.centerY, 0, 1.0, 1.0, 1.0);
-  //  }
-  //}
 }
 
 void keyPressed(){
@@ -318,18 +299,16 @@ void keyPressed(){
   if(key == 'd'){
     scaleD = !scaleD;
   }
-<<<<<<< HEAD
   if(key == CODED){
     if(keyCode == RIGHT){
       zoomNum++;
     }
-=======
+  }
   if (key == 'i') {
     in = !in;
   }
   if (key == 'o') {
     out = !out;
->>>>>>> 21272468629e6b5d4c540192ae0380f2f07a2646
   }
 }
 
@@ -339,9 +318,6 @@ void mouseClicked(){
   mY = mouseY;
 }
 
-<<<<<<< HEAD
-    
-=======
 //void mouseReleased() {
 //  clicked = false;
 //}
@@ -355,4 +331,3 @@ void mouseClicked(){
 //  translateY = translateY-e.getAmount()*(mouseY)/100;
 //  scaleFactor += e.getAmount()/100;
 //}
->>>>>>> 21272468629e6b5d4c540192ae0380f2f07a2646
