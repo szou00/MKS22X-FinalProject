@@ -221,7 +221,7 @@ void draw(){
     }
     //pushMatrix();
     background(51);
-    scale(scaleFactor);
+    scale(0,0,scaleFactor);
     //notPlanets.get(0).display();
     //popMatrix();
     //pushMatrix();
