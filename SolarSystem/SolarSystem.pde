@@ -170,9 +170,7 @@ void draw(){
     }
     //pushMatrix();
     scaleFactor = 1;
-    translate(width/2,height/2);
     scale(scaleFactor);
-    translate(-width/2,-height/2);
     background(51);
     for(int i = 0; i < notPlanets.size(); i++){
       Celesties c = notPlanets.get(i);
@@ -223,6 +221,7 @@ void draw(){
     }
     //pushMatrix();
     background(51);
+    translate(width/2,height/2);
     scale(scaleFactor);
     //notPlanets.get(0).display();
     //popMatrix();
@@ -250,6 +249,7 @@ void draw(){
     text("Seconds passed: " + totaltime/1000/*totaltime*1/365*/,100,200);
     text("" + zoomNum, 100, 300);
     //popMatrix();
+    translate(-width/2,-height/2);
   }
   //stoppedtime = millis();
   if(scaleU){
