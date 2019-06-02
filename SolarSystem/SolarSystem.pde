@@ -223,6 +223,7 @@ void draw(){
     background(51);
     translate(width/2,height/2);
     scale(scaleFactor);
+    translate(-width/2,-height/2);
     //notPlanets.get(0).display();
     //popMatrix();
     //pushMatrix();
@@ -249,7 +250,6 @@ void draw(){
     text("Seconds passed: " + totaltime/1000/*totaltime*1/365*/,100,200);
     text("" + zoomNum, 100, 300);
     //popMatrix();
-    translate(-width/2,-height/2);
   }
   //stoppedtime = millis();
   if(scaleU){
