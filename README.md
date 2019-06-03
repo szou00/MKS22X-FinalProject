@@ -73,6 +73,13 @@ Sharon: made the moons the the actual moon texture. Tried to zoom in and follow 
 Sharon: worked on creating a zoom in and zoom out feature of the solar system and successfully applied that; worked on zooming in and out based on where the user clicks (mouse).
   </td>
   </tr>
+    <td>6/1/19</td>
+    <td>Tiffany: updated instructions in README.md to allow user to understand how the program works.
+        Sharon: continued working on zooming in. Translate wasn't working because the planets and the sun were shifting to different places on the screen. 
+  </td>
+  </tr>
+     <td>6/2/31</td>
+     <td>Sharon: Finally got zooming in and out to work while the whole system stays in place. Changed the texture for Uranus because it looked too similar to Neptune. Added in stars in the background. 
 </table>
 
 ## Formulas
