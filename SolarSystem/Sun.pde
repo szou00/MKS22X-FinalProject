@@ -46,7 +46,6 @@ class Sun extends Celesties{
   
   void infoText(){
     //pushMatrix();
-    text("" + mouseX + " " + mouseY + "center" + " " + centerX + " " + centerY, -200, 300);
     if(mouseX >= centerX - radius && mouseX <= centerX + radius
       && mouseY >= centerY - radius && mouseY <= centerY + radius){
       

@@ -8,10 +8,9 @@ boolean scaleU = false;
 boolean scaleD = false;
 int zoomNum = -1;
 boolean pushed = false;
-boolean in = false;
-boolean out = false;
+boolean in, out, left = false;
 boolean clicked = false;
-float scaleFactor;
+float scaleFactor,leftFactor;
 int time;
 int totaltime = 0;
 int passedtime = 0;
@@ -133,6 +132,8 @@ void setup(){
   }
   
   Celesties c = notPlanets.get(0);
+  //hi sorry i commented this out bc i wasn't sure how it should look like and it 
+  //generated the planets in a weird position in the beg 
   //pushMatrix();
   //if(c.camera == true){
   //  camera(c.centerX-200, c.centerY-200, 0, c.centerX, c.centerY, 0, 1.0, 1.0, 1.0);
@@ -200,14 +201,14 @@ void draw(){
   //    zoomNum = -1;
   //  }
     //pushMatrix();
-    scaleFactor = 1;
+    scaleFactor = scaleFactor = 1;
     scale(scaleFactor);
     background(51);
     for(int i = 0; i < notPlanets.size(); i++){
       Celesties c = notPlanets.get(i);
       c.setScale(1);
       c.display();
-      c.infoText();
+      //c.infoText();
     }
     for(int i = 0; i < planets.size(); i++){
       Planet p = planets.get(i);
@@ -235,7 +236,7 @@ void draw(){
     difference = millis();
     for(int i = 0; i < notPlanets.size(); i++){
       Celesties c = notPlanets.get(i);
-      c.infoText();
+      //c.infoText();
     }
     for(int i = 0; i < planets.size(); i++){
       Planet p = planets.get(i);
@@ -253,6 +254,10 @@ void draw(){
     if (out) {
       scaleFactor -= 0.1;
       out=false;
+    }
+    if (left) {
+      leftFactor += 10;
+      translate(leftFactor,0);
     }
     background(51);
     for (int i = 0; i < stars.size(); i++) {
@@ -276,7 +281,7 @@ void draw(){
         p.displayEach();
       }
     }
-    //text("CenterX and centerY: " + planets.get(0).getCenterX() + " " + planets.get(0).getCenterY(),100,220);
+    text("CenterX and centerY: " + notPlanets.get(0).getCenterX() + " " + notPlanets.get(0).getCenterY(),100,220);
 
     totaltime = millis() - difference + passedtime;
     translate(-width/2,-height/2);
@@ -342,6 +347,9 @@ void keyPressed(){
   }
   if (key == 'o') {
     out = !out;
+  }
+  if (key == 'l') {
+    left = !left;
   }
  
 }
