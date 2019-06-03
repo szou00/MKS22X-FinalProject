@@ -13,7 +13,7 @@ class Star {
     centerY = random(height);
     noStroke();
     lights();
-    fill(255);
+    fill(255,255,255,120);
     circle(centerX,centerY,3);
     //shape = createShape(SPHERE, radius);
     //shape.setTexture(newImage);
@@ -22,6 +22,7 @@ class Star {
   void display() {
     noStroke();
     lights();
+    fill(255,255,255,120);
     circle(centerX,centerY,3);
   }
   

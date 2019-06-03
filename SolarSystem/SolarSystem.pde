@@ -102,7 +102,7 @@ void setup(){
   saturn.addMoon(titan);
   saturn.addMoon(dione);
 
-  PImage uranusImage = loadImage("uranus.jpg");
+  PImage uranusImage = loadImage("uranus.jpeg");
   Planet uranus = new Planet(1150, 450, 11, 1150-720, 0.01,uranusImage);
   uranus.setInfo("Uranus\nDiameter: 32,600 miles\nDistance from the Sun: 1784 million miles\nPeriod of Orbit: 84 Earth years");
   planets.add(uranus);
@@ -126,8 +126,8 @@ void setup(){
   pluto.setInfo("Pluto\nDiameter: 1413 miles\nDistance from the Sun: 3674.5 million miles\nPeriod of Orbit: 248 Earth years");
   planets.add(pluto);
   
-  PImage starImage = loadImage("star.png");
-  for (int i = 0; i < 40; i++) {
+  //PImage starImage = loadImage("star.png");
+  for (int i = 0; i < 100; i++) {
     Star newStar = new Star();
     stars.add(newStar);
   }
@@ -255,6 +255,9 @@ void draw(){
       out=false;
     }
     background(51);
+    for (int i = 0; i < stars.size(); i++) {
+      stars.get(i).display();
+    }
     translate(width/2,height/2);
     scale(scaleFactor);
     translate(-width/2,-height/2);
@@ -277,6 +280,7 @@ void draw(){
 
     totaltime = millis() - difference + passedtime;
     translate(-width/2,-height/2);
+    fill(255);
     text("Years passed: " + totaltime/1000/8/*totaltime*1/365*/,100,450);
     text("" + zoomNum, 100, 300);
   }
