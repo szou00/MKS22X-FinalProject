@@ -8,9 +8,8 @@ boolean scaleU = false;
 boolean scaleD = false;
 int zoomNum = -1;
 boolean pushed = false;
-boolean in, out, left = false;
 boolean clicked = false;
-float scaleFactor,leftFactor;
+float scaleFactor,leftFactor, rightFactor, downFactor, upFactor;
 int time;
 int totaltime = 0;
 int passedtime = 0;
@@ -200,7 +199,8 @@ void draw(){
   //    zoomNum = -1;
   //  }
     //pushMatrix();
-    scaleFactor = leftFactor = 1;
+    scaleFactor = 1;
+    leftFactor = rightFactor = upFactor = downFactor = 0;
     scale(scaleFactor);
     background(bg);
     for(int i = 0; i < notPlanets.size(); i++){
@@ -246,23 +246,26 @@ void draw(){
     }
   }
   if(move){
-    if (in) {
-      scaleFactor += 0.1;
-      in=false;
+    if (keyPressed) { //this makes it smoother!!
+      if (key == 'i') scaleFactor+=0.1;
+      if (key == 'o') {
+        if (scaleFactor > 0) {
+          scaleFactor -=0.1;
+        }
+      }
+      if (key == 'a') leftFactor += 10;
+      if (key == 'd') rightFactor += 10;
+      if (key == 'w') upFactor += 10;
+      if (key == 's') downFactor += 10;
     }
-    if (out) {
-      scaleFactor -= 0.1;
-      out=false;
-    }
-    if (left) {
-      leftFactor += 10;
-      left = false;
-    }
+    translate(leftFactor,0);
+    translate(-rightFactor,0);
+    translate(0,upFactor);
+    translate(0,-downFactor);
     background(bg);
     //for (int i = 0; i < stars.size(); i++) {
     //  stars.get(i).display();
     //}
-    translate(leftFactor,0);
     translate(width/2,height/2);
     scale(scaleFactor);
     translate(-width/2,-height/2);
@@ -342,16 +345,6 @@ void keyPressed(){
       zoomNum++;
     }
   }
-  if (key == 'i') {
-    in = !in;
-  }
-  if (key == 'o') {
-    out = !out;
-  }
-  if (key == 'l') {
-    left = !left;
-  }
- 
 }
 
 
