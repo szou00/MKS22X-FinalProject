@@ -79,7 +79,7 @@ Sharon: worked on creating a zoom in and zoom out feature of the solar system an
   </td>
   </tr>
      <td>6/2/31</td>
-     <td>Sharon: Finally got zooming in and out to work while the whole system stays in place. Changed the texture for Uranus because it looked too similar to Neptune. Added in stars in the background. 
+     <td>Sharon: Finally got zooming in and out to work while the whole system stays in place. Changed the texture for Uranus because it looked too similar to Neptune. Added in stars in the background. Added left, right, up, down keys as well.
 </table>
 
 ## Formulas
