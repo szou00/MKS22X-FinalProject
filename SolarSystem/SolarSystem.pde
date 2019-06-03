@@ -1,7 +1,7 @@
 ArrayList<Celesties> notPlanets = new ArrayList<Celesties>();
 ArrayList<Planet> planets = new ArrayList<Planet>();
 ArrayList<Planet> testing = new ArrayList<Planet>();
-ArrayList<Star> stars = new ArrayList<Star>();
+//ArrayList<Star> stars = new ArrayList<Star>();
 boolean move = false;
 boolean reset = true;
 boolean scaleU = false;
@@ -16,7 +16,7 @@ int totaltime = 0;
 int passedtime = 0;
 int difference = 0;
 String keyStuff;
-PImage sunImage;
+PImage sunImage,bg;
 float mX,mY;
 
 public float resize(float radius) {
@@ -32,7 +32,10 @@ public float resize(float radius) {
 
 void setup(){
   size(1440, 900, P3D);
-  background(51);
+  
+  bg = loadImage("background.jpeg");
+  bg.resize(1440,900);
+  background(bg);
   time = millis();
   scaleFactor = 1;
   
@@ -126,10 +129,10 @@ void setup(){
   planets.add(pluto);
   
   //PImage starImage = loadImage("star.png");
-  for (int i = 0; i < 100; i++) {
-    Star newStar = new Star();
-    stars.add(newStar);
-  }
+  //for (int i = 0; i < 100; i++) {
+  //  Star newStar = new Star();
+  //  stars.add(newStar);
+  //}
   
   Celesties c = notPlanets.get(0);
   //hi sorry i commented this out bc i wasn't sure how it should look like and it 
@@ -164,15 +167,11 @@ void setup(){
         p.scaleEach(1);
       }
     }
-    for (int i = 0; i < stars.size(); i++) {
-      stars.get(i).display();
-    }
+    //for (int i = 0; i < stars.size(); i++) {
+    //  stars.get(i).display();
+    //}
   time = millis();
   
-  //Planet x = new Planet(875, 450, resize(3958.8), 875-720, (24/180) * PI);
-  //testing.add(x);
-  //Planet y = new Planet(1000, 450, 28, 1000-720);
-  //testing.add(y);
 }
 
 void draw(){
@@ -201,9 +200,9 @@ void draw(){
   //    zoomNum = -1;
   //  }
     //pushMatrix();
-    scaleFactor = scaleFactor = 1;
+    scaleFactor = leftFactor = 1;
     scale(scaleFactor);
-    background(51);
+    background(bg);
     for(int i = 0; i < notPlanets.size(); i++){
       Celesties c = notPlanets.get(i);
       c.setScale(1);
@@ -220,9 +219,9 @@ void draw(){
         p.scaleEach(1);
       }
     }
-    for (int i = 0; i < stars.size(); i++) {
-      stars.get(i).display();
-    }
+    //for (int i = 0; i < stars.size(); i++) {
+    //  stars.get(i).display();
+    //}
     //infoBox();
     totaltime = 0;
     passedtime = 0;
@@ -257,12 +256,13 @@ void draw(){
     }
     if (left) {
       leftFactor += 10;
-      translate(leftFactor,0);
+      left = false;
     }
-    background(51);
-    for (int i = 0; i < stars.size(); i++) {
-      stars.get(i).display();
-    }
+    background(bg);
+    //for (int i = 0; i < stars.size(); i++) {
+    //  stars.get(i).display();
+    //}
+    translate(leftFactor,0);
     translate(width/2,height/2);
     scale(scaleFactor);
     translate(-width/2,-height/2);
@@ -281,7 +281,7 @@ void draw(){
         p.displayEach();
       }
     }
-    text("CenterX and centerY: " + notPlanets.get(0).getCenterX() + " " + notPlanets.get(0).getCenterY(),100,220);
+    //text("CenterX and centerY: " + notPlanets.get(0).getCenterX() + " " + notPlanets.get(0).getCenterY(),100,220);
 
     totaltime = millis() - difference + passedtime;
     translate(-width/2,-height/2);
