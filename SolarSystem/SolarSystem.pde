@@ -8,6 +8,7 @@ boolean scaleU = false;
 boolean scaleD = false;
 int zoomNum = -1;
 boolean pushed = false;
+boolean zoom = false;
 boolean clicked = false;
 float scaleFactor,leftFactor, rightFactor, downFactor, upFactor;
 int time;
@@ -174,24 +175,37 @@ void setup(){
 }
 
 void draw(){
-  if(!pushed && zoomNum >= 0){
-    pushed = true;
-    pushMatrix();
-  }
-  if(pushed && zoomNum >= 0 && zoomNum <= 9){
-    if(zoomNum == 9){
-      Celesties c = notPlanets.get(0);
-      camera(c.centerX-200, c.centerY-200, 0, c.centerX, c.centerY, 0, 1.0, 1.0, 1.0);
-      text("" + zoomNum, c.centerX-100, c.centerY-100);
-    }else{
-      Planet p = planets.get(zoomNum);
-      camera(p.centerX-200, p.centerY-200, 0, p.centerX, p.centerY, 0, 1.0, 1.0, 1.0);
-      text("" + zoomNum, p.centerX-100, p.centerY-100);
+  if(!zoom){
+    if(pushed){
+      if(zoomNum >= 0 && zoomNum <= 9){
+        if(zoomNum == 9){
+          Celesties c = notPlanets.get(0);
+          camera(c.centerX-200, c.centerY-200, 0, c.centerX, c.centerY, 0, 1.0, 1.0, 1.0);
+          //text("" + zoomNum, c.centerX-100, c.centerY-100);
+        }else{
+          Planet p = planets.get(zoomNum);
+          camera(p.originalX-200, p.originalY-200, 0, p.originalX, p.originalY, 0, 1.0, 1.0, 1.0);
+          //text("" + zoomNum, p.centerX-100, p.centerY-100);
+        }
+      }
+      pushed = false;
     }
   }
-  if(pushed && zoomNum > 9){
-    popMatrix();
-    pushed = false;
+  if(zoom){
+    if(zoomNum >= 0 && zoomNum <= 9){
+      if(zoomNum == 9){
+        Celesties c = notPlanets.get(0);
+        camera(c.centerX-200, c.centerY-200, 0, c.centerX, c.centerY, 0, 1.0, 1.0, 1.0);
+        //text("" + zoomNum, c.centerX-100, c.centerY-100);
+      }else{
+        Planet p = planets.get(zoomNum);
+        camera(p.centerX-200, p.centerY-200, 0, p.centerX, p.centerY, 0, 1.0, 1.0, 1.0);
+        //text("" + zoomNum, p.centerX-100, p.centerY-100);
+      }
+    }
+  }
+  if(zoomNum > 9){
+    camera();
     zoomNum = -1;
   }
        
@@ -356,9 +370,13 @@ void keyPressed(){
   if(key == 'y'){
     scaleD = !scaleD;
   }
+  if(key == 'z'){
+    zoom = !zoom;
+  }
   if(key == CODED){
     if(keyCode == RIGHT){
       zoomNum++;
+      pushed = true;
     }
   }
 }
