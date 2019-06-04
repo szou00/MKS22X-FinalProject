@@ -44,22 +44,6 @@ class Planet extends Celesties{
     shape.setTexture(newImage);
   }
   
-  public Planet(float x, float y, float radius, float orbit, float speed, PImage newImage, boolean camera){
-    this.centerX = x;
-    this.centerY = y;
-    originalX = x;
-    originalY = y;
-    this.radius = radius;
-    this.orbit = orbit;
-    this.angle = atan2(720-centerX, 450-centerY);
-    this.speed = speed;
-    this.camera = camera;
-    noStroke();
-    noFill();
-    shape = createShape(SPHERE, radius);
-    shape.setTexture(newImage);
-  }
-  
   public void addMoon(Moon newMoon) {
     moons.add(newMoon);
   }
@@ -72,12 +56,9 @@ class Planet extends Celesties{
   }
   
   void reset(){
-    //pushMatrix();
-    //translate(-720,-450);
     this.centerX = originalX;
     this.centerY = originalY;
     this.angle = atan2(720-centerX, 450-centerY);
-    //popMatrix();
   }
   
   public void displayEach() {
@@ -149,11 +130,9 @@ class Planet extends Celesties{
   }
   
   boolean infoText(){
-    //text("" + mouseX + " " + mouseY + "center" + " " + centerX + " " + centerY, -200, 300);
-    
     if((mouseX >= this.centerX - this.radius) && (mouseX <= this.centerX + this.radius)
       && (mouseY >= this.centerY - this.radius) && (mouseY <= this.centerY + this.radius)){
-    //pushMatrix();
+
     String s = this.info;
     fill(255);
     text(s, 100, 500, 200, 100);

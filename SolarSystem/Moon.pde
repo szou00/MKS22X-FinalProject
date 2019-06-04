@@ -84,20 +84,13 @@ class Moon extends Celesties {
   }
   
   boolean infoText(){
-    //text("" + mouseX + " " + mouseY + "center" + " " + centerX + " " + centerY, -200, 300);
     if(mouseX >= centerX - radius && mouseX <= centerX + radius
       && mouseY >= centerY - radius && mouseY <= centerY + radius){
-    //pushMatrix();
     String s = this.info;
     fill(255);
     text(s, -700,-450, 200, 100);
-    //clicked = true;
     return true;
     } return false;
   }
-  
-  //void rotating(){
-  //  gravity = 0;
-  //}
   
 }

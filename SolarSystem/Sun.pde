@@ -1,6 +1,5 @@
 class Sun extends Celesties{
   public ArrayList<Planet> planets;
-  //PImage image;
   PShape shape;
   
   public Sun(float x, float y, float radius){
@@ -35,11 +34,6 @@ class Sun extends Celesties{
     rotate(rotateF += PI/120);
     scale(this.scale);
     shape(shape);
-    //popMatrix();
-    //rotateZ(PI/8);
-    //sphere(radius);
-    //shape = createShape(sphereradius);
-    //shape.setTexture(image);
     translate(-centerX, -centerY, 0);
     popMatrix();
   }
@@ -51,7 +45,6 @@ class Sun extends Celesties{
     String s = "Sun\nDiameter: 864,340 miles\nAge: 4.5 billion years";
     fill(255);
     text(s, 100, 500, 200, 100);
-    clicked = true;
     return true;
     } return false;
   }
@@ -59,11 +52,4 @@ class Sun extends Celesties{
   void zoom() {
      scale(2.5, 2.5, 2.5);
   }
-  
-  //void mouseClicked(){
-  //  clicked = true;
-  //}
-  //void rotating(){
-  //  rotateZ(rotateF += PI/8);
-  //}
 }
