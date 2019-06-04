@@ -1,11 +1,14 @@
 class Planet extends Celesties{
+  //original position
   float originalX;
   float originalY;
-  float orbit;
-  float angle;
-  ArrayList<Moon> moons = new ArrayList<Moon>();
+  float orbit; //orbit radius
+  float angle; //orbit angle
+  ArrayList<Moon> moons = new ArrayList<Moon>(); //list of moons
   PShape shape;
   
+  /**A constructor for a Planet
+  */
   public Planet(float x, float y, float radius, float orbit){
     this.centerX = x;
     originalX = x;
@@ -17,6 +20,8 @@ class Planet extends Celesties{
     this.speed = 1;
   }
   
+  /**A constructor for a Planet
+  */
   public Planet(float x, float y, float radius, float orbit, float speed){
     this.centerX = x;
     this.centerY = y;
@@ -28,6 +33,8 @@ class Planet extends Celesties{
     this.speed = speed;
   }
   
+   /**A constructor for a Planet
+   */
    public Planet(float x, float y, float radius, float orbit, float speed, PImage newImage){
     this.centerX = x;
     this.centerY = y;
@@ -44,10 +51,15 @@ class Planet extends Celesties{
     shape.setTexture(newImage);
   }
   
+  /**A method for adding moons
+  */
   public void addMoon(Moon newMoon) {
     moons.add(newMoon);
   }
   
+  /**A method that checks if the planet has moons
+  *@return boolean
+  */
   public boolean hasMoon() {
     if (moons.size() > 0) {
       return true;
@@ -55,12 +67,16 @@ class Planet extends Celesties{
     return false;
   }
   
+  /**A method that resets the moon to its original position
+  */
   void reset(){
     this.centerX = originalX;
     this.centerY = originalY;
     this.angle = atan2(720-centerX, 450-centerY);
   }
   
+  /**A method that calls on each of the planet's moons and tells them to display and move
+  */
   public void displayEach() {
     for (int i = 0; i < moons.size(); i++) {
       if(reset){
@@ -73,18 +89,24 @@ class Planet extends Celesties{
     }
   }
   
+  /**A method that tell's each of the planet's moons to call infoText()
+  */
   public void infoEach() {
     for (int i = 0; i < moons.size(); i++) {
       moons.get(i).infoText();
     }
   }
   
+  /**A method that scales up each of the planet's moons
+  */
   public void scaleEachUp() {
     for (int i = 0; i < moons.size(); i++) {
       moons.get(i).setScale(moons.get(i).scale + 1);
     }
   }
   
+  /**A method that scales down each of the planet's moons
+  */
   public void scaleEachDown() {
     for (int i = 0; i < moons.size(); i++) {
       Moon m = moons.get(i);
@@ -94,6 +116,8 @@ class Planet extends Celesties{
     }
   }
   
+  /**A method that sets the scale for each of the planet's moons
+  */
   public void scaleEach(float s) {
     for (int i = 0; i < moons.size(); i++) {
       moons.get(i).setScale(s);
@@ -113,22 +137,31 @@ class Planet extends Celesties{
     popMatrix();
   }
   
+  /**A method for orbiting the Sun using the default speed
+  */
   void orbitSun(){
     this.centerX = (orbit * cos(angle + PI/2));
     this.centerY = (orbit * sin(angle + PI/2));
     angle += PI/120;
   }
   
+  /**A method for orbiting the Sun using the given speed
+  */
   void orbitSunSpeed(){
     this.centerX = (orbit * cos((speed * (angle + PI/2))));
     this.centerY = (orbit * sin((speed * (angle + PI/2))));
     angle += PI/120;
   }
   
+  /**A method for updating information
+  */
   void setInfo(String s){
     this.info = s;
   }
   
+  /**A method that checks if the mouse is on the Planet and displays the info if true
+  *@return boolean
+  */
   boolean infoText(){
     if((mouseX >= this.centerX - this.radius) && (mouseX <= this.centerX + this.radius)
       && (mouseY >= this.centerY - this.radius) && (mouseY <= this.centerY + this.radius)){
@@ -141,6 +174,8 @@ class Planet extends Celesties{
     return false;
   }
   
+  /**A method for zooming in
+  */
   void zoom() {
     pushMatrix();
     scale(2.5, 2.5, 2.5);

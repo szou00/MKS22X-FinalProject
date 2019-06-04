@@ -1,13 +1,17 @@
 class Sun extends Celesties{
-  public ArrayList<Planet> planets;
+  public ArrayList<Planet> planets; //list of planets
   PShape shape;
   
+  /**A constructor for the Sun
+  */
   public Sun(float x, float y, float radius){
     this.centerX = x;
     this.centerY = y;
     this.radius = radius; 
   }
   
+  /**A constructor for the Sun
+  */
   public Sun(float x, float y, float radius, PImage newImage){
     this.centerX = x;
     this.centerY = y;
@@ -21,6 +25,8 @@ class Sun extends Celesties{
     planets = new ArrayList<Planet>();
   }
   
+  /**A method for setting the texture of the Sun
+  */
   void imageTexture(PImage newimage) {
     image = newimage;
   }
@@ -38,6 +44,9 @@ class Sun extends Celesties{
     popMatrix();
   }
   
+  /**A method that checks if the mouse is on the Sun and displays the info if true
+  *@return boolean
+  */
   boolean infoText(){
     
     if(mouseX >= centerX - radius && mouseX <= centerX + radius
@@ -49,6 +58,8 @@ class Sun extends Celesties{
     } return false;
   }
   
+  /**A method for zooming in
+  */
   void zoom() {
      scale(2.5, 2.5, 2.5);
   }
