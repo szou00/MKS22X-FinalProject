@@ -5,9 +5,9 @@
 
   To start the movement of the solar system, press the SPACE bar. To stop the movement, press the SPACE bar again.
 
-  To increase the sizes of the celestial bodies in the solar system, press 'u'.
+  To increase the sizes of the celestial bodies in the solar system, press 'u'. Then choose which objects to be scaled, pressing 'm' for the moons, 'p' for the planets, and 'n' for the Sun.
 
-  To decrease the sizes of the celestial bodies in the solar system, press 'y'.
+  To decrease the sizes of the celestial bodies in the solar system, press 'y'. Then choose which objects to be scaled, pressing 'm' for the moons, 'p' for the planets, and 'n' for the Sun.
 
   To dive into the 3D view of the planets' orbits and see their movements from within their orbits, press the RIGHT arrow to switch between planets. To follow along with the orbital movements, meaning the solar system will mimic the orbit, press 'z'. Press 'z' again to stop following along. Switching between the planets using the RIGHT arrow will eventually bring the screen back to the original bird's-eye view.
 
@@ -18,6 +18,8 @@
   To access general information about the celestial bodies, HOVER over the object. Information will appear on the left-hand side. Keep in mind that information can only be seen when in the bird's-eye view of the solar system. Reseting is required each time to view the information of the other objects.
 
   To reset to the original, unmoving solar system, press 'r'.
+
+  To access the legend, PAUSE the solar system or RESET.
 
 ## Development Log
 <table>
@@ -91,7 +93,7 @@ Sharon: worked on creating a zoom in and zoom out feature of the solar system an
   </td>
   </tr>
     <td>6/4/19</td>
-    <td>Tiffany: fixed uml diagram; tested the following of planets
+    <td>Tiffany: fixed uml diagram; made scaling of objects separate; added a legend box at the top of the screen
 
 Sharon: fixed prototype
 </table>
