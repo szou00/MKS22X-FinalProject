@@ -4,19 +4,19 @@
   This is a simulation of the solar system, with all the planets and Pluto, as well as the major moons of the planets. The timer system works to represent one year for every 8 seconds, and the planets' orbital period in terms of seconds in the simulation is proportional their orbital period in reality.
 
   To start the movement of the solar system, press the SPACE bar. To stop the movement, press the SPACE bar again.
-  
+
   To increase the sizes of the celestial bodies in the solar system, press 'u'.
-  
+
   To decrease the sizes of the celestial bodies in the solar system, press 'y'.
-  
-  To dive into the 3D view of the planets' orbits and see their movements from within their oribts, press the RIGHT arrow to switch between planets. To follow along with the orbital movements, meaning the screen will mimic the oribit, press 'z'. Press 'z' again to stop following along. Switching between the planets using the RIGHT arrow will eventually bring the screen back to the original bird's-eye view.
-  
+
+  To dive into the 3D view of the planets' orbits and see their movements from within their orbits, press the RIGHT arrow to switch between planets. To follow along with the orbital movements, meaning the solar system will mimic the orbit, press 'z'. Press 'z' again to stop following along. Switching between the planets using the RIGHT arrow will eventually bring the screen back to the original bird's-eye view.
+
   To zoom in, press 'i'. To zoom out, press 'o'.
-  
+
   To shift the screen left, right, up, or down, press 'a', 'd', 'w', or 's', respectively.
-  
+
   To access general information about the celestial bodies, HOVER over the object. Information will appear on the left-hand side. Keep in mind that information can only be seen when in the bird's-eye view of the solar system. Reseting is required each time to view the information of the other objects.
-  
+
   To reset to the original, unmoving solar system, press 'r'.
 
 ## Development Log
@@ -54,7 +54,7 @@
   </td>
   </tr>
     <td>5/28/19</td>
-    <td>Today, Tiffany made all the moons orbit at the correct speeds around the planets. We also managed to make the planets start at the same position. Sharon started to import photos of the planets to implement them, but she had trouble with placing the images in the 3D planes, because they would not appear where we wanted them to. Sharon started importImages but had a hard time getting everything to look realistic with 3D images. 
+    <td>Today, Tiffany made all the moons orbit at the correct speeds around the planets. We also managed to make the planets start at the same position. Sharon started to import photos of the planets to implement them, but she had trouble with placing the images in the 3D planes, because they would not appear where we wanted them to. Sharon started importImages but had a hard time getting everything to look realistic with 3D images.
   </td>
   </tr>
     <td>5/29/19</td>
@@ -65,19 +65,19 @@ Sharon: tried implementing a perspective change where you can choose a planet to
   </tr>
     <td>5/30/19</td>
     <td>Tiffany: worked on rotating the celestial bodies in the z direction to make the simulation seem more three dimensional. She then started to add information to the bodies.
-        
-Sharon: made the moons the the actual moon texture. Tried to zoom in and follow a celestial body again. The zooming in feature does work and the screen moves, however, it just doesn't zoom in on the right spot. 
+
+Sharon: made the moons the the actual moon texture. Tried to zoom in and follow a celestial body again. The zooming in feature does work and the screen moves, however, it just doesn't zoom in on the right spot.
   </td>
   </tr>
     <td>5/31/19</td>
-    <td>Tiffany: worked on following the planets in the 3D dimensions using the camera function; users can now swtich between the planet orbit they are following; also created a scale up and scale down system in order to play with the sizes of the celestial bodies. 
+    <td>Tiffany: worked on following the planets in the 3D dimensions using the camera function; users can now swtich between the planet orbit they are following; also created a scale up and scale down system in order to play with the sizes of the celestial bodies.
 
 Sharon: worked on creating a zoom in and zoom out feature of the solar system and successfully applied that; worked on zooming in and out based on where the user clicks (mouse).
   </td>
   </tr>
     <td>6/1/19</td>
     <td>Tiffany: updated instructions in README.md to allow user to understand how the program works.
-        Sharon: continued working on zooming in. Translate wasn't working because the planets and the sun were shifting to different places on the screen. 
+        Sharon: continued working on zooming in. Translate wasn't working because the planets and the sun were shifting to different places on the screen.
   </td>
   </tr>
      <td>6/2/31</td>
@@ -86,10 +86,14 @@ Sharon: worked on creating a zoom in and zoom out feature of the solar system an
   </tr>
     <td>6/3/19</td>
     <td>Tiffany: fixed the speeds of the planets; tried fixing the information plaques; changed positioning of years and zoomNum; created two systems for viewing planets: to just stay in their orbits, or follow along with their orbits.
-  
+
   Sharon: implemented and improved the left, right, up, down keys; made zooming in and out much smoother than before
   </td>
   </tr>
+    <td>6/4/19</td>
+    <td>Tiffany: fixed uml diagram; tested the following of planets
+
+Sharon: fixed prototype
 </table>
 
 ## Formulas
