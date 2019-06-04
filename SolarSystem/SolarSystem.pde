@@ -194,6 +194,7 @@ void draw(){
     pushed = false;
     zoomNum = -1;
   }
+       
   if (reset) {
     //if(pushed && zoomNum >= 0){
   //    popMatrix();
