@@ -36,10 +36,11 @@ float mX, mY;
   }
   
   void infoBox() {
-    fill(255,200,200);
-    rect(70,450,200,100);
+    String s = "LEGEND\n\nSPACE = movement\nU = scale up; Y = scale down\n   Select the objects you want to scale:\n   N = Sun, M = moons, P = planets\nRIGHT arrow = switch between planets' orbits\nZ = system mimics orbit\nI = zoom in; O = zoom out\nA, D, W, S = shift screen left, right, up, and down\nHOVER the mouse over an object to see its info\n   (RESET each time)\nR = reset";
+    fill(255);
+    rect(70,10,320,185);
     fill(0);//set the text color to black
-    text("Information", 90, 470);  
+    text(s, 90, 25);  
   }
 
 void setup(){
@@ -168,10 +169,11 @@ void setup(){
   //  stars.get(i).display();
   //}
   time = millis();
-  
+  infoBox();
 }
 
 void draw(){
+  infoBox();
   if(!zoom){ //if don't mimic the orbit...
     if(pushed){ //just stay in orbit of planet using camera
       if(zoomNum >= 0 && zoomNum <= 9){
@@ -261,7 +263,6 @@ void draw(){
     }
   }
   if(move){ //if solar system is in motion...
-  
     //toggles for movement of screen
     if (keyPressed) { //this makes it smoother!!
       if (key == 'i') scaleFactor+=0.1;
@@ -354,7 +355,7 @@ void draw(){
       p.infoEach();
     }
   }
-  text("" + zoomNum, 100-leftFactor+rightFactor, 200-upFactor+downFactor);
+  //text("" + zoomNum, 100-leftFactor+rightFactor, 200-upFactor+downFactor);
   //System.out.println("" + mouseX + " " + mouseY);
 }
 
