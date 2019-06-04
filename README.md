@@ -9,7 +9,7 @@
   
   To decrease the sizes of the celestial bodies in the solar system, press 'y'.
   
-  To dive into the 3D view of the planets' orbits and switch between the different planets to "follow" them, press the RIGHT arrow. This will switch between the planets and eventually go back to the original bird's-eye view.
+  To dive into the 3D view of the planets' orbits and see their movements from within their oribts, press the RIGHT arrow to switch between planets. To follow along with the orbital movements, meaning the screen will mimic the oribit, press 'z'. Press 'z' again to stop following along. Switching between the planets using the RIGHT arrow will eventually bring the screen back to the original bird's-eye view.
   
   To zoom in, press 'i'. To zoom out, press 'o'.
   
@@ -85,7 +85,7 @@ Sharon: worked on creating a zoom in and zoom out feature of the solar system an
   </td>
   </tr>
     <td>6/3/19</td>
-    <td>Tiffany: fixed the speeds of the planets; tried fixing the information plaques; tried fixing the camera following the planets; changed positioning of years and zoomNum
+    <td>Tiffany: fixed the speeds of the planets; tried fixing the information plaques; changed positioning of years and zoomNum; created two systems for viewing planets: to just stay in their orbits, or follow along with their orbits.
   
   Sharon: implemented and improved the left, right, up, down keys; made zooming in and out much smoother than before
   </td>
