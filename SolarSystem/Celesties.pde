@@ -68,7 +68,7 @@ abstract class Celesties{
   //void zoomIn(float z) {
   //  translate(width>>1, height>>1, zoom, zoom);
   
-  abstract void infoText();
+  abstract boolean infoText();
   //abstract void rotating();
     
   abstract void display();

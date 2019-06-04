@@ -16,7 +16,7 @@ int passedtime = 0;
 int difference = 0;
 String keyStuff;
 PImage sunImage,bg;
-float mX,mY;
+float mX, mY;
 
 public float resize(float radius) {
     return radius/(4321.7/7);
@@ -45,18 +45,18 @@ void setup(){
   sun.infoText();
   
   PImage mercuryImage = loadImage("mercury.jpeg");
-  Planet mercury = new Planet(800, 450, resize(1516), 800-720, 1 * 2,mercuryImage);
+  Planet mercury = new Planet(800, 450, resize(1516), 800-720, 1 * 2 * 2,mercuryImage);
   planets.add(mercury);
   mercury.setInfo("Mercury\nDiameter: 3031 miles\nDistance from the Sun: 36 million miles\nPeriod of Orbit: 88 Earth days");
 
   PImage venusImage = loadImage("venus.jpg");
-  Planet venus = new Planet(832, 450, resize(3760.4), 832-720, 0.4 * 2,venusImage);
+  Planet venus = new Planet(832, 450, resize(3760.4), 832-720, 0.4 * 2 * 2,venusImage);
   planets.add(venus);
   venus.setInfo("Venus\nDiameter: 7521 miles\nDistance from the Sun: 67.2 million miles\nPeriod of Orbit: 225 Earth days");
   
   PImage earthImage = loadImage("earth.jpeg");
   PImage moonImage = loadImage("moon.jpeg");
-  Planet earth = new Planet(875, 450, resize(3958.8), 875-720, 0.25 * 2, earthImage);
+  Planet earth = new Planet(875, 450, resize(3958.8), 875-720, 0.25 * 2 * 2, earthImage);
   earth.setInfo("Earth\nDiameter: 7926 miles\nDistance from the Sun: 93 million miles\nPeriod of Orbit: 365 Earth days");
   //earth.camera = true;
   planets.add(earth);
@@ -65,7 +65,7 @@ void setup(){
   earth.addMoon(earthMoon);
   
   PImage marsImage = loadImage("mars.jpeg");
-  Planet mars = new Planet(920, 450, resize(2106.1), 920-720, 0.138 * 2,marsImage);
+  Planet mars = new Planet(920, 450, resize(2106.1), 920-720, 0.138 * 2 * 2,marsImage);
   mars.setInfo("Mars\nDiameter: 4222 miles\nDistance from the Sun: 141.6 million miles\nPeriod of Orbit: 687 Earth days");
   planets.add(mars);
   Moon phobos = new Moon(920,  460, 0.6, 460-450, 3, 10,moonImage);
@@ -76,7 +76,7 @@ void setup(){
   mars.addMoon(deimos);
  
   PImage jupiterImage = loadImage("jupiter.jpeg");
-  Planet jupiter = new Planet(1000, 450, 28, 1000-720, 0.021 * 2,jupiterImage);
+  Planet jupiter = new Planet(1000, 450, 28, 1000-720, 0.021 * 2 * 2,jupiterImage);
   jupiter.setInfo("Jupiter\nDiameter: 88,729 miles\nDistance from the Sun: 483.6 million miles\nPeriod of Orbit: 11.862 Earth years");
   planets.add(jupiter);
   Moon io = new Moon(1000, 410, 1.7, 450-410, 4, 8.9,moonImage);
@@ -93,7 +93,7 @@ void setup(){
   jupiter.addMoon(callisto);
   
   PImage saturnImage = loadImage("saturn.jpg");
-  Planet saturn = new Planet(1080, 450, 20, 1080-720, 0.0175,saturnImage);
+  Planet saturn = new Planet(1080, 450, 20, 1080-720, 0.0175 * 2,saturnImage);
   saturn.setInfo("Saturn\nDiameter: 74,600 miles\nDistance from the Sun: 886.7 million miles\nPeriod of Orbit: 29.5 Earth years");
   planets.add(saturn);
   Moon titan = new Moon(1080, 480, 2.4, 30, 5, 8,moonImage);
@@ -104,7 +104,7 @@ void setup(){
   saturn.addMoon(dione);
 
   PImage uranusImage = loadImage("uranus.jpeg");
-  Planet uranus = new Planet(1150, 450, 11, 1150-720, 0.01,uranusImage);
+  Planet uranus = new Planet(1150, 450, 11, 1150-720, 0.01 * 2,uranusImage);
   uranus.setInfo("Uranus\nDiameter: 32,600 miles\nDistance from the Sun: 1784 million miles\nPeriod of Orbit: 84 Earth years");
   planets.add(uranus);
   Moon miranda = new Moon(1150, 435, .4, 450-435, 6, 8.85,moonImage);
@@ -115,7 +115,7 @@ void setup(){
   uranus.addMoon(ariel);
   
   PImage neptuneImage = loadImage("neptune.jpg");
-  Planet neptune = new Planet(1200, 450, 10, 1200-720, 0.005,neptuneImage);
+  Planet neptune = new Planet(1200, 450, 10, 1200-720, 0.005 * 2,neptuneImage);
   neptune.setInfo("Neptune\nDiameter: 30,200 miles\nDistance from the Sun: 2794.4 million miles\nPeriod of Orbit: 165 Earth years");
   planets.add(neptune);
   Moon triton = new Moon(1200, 435, 1.3, 15, 7, 8.6,moonImage);
@@ -123,7 +123,7 @@ void setup(){
   neptune.addMoon(triton);
 
   PImage plutoImage = loadImage("pluto.jpg");
-  Planet pluto = new Planet(1260, 450, 1, 1260-720, 0.0035,plutoImage);
+  Planet pluto = new Planet(1260, 450, 1, 1260-720, 0.0035 * 2,plutoImage);
   pluto.setInfo("Pluto\nDiameter: 1413 miles\nDistance from the Sun: 3674.5 million miles\nPeriod of Orbit: 248 Earth years");
   planets.add(pluto);
   
@@ -182,9 +182,11 @@ void draw(){
     if(zoomNum == 9){
       Celesties c = notPlanets.get(0);
       camera(c.centerX-200, c.centerY-200, 0, c.centerX, c.centerY, 0, 1.0, 1.0, 1.0);
+      text("" + zoomNum, c.centerX-100, c.centerY-100);
     }else{
       Planet p = planets.get(zoomNum);
       camera(p.centerX-200, p.centerY-200, 0, p.centerX, p.centerY, 0, 1.0, 1.0, 1.0);
+      text("" + zoomNum, p.centerX-100, p.centerY-100);
     }
   }
   if(pushed && zoomNum > 9){
@@ -239,9 +241,9 @@ void draw(){
     }
     for(int i = 0; i < planets.size(); i++){
       Planet p = planets.get(i);
-      p.infoText();
+      //p.infoText();
       if(p.hasMoon()){
-        p.infoEach();
+        //p.infoEach();
       }
     }
   }
@@ -272,16 +274,17 @@ void draw(){
     for(int i = 0; i < notPlanets.size(); i++){
       Celesties c = notPlanets.get(i);
       c.display();
-      c.infoText();
+      //c.infoText();
     }
     translate(width/2,height/2);
     for(int i = 0; i < planets.size(); i++){
       Planet p = planets.get(i);
       p.display();
-      p.infoText();
+      //p.infoText();
       p.orbitSunSpeed();
       if(p.hasMoon()){
         p.displayEach();
+        //p.infoEach();
       }
     }
     //text("CenterX and centerY: " + notPlanets.get(0).getCenterX() + " " + notPlanets.get(0).getCenterY(),100,220);
@@ -289,8 +292,8 @@ void draw(){
     totaltime = millis() - difference + passedtime;
     translate(-width/2,-height/2);
     fill(255);
-    text("Years passed: " + totaltime/1000/8/*totaltime*1/365*/,100,450);
-    text("" + zoomNum, 100, 300);
+    text("Years passed: " + totaltime/1000/8/*totaltime*1/365*/,100-leftFactor+rightFactor,250-upFactor+downFactor);
+    
   }
   if(scaleU){
     for(int i = 0; i < notPlanets.size(); i++){
@@ -324,6 +327,18 @@ void draw(){
     }
     scaleD = false;
   }
+  for(int i = 0; i < notPlanets.size(); i++){
+    Celesties c = notPlanets.get(i);
+    c.infoText();
+  }
+  for(int i = 0; i < planets.size(); i++){
+    Planet p = planets.get(i);
+    p.infoText();
+    if(p.hasMoon()){
+      p.infoEach();
+    }
+  }
+  text("" + zoomNum, 100-leftFactor+rightFactor, 200-upFactor+downFactor);
 }
 
 void keyPressed(){
@@ -337,7 +352,7 @@ void keyPressed(){
   if(key == 'u'){
     scaleU = !scaleU;
   }
-  if(key == 'd'){
+  if(key == 'y'){
     scaleD = !scaleD;
   }
   if(key == CODED){
@@ -349,7 +364,6 @@ void keyPressed(){
 
 
 void mouseClicked(){
-  clicked = true;
   mX = mouseX;
   mY = mouseY;
 }

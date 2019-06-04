@@ -148,14 +148,18 @@ class Planet extends Celesties{
     this.info = s;
   }
   
-  void infoText(){
+  boolean infoText(){
     //text("" + mouseX + " " + mouseY + "center" + " " + centerX + " " + centerY, -200, 300);
-    if(mouseX >= centerX - radius && mouseX <= centerX + radius
-      && mouseY >= centerY - radius && mouseY <= centerY + radius){
-      
+    
+    if((mouseX >= this.centerX - this.radius) && (mouseX <= this.centerX + this.radius)
+      && (mouseY >= this.centerY - this.radius) && (mouseY <= this.centerY + this.radius)){
+    //pushMatrix();
+    String s = this.info;
     fill(255);
-    text(info, 100, 500, 200, 100);
+    text(s, 100, 500, 200, 100);
+    return true;
     }
+    return false;
   }
   
   void zoom() {
