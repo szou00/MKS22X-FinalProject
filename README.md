@@ -7,13 +7,15 @@
   
   To increase the sizes of the celestial bodies in the solar system, press 'u'.
   
-  To decrease the sizes of the celestial bodies in the solar system, press 'd'.
+  To decrease the sizes of the celestial bodies in the solar system, press 'y'.
   
   To dive into the 3D view of the planets' orbits and switch between the different planets to "follow" them, press the RIGHT arrow. This will switch between the planets and eventually go back to the original bird's-eye view.
   
   To zoom in, press 'i'. To zoom out, press 'o'.
   
-  To access general information about the celestial bodies, CLICK on the object. Information will appear on the left-hand side. Keep in mind that information can only be seen when in the bird's-eye view of the solar system.
+  To shift the screen left, right, up, or down, press 'a', 'd', 'w', or 's', respectively.
+  
+  To access general information about the celestial bodies, HOVER over the object. Information will appear on the left-hand side. Keep in mind that information can only be seen when in the bird's-eye view of the solar system. Reseting is required each time to view the information of the other objects.
   
   To reset to the original, unmoving solar system, press 'r'.
 
@@ -80,6 +82,14 @@ Sharon: worked on creating a zoom in and zoom out feature of the solar system an
   </tr>
      <td>6/2/31</td>
      <td>Sharon: Finally got zooming in and out to work while the whole system stays in place. Changed the texture for Uranus because it looked too similar to Neptune. Added in stars in the background. Added left, right, up, down keys as well.
+  </td>
+  </tr>
+    <td>6/3/19</td>
+    <td>Tiffany: fixed the speeds of the planets; tried fixing the information plaques; tried fixing the camera following the planets; changed positioning of years and zoomNum
+  
+  Sharon: implemented and improved the left, right, up, down keys; made zooming in and out much smoother than before
+  </td>
+  </tr>
 </table>
 
 ## Formulas
