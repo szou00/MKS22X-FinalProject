@@ -195,12 +195,14 @@ void draw(){
     if(zoomNum >= 0 && zoomNum <= 9){
       if(zoomNum == 9){
         Celesties c = notPlanets.get(0);
-        camera(c.centerX-200, c.centerY-200, 0, c.centerX, c.centerY, 0, 1.0, 1.0, 1.0);
+        camera(c.centerX-100, c.centerY-100, 0, c.centerX, c.centerY, 0, 1.0, 1.0, 1.0);
         //text("" + zoomNum, c.centerX-100, c.centerY-100);
+        //System.out.println("" + c.centerX + " " + c.centerY);
       }else{
         Planet p = planets.get(zoomNum);
-        camera(p.centerX-200, p.centerY-200, 0, p.centerX, p.centerY, 0, 1.0, 1.0, 1.0);
+        camera(p.centerX-100, p.centerY-100, 0, p.centerX, p.centerY, 0, 1.0, 1.0, 1.0);
         //text("" + zoomNum, p.centerX-100, p.centerY-100);
+        //System.out.println("" + p.centerX + " " + p.centerY);
       }
     }
   }
@@ -354,6 +356,7 @@ void draw(){
     }
   }
   text("" + zoomNum, 100-leftFactor+rightFactor, 200-upFactor+downFactor);
+  //System.out.println("" + mouseX + " " + mouseY);
 }
 
 void keyPressed(){
