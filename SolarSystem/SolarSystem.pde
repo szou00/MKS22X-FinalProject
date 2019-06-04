@@ -1,7 +1,7 @@
 ArrayList<Celesties> notPlanets = new ArrayList<Celesties>();
 ArrayList<Planet> planets = new ArrayList<Planet>();
 ArrayList<Planet> testing = new ArrayList<Planet>();
-//ArrayList<Star> stars = new ArrayList<Star>();
+ArrayList<Button> buttons = new ArrayList<Button>();
 boolean move = false;
 boolean reset = true;
 boolean scaleU = false;
@@ -31,10 +31,10 @@ public float resize(float radius) {
   }
 
 void setup(){
-  size(1440, 900, P3D);
+  size(300, 500, P3D);
   
   bg = loadImage("background.jpeg");
-  bg.resize(1440,900);
+  bg.resize(300,500);
   background(bg);
   time = millis();
   scaleFactor = 1;
@@ -128,11 +128,8 @@ void setup(){
   pluto.setInfo("Pluto\nDiameter: 1413 miles\nDistance from the Sun: 3674.5 million miles\nPeriod of Orbit: 248 Earth years");
   planets.add(pluto);
   
-  //PImage starImage = loadImage("star.png");
-  //for (int i = 0; i < 100; i++) {
-  //  Star newStar = new Star();
-  //  stars.add(newStar);
-  //}
+  Button info = new Button(200,500);
+  buttons.add(info);
   
   Celesties c = notPlanets.get(0);
   //hi sorry i commented this out bc i wasn't sure how it should look like and it 
@@ -250,17 +247,6 @@ void draw(){
   if (!move) {
     passedtime = totaltime;
     difference = millis();
-    for(int i = 0; i < notPlanets.size(); i++){
-      Celesties c = notPlanets.get(i);
-      //c.infoText();
-    }
-    for(int i = 0; i < planets.size(); i++){
-      Planet p = planets.get(i);
-      //p.infoText();
-      if(p.hasMoon()){
-        //p.infoEach();
-      }
-    }
   }
   if(move){
     if (keyPressed) { //this makes it smoother!!
@@ -275,14 +261,29 @@ void draw(){
       if (key == 'w') upFactor += 10;
       if (key == 's') downFactor += 10;
     }
+    
+    background(bg);
+    boolean over = buttons.get(0).overButton(mouseX,mouseY);
+    text("mouseX mouseY" + mouseX + " " + mouseY,200,820);
+    if (over) {
+      fill(50);
+      buttons.get(0).display();
+    }
+    else {
+      fill(255);
+      buttons.get(0).display();
+    }
     translate(leftFactor,0);
     translate(-rightFactor,0);
     translate(0,upFactor);
     translate(0,-downFactor);
-    background(bg);
     //for (int i = 0; i < stars.size(); i++) {
     //  stars.get(i).display();
     //}
+    totaltime = millis() - difference + passedtime;
+    fill(255);
+    text("Years passed: " + totaltime/1000/8/*totaltime*1/365*/,100-leftFactor+rightFactor,250-upFactor+downFactor);
+    
     translate(width/2,height/2);
     scale(scaleFactor);
     translate(-width/2,-height/2);
@@ -303,12 +304,7 @@ void draw(){
       }
     }
     //text("CenterX and centerY: " + notPlanets.get(0).getCenterX() + " " + notPlanets.get(0).getCenterY(),100,220);
-
-    totaltime = millis() - difference + passedtime;
     translate(-width/2,-height/2);
-    fill(255);
-    text("Years passed: " + totaltime/1000/8/*totaltime*1/365*/,100-leftFactor+rightFactor,250-upFactor+downFactor);
-    
   }
   if(scaleU){
     for(int i = 0; i < notPlanets.size(); i++){
@@ -344,11 +340,11 @@ void draw(){
   }
   for(int i = 0; i < notPlanets.size(); i++){
     Celesties c = notPlanets.get(i);
-    c.infoText();
+    //c.infoText();
   }
   for(int i = 0; i < planets.size(); i++){
     Planet p = planets.get(i);
-    p.infoText();
+    //p.infoText();
     if(p.hasMoon()){
       p.infoEach();
     }

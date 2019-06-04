@@ -45,9 +45,9 @@ abstract class Celesties{
     image = newimage;
   }
   
-  void move(float x, float y){
+  //void move(float x, float y){
     //
-  }
+  //}
   
   void setRotate(float r){
     this.rotateF = r;
