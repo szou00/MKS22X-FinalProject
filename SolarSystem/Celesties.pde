@@ -1,75 +1,74 @@
 abstract class Celesties{
   float radius;
-  float centerX, centerY;
-  PImage img;
-  float rotateF;
+  float centerX, centerY; //center of object
+  float rotateF; //rotation factor
   float speed;
-  float mass;
-  float gravity;
-  //PShape shape;
   PImage image;
   String info;
-  boolean clicked = true;
   float scale = 1;
-  boolean camera;
   
+  /**A method for obtaining the radius
+  *@return float
+  */
   float getRadius(){
     return radius;
   }
   
+  /**A method for obtaining the x coordinate
+  *@return float
+  */
   float getCenterX(){
     return centerX;
   }
   
+  /**A method for obtaining the y coordinate
+  *@return float
+  */
   float getCenterY(){
     return centerY;
   }
-  
+
+  /**A method for obtaining the rotation factor
+  *@return float
+  */
   float getRotate(){
     return rotateF;
   }
   
+  /**A method for obtaining the speed factor
+  *@return float
+  */
   float getSpeed(){
     return speed;
   }
   
-  float getMass(){
-    return mass;
-  }
-  
-  float getGravity(){
-    return gravity;
-  }
-  
+  /**A method to store the image imported for each object
+  */
   void storeImage(PImage newimage) {
     image = newimage;
   }
-  
-  //void move(float x, float y){
-    //
-  //}
   
   void setRotate(float r){
     this.rotateF = r;
   }
   
-  void changeMass(float m){
-    this.mass = m;
-  }
-  
+  /**A method to change the radius
+  */
   void changeSize(float s){
     this.radius = s;
   }
   
+  /**A method to set the scale/size of the object
+  */
   void setScale(float s){
     this.scale = s;
   }
   
-  //void zoomIn(float z) {
-  //  translate(width>>1, height>>1, zoom, zoom);
-  
+  /**An abstract method to display information
+  */
   abstract boolean infoText();
-  //abstract void rotating();
     
+  /**An abstract method to display the object on the scree
+  */
   abstract void display();
 }

@@ -1,11 +1,14 @@
 class Moon extends Celesties {
-  float originalX;
+  //original positions
+  float originalX; 
   float originalY;
-  private float orbit;
-  private float angle;
-  private Planet planet;
+  private float orbit; //orbit radius
+  private float angle;  //orbit angle
+  private Planet planet; //planet to orbit
   PShape shape;
   
+  /**A constructor for a moon
+  */
   public Moon(float x, float y, float radius, float neworbit, int planetNum) {
     this.centerX = x;
     originalX = x;
@@ -18,6 +21,8 @@ class Moon extends Celesties {
     this.speed = 2;
   }
   
+  /**A constructor for a moon
+  */
   public Moon(float x, float y, float radius, float neworbit, int planetNum, float speed) {
     this.centerX = x;
     this.centerY = y;
@@ -30,6 +35,8 @@ class Moon extends Celesties {
     this.speed = speed;
   }
   
+  /**A constructor for a moon
+  */
   public Moon(float x, float y, float radius, float neworbit, int planetNum, float speed, PImage newImage) {
     this.centerX = x;
     this.centerY = y;
@@ -60,44 +67,47 @@ class Moon extends Celesties {
     popMatrix();
   }
   
+  /**A method that resets the moon to its original position
+  */
   void reset(){
     this.centerX = originalX;
     this.centerY = originalY;
     this.angle = atan2(planet.getCenterX()-centerX, planet.getCenterY()-centerY);
   }
     
-  
+  /**A method for orbiting the planet using the default speed
+  */
   void orbitPlanet(){
     this.centerX = (planet.getCenterX() + orbit * cos(2 * angle - PI/2));
     this.centerY = (planet.getCenterY() + orbit * sin(2 * angle - PI/2));
     angle += PI/120;
   }
   
+  /**A method for orbiting the planet using the given speed
+  */
   void orbitPlanetSpeed(){
     this.centerX = (planet.getCenterX() + orbit * cos(speed * angle - PI/2));
     this.centerY = (planet.getCenterY() + orbit * sin(speed * angle - PI/2));
     angle += PI/120;
   }
   
+  /**A method for updating information
+  */
   void setInfo(String s){
     this.info = s;
   }
   
+  /**A method that checks if the mouse is on the moon and displays the info if true
+  *@return boolean
+  */
   boolean infoText(){
-    //text("" + mouseX + " " + mouseY + "center" + " " + centerX + " " + centerY, -200, 300);
     if(mouseX >= centerX - radius && mouseX <= centerX + radius
       && mouseY >= centerY - radius && mouseY <= centerY + radius){
-    //pushMatrix();
     String s = this.info;
     fill(255);
     text(s, -700,-450, 200, 100);
-    //clicked = true;
     return true;
     } return false;
   }
-  
-  //void rotating(){
-  //  gravity = 0;
-  //}
   
 }

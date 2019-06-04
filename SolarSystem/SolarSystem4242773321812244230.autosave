@@ -1,4 +1,3 @@
-//object lists
 ArrayList<Celesties> notPlanets = new ArrayList<Celesties>();
 ArrayList<Planet> planets = new ArrayList<Planet>();
 ArrayList<Planet> testing = new ArrayList<Planet>();
@@ -7,53 +6,42 @@ boolean move = false;
 boolean reset = true;
 boolean scaleU = false;
 boolean scaleD = false;
-boolean Moons = false;
-boolean Planets = false;
-boolean Sun = false;
 int zoomNum = -1;
 boolean pushed = false;
 boolean zoom = false;
-
-//variables for moving
+boolean clicked = false;
 float scaleFactor,leftFactor, rightFactor, downFactor, upFactor;
-
-//variables for time system
 int time;
 int totaltime = 0;
 int passedtime = 0;
 int difference = 0;
-
-//extraneous variables
 String keyStuff;
 PImage sunImage,bg;
 float mX, mY;
 
-  /**A method for recalculating a radius to scale based on the scale factor
-  */
-  public float resize(float radius) {
+public float resize(float radius) {
     return radius/(4321.7/7);
   }
   
   void infoBox() {
-    String s = "LEGEND\n\nSPACE = movement\nU = scale up; Y = scale down\n   Select the objects you want to scale:\n   N = Sun, M = moons, P = planets\nRIGHT arrow = switch between planets' orbits\nZ = system mimics orbit\nI = zoom in; O = zoom out\nA, D, W, S = shift screen left, right, up, and down\nHOVER the mouse over an object to see its info\n   (RESET each time)\nR = reset";
-    fill(255);
-    rect(70,10,320,185);
+    fill(255,200,200);
+    rect(70,450,200,100);
     fill(0);//set the text color to black
-    text(s, 90, 25);  
+    text("Information", 90, 470);  
   }
 
 void setup(){
-  size(300, 500, P3D);
+  size(1440, 900, P3D);
   
-  //setting up the sun, planets, moons, and information
   bg = loadImage("background.jpeg");
-  bg.resize(300,500);
+  bg.resize(1440,900);
   background(bg);
   time = millis();
   scaleFactor = 1;
   
   sunImage = loadImage("sun.jpg");
   Sun sun = new Sun(720, 450, 70,sunImage);
+  sun.camera = true;
   notPlanets.add(sun);
   sun.infoText();
   
@@ -71,6 +59,7 @@ void setup(){
   PImage moonImage = loadImage("moon.jpeg");
   Planet earth = new Planet(875, 450, resize(3958.8), 875-720, 0.25 * 2 * 2, earthImage);
   earth.setInfo("Earth\nDiameter: 7926 miles\nDistance from the Sun: 93 million miles\nPeriod of Orbit: 365 Earth days");
+  //earth.camera = true;
   planets.add(earth);
   Moon earthMoon = new Moon(875, 460, resize(1079.4), 460-450, 2, 4,moonImage);
   earthMoon.setInfo("Moon\nDiameter: 2159 miles\nDistance from Earth: 238,900 miles\nPeriod of Orbit: 27 Earth days");
@@ -160,36 +149,31 @@ void setup(){
   //  }
   //}
   //popMatrix();
-
   for(int i = 0; i < notPlanets.size(); i++){
-    Celesties c = notPlanets.get(i);
-    c.setScale(1);
-    c.display();
-    c.infoText();
-  }
-  for(int i = 0; i < planets.size(); i++){
-    Planet p = planets.get(i);
-    p.reset();
-    p.setScale(1);
-    p.display();
-    p.infoText();
-    if (p.hasMoon()) {
-      p.displayEach();
-      p.scaleEach(1);
-      p.infoEach();
+      c.setScale(1);
+      c.display();
+      c.infoText();
     }
-  }
-  //for (int i = 0; i < stars.size(); i++) {
-  //  stars.get(i).display();
-  //}
+    for(int i = 0; i < planets.size(); i++){
+      Planet p = planets.get(i);
+      p.reset();
+      p.setScale(1);
+      p.display();
+      if (p.hasMoon()) {
+        p.displayEach();
+        p.scaleEach(1);
+      }
+    }
+    //for (int i = 0; i < stars.size(); i++) {
+    //  stars.get(i).display();
+    //}
   time = millis();
-  infoBox();
+  
 }
 
 void draw(){
-  infoBox();
-  if(!zoom){ //if don't mimic the orbit...
-    if(pushed){ //just stay in orbit of planet using camera
+  if(!zoom){
+    if(pushed){
       if(zoomNum >= 0 && zoomNum <= 9){
         if(zoomNum == 9){
           Celesties c = notPlanets.get(0);
@@ -201,38 +185,38 @@ void draw(){
           //text("" + zoomNum, p.centerX-100, p.centerY-100);
         }
       }
-      pushed = false; //stay in the orbit without moving
+      pushed = false;
     }
   }
-  if(zoom){ //if mimicing the orbit...
-    //update the x and y values of the camera
+  if(zoom){
     if(zoomNum >= 0 && zoomNum <= 9){
       if(zoomNum == 9){
         Celesties c = notPlanets.get(0);
-        camera(c.centerX-100, c.centerY-100, 0, c.centerX, c.centerY, 0, 1.0, 1.0, 1.0);
+        camera(c.centerX-200, c.centerY-200, 0, c.centerX, c.centerY, 0, 1.0, 1.0, 1.0);
+        //text("" + zoomNum, c.centerX-100, c.centerY-100);
       }else{
         Planet p = planets.get(zoomNum);
-        camera(p.centerX-100, p.centerY-100, 0, p.centerX, p.centerY, 0, 1.0, 1.0, 1.0);
+        camera(p.centerX-200, p.centerY-200, 0, p.centerX, p.centerY, 0, 1.0, 1.0, 1.0);
+        //text("" + zoomNum, p.centerX-100, p.centerY-100);
       }
     }
   }
-  if(zoomNum > 9){ //go back to initial camera setting
+  if(zoomNum > 9){
     camera();
     zoomNum = -1;
   }
        
-  if (reset) { //reset to initial screen
+  if (reset) {
+    //if(pushed && zoomNum >= 0){
+  //    popMatrix();
+  //    pushed = false;
+  //    zoomNum = -1;
+  //  }
+    //pushMatrix();
     scaleFactor = 1;
-    scaleU = false;
-    scaleD = false;
-    Moons = false;
-    Planets = false;
-    Sun = false;
-
     leftFactor = rightFactor = upFactor = downFactor = 0;
     scale(scaleFactor);
     background(bg);
-    //reset all objects
     for(int i = 0; i < notPlanets.size(); i++){
       Celesties c = notPlanets.get(i);
       c.setScale(1);
@@ -253,31 +237,18 @@ void draw(){
     //  stars.get(i).display();
     //}
     //infoBox();
-    
-    //reset time
     totaltime = 0;
     passedtime = 0;
     difference = 0;
     move = false;
     reset = false;
+    //popMatrix();
    }
-  if (!move) { //if solar system is not in motion...
+  if (!move) {
     passedtime = totaltime;
     difference = millis();
-    for(int i = 0; i < notPlanets.size(); i++){
-      Celesties c = notPlanets.get(i);
-      c.infoText();
-    }
-    for(int i = 0; i < planets.size(); i++){
-      Planet p = planets.get(i);
-      p.infoText();
-      if(p.hasMoon()){
-        p.infoEach();
-      }
-    }
   }
-  if(move){ //if solar system is in motion...
-    //toggles for movement of screen
+  if(move){
     if (keyPressed) { //this makes it smoother!!
       if (key == 'i') scaleFactor+=0.1;
       if (key == 'o') {
@@ -332,41 +303,41 @@ void draw(){
         //p.infoEach();
       }
     }
+    //text("CenterX and centerY: " + notPlanets.get(0).getCenterX() + " " + notPlanets.get(0).getCenterY(),100,220);
     translate(-width/2,-height/2);
   }
-  if(scaleU){ //to increase sizes of objects
+  if(scaleU){
     for(int i = 0; i < notPlanets.size(); i++){
       Celesties c = notPlanets.get(i);
-      if(Sun) c.setScale(c.scale + 1);
+      c.setScale(c.scale + 1);
     }
     for(int i = 0; i < planets.size(); i++){
       Planet p = planets.get(i);
-      if(Planets) p.setScale(p.scale + 1);
-      if(Moons && p.hasMoon()){
+      p.setScale(p.scale + 1);
+      if(p.hasMoon()){
         p.scaleEachUp();
       }
     }
     scaleU = false;
   }
-  if(scaleD){ //to decrease sizes of planets
+  if(scaleD){
     for(int i = 0; i < notPlanets.size(); i++){
       Celesties c = notPlanets.get(i);
-      if(Sun && c.scale > 1){
+      if(c.scale > 1){
         c.setScale(c.scale - 1);
       }
     }
     for(int i = 0; i < planets.size(); i++){
       Planet p = planets.get(i);
-      if(Planets && p.scale > 1){
+      if(p.scale > 1){
         p.setScale(p.scale - 1);
       }
-      if(Moons && p.hasMoon()){
+      if(p.hasMoon()){
         p.scaleEachDown();
       }
     }
     scaleD = false;
   }
-  //display info
   for(int i = 0; i < notPlanets.size(); i++){
     Celesties c = notPlanets.get(i);
     //c.infoText();
@@ -378,12 +349,9 @@ void draw(){
       p.infoEach();
     }
   }
-  //text("" + zoomNum, 100-leftFactor+rightFactor, 200-upFactor+downFactor);
-  //System.out.println("" + mouseX + " " + mouseY);
+  text("" + zoomNum, 100-leftFactor+rightFactor, 200-upFactor+downFactor);
 }
 
-
-//checking for key input
 void keyPressed(){
   keyStuff = "" + key;
   if(key == ' '){
@@ -401,15 +369,6 @@ void keyPressed(){
   if(key == 'z'){
     zoom = !zoom;
   }
-  if(key == 'p'){
-    Planets = !Planets;
-  }
-  if(key == 'm'){
-    Moons = !Moons;
-  }
-  if(key == 'n'){
-    Sun  = !Sun;
-  }
   if(key == CODED){
     if(keyCode == RIGHT){
       zoomNum++;
@@ -418,7 +377,7 @@ void keyPressed(){
   }
 }
 
-//checking for mouse clicked
+
 void mouseClicked(){
   mX = mouseX;
   mY = mouseY;

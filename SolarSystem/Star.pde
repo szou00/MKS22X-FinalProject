@@ -6,6 +6,8 @@ class Star {
   float centerY;
   PShape shape;
   
+  /**A constructor for star
+  */
   public Star() {
     //Random rand = new Random();
     radius = 3/*(rand.nextInt(5) + 1)*/;

@@ -1,14 +1,17 @@
 class Sun extends Celesties{
-  public ArrayList<Planet> planets;
-  //PImage image;
+  public ArrayList<Planet> planets; //list of planets
   PShape shape;
   
+  /**A constructor for the Sun
+  */
   public Sun(float x, float y, float radius){
     this.centerX = x;
     this.centerY = y;
     this.radius = radius; 
   }
   
+  /**A constructor for the Sun
+  */
   public Sun(float x, float y, float radius, PImage newImage){
     this.centerX = x;
     this.centerY = y;
@@ -22,6 +25,8 @@ class Sun extends Celesties{
     planets = new ArrayList<Planet>();
   }
   
+  /**A method for setting the texture of the Sun
+  */
   void imageTexture(PImage newimage) {
     image = newimage;
   }
@@ -35,15 +40,13 @@ class Sun extends Celesties{
     rotate(rotateF += PI/120);
     scale(this.scale);
     shape(shape);
-    //popMatrix();
-    //rotateZ(PI/8);
-    //sphere(radius);
-    //shape = createShape(sphereradius);
-    //shape.setTexture(image);
     translate(-centerX, -centerY, 0);
     popMatrix();
   }
   
+  /**A method that checks if the mouse is on the Sun and displays the info if true
+  *@return boolean
+  */
   boolean infoText(){
     
     float disX = centerX - mouseX;
@@ -52,19 +55,13 @@ class Sun extends Celesties{
     String s = "Sun\nDiameter: 864,340 miles\nAge: 4.5 billion years";
     fill(255);
     text(s, 100, 500, 200, 100);
-    clicked = true;
     return true;
     } return false;
   }
   
+  /**A method for zooming in
+  */
   void zoom() {
      scale(2.5, 2.5, 2.5);
   }
-  
-  //void mouseClicked(){
-  //  clicked = true;
-  //}
-  //void rotating(){
-  //  rotateZ(rotateF += PI/8);
-  //}
 }
