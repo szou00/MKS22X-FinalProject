@@ -95,7 +95,7 @@ Sharon: worked on creating a zoom in and zoom out feature of the solar system an
     <td>6/4/19</td>
     <td>Tiffany: fixed uml diagram; made scaling of objects separate; added a legend box at the top of the screen
 
-Sharon: fixed prototype; tried implementing a button that would display the orbits via a button class
+Sharon: fixed prototype; tried implementing buttons that would display the orbits and information of the sun, planets, and moons when the mouse is hovered over the button. 
 </td>
 </tr>
 </table>
