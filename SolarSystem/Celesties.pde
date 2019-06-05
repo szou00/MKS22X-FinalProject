@@ -29,6 +29,10 @@ abstract class Celesties{
   float getCenterY(){
     return centerY;
   }
+  
+  String getInfo() {
+    return info;
+  }
 
   /**A method for obtaining the rotation factor
   *@return float

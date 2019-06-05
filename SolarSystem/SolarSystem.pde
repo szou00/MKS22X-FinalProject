@@ -139,9 +139,13 @@ void setup(){
   Planet pluto = new Planet(width/2+540, height/2, 1, 540, 0.0035 * 2,plutoImage);
   pluto.setInfo("Pluto\nDiameter: 1413 miles\nDistance from the Sun: 3674.5 million miles\nPeriod of Orbit: 248 Earth years");
   planets.add(pluto);
-  
-  Button info = new Button(100,300);
+ 
+  Button info = new Button(100,300,200,20);
+  info.setText("Click for More Information");
   buttons.add(info);
+  
+  Button sunB = new Button(250,330,100,20);
+  sunB.setText(
   
   Celesties c = notPlanets.get(0);
   //hi sorry i commented this out bc i wasn't sure how it should look like and it 
@@ -295,13 +299,12 @@ void draw(){
     
     //background(bg);
     background(51);
-    text("mouseX mouseY" + mouseX + " " + mouseY,200,620);
+    //text("mouseX mouseY" + mouseX + " " + mouseY,200,620);
     buttons.get(0).changeButton(mouseX, mouseY);
-    boolean over = buttons.get(0).pressed();
+    boolean over = buttons.get(0).hovering();
     if (over) {
       notPlanets.get(0).displayInfo();
     }
-    text(""+ over,100,680);
     
     
     translate(leftFactor,0);

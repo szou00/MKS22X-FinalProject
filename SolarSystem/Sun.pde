@@ -65,6 +65,8 @@ class Sun extends Celesties{
     text(s, 100, 500, 200, 400);
   }
   
+  
+  
   /**A method for zooming in
   */
   void zoom() {
