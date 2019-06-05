@@ -113,16 +113,16 @@ Sharon: fixed prototype; tried implementing a button that would display the orbi
   </tr>
     <td>Mercury</td>
     <td>Diameter: 3031 miles
-Distance from the Sun: 36 million miles
-Period of Orbit: 88 Earth days --> 2 seconds</td>
+  Distance from the Sun: 36 million miles
+  Period of Orbit: 88 Earth days --> 2 seconds</td>
   </tr>
     <td>Venus</td>
     <td>Diameter: 7521 miles
-Distance from the Sun: 67.2 million miles
-Period of Orbit: 225 Earth days --> 5 seconds</td>
+  Distance from the Sun: 67.2 million miles
+  Period of Orbit: 225 Earth days --> 5 seconds</td>
   </tr>
     <td>Earth</td>
     <td>Diameter: 7926 miles
-Distance from the Sun: 93 million miles
-Period of Orbit: 365 Earth days --> 8 seconds</td>
+  Distance from the Sun: 93 million miles
+  Period of Orbit: 365 Earth days --> 8 seconds</td>
     </tr>
