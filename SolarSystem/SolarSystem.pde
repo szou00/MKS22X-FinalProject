@@ -46,7 +46,7 @@ float mX, mY;
   }
 
 void setup(){
-  size(1440,700, P3D);
+  size(1440,900, P3D);
   
   //setting up the sun, planets, moons, and information
   bg = loadImage("background.jpeg");
@@ -180,7 +180,7 @@ void setup(){
   buttons.add(uranusB);
 
   Button neptuneB = new Button(100,570,60,20);
-  neptuneB.setText("Saturn");
+  neptuneB.setText("Neptune");
   buttons.add(neptuneB);
   
   Button plutoB = new Button(100,600,60,20);
