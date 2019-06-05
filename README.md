@@ -111,18 +111,158 @@ Sharon: fixed prototype; tried implementing a button that would display the orbi
     <td>1 year</td>
     <td>8 seconds</td>
   </tr>
+  
+<table>
+  <th>Planet</th>
+  <th>Diameter</th>
+  <th>Distance from the Sun</th>
+  <th>Period of Orbit</th>
+  <th>Moons Displayed</th>
+  <tr>
     <td>Mercury</td>
-    <td>Diameter: 3031 miles
-  Distance from the Sun: 36 million miles
-  Period of Orbit: 88 Earth days --> 2 seconds</td>
+    <td>3031 miles</td>
+    <td>36 million miles</td>
+    <td>88 Earth days --> 2 seconds</td>
+    <td>None</td>
   </tr>
     <td>Venus</td>
-    <td>Diameter: 7521 miles
-  Distance from the Sun: 67.2 million miles
-  Period of Orbit: 225 Earth days --> 5 seconds</td>
+    <td>7521 miles</td>
+    <td>67.2 million miles</td>
+    <td>225 Earth days --> 5 seconds</td>
+    <td>None</td>
   </tr>
     <td>Earth</td>
-    <td>Diameter: 7926 miles
-  Distance from the Sun: 93 million miles
-  Period of Orbit: 365 Earth days --> 8 seconds</td>
-    </tr>
+    <td>7926 miles</td>
+    <td>93 million miles</td>
+    <td>365 Earth days --> 8 seconds</td>
+    <td>Moon:
+      
+     Diameter: 2159 miles
+     
+     Distance from Earth: 238,900 miles
+     
+     Period of Orbit: 27 Earth days
+  </td>
+  </tr>
+    <td>Mars</td>
+    <td>4222 miles</td>
+    <td>141.6 million miles</td>
+    <td>Period of Orbit: 687 Earth days --> 15 seconds</td>
+    <td>Phobos:
+  
+    Diameter: 14 miles
+    
+    Distance from Mars: 5826 miles
+    
+    Period of Orbit: 8 hours
+    
+Deimos: 
+
+    Diameter: 7.7 miles
+    
+    Distance from Mars: 14,573 miles
+    
+    Period of Orbit: 30 hours
+</td>
+</tr>
+  <td>Jupiter</td>
+  <td>88,729 miles</td>
+  <td>483.6 million miles</td>
+  <td>11.862 Earth years --> 95 seconds</td>
+  <td>Io:
+  
+    Diameter: 2,263.8 miles
+    
+    Distance from Jupiter: 262,000 miles
+    
+    Period of Orbit: 42 hours
+
+Europa:
+
+    Diameter: 1,939.7 miles
+    
+    Distance from Jupiter: 414,000 miles
+    
+    Period of Orbit: 85 hours
+    
+Ganymede:
+
+    Diameter: 3,273.5 miles
+    
+    Distance from Jupiter: 665,000 miles
+    
+    Period of Orbit: 7.15 Earth days
+    
+Callisto:
+
+    Diameter: 2,995.4 miles
+    
+    Distance from Jupiter: 1,168,000 miles
+    
+    Period of Orbit: 16.7 Earth days
+</td>
+</tr>
+  <td>Saturn</td>
+  <td>74,600 miles</td>
+  <td>886.7 million miles</td>
+  <td>29.5 Earth years --> 230 seconds</td>
+  <td>Titan:
+  
+      Diameter: 3,199.7 miles
+      
+      Distance from Saturn: 759,220 miles
+      
+      Period of Orbit: 16 Earth days
+      
+Dione:
+  
+    Diameter: 697.68 miles
+    
+    Distance from Saturn: 698 miles
+    
+    Period of Orbit: 2.7 Earth days
+    
+</td>
+</tr>
+  <td>Uranus</td>
+  <td>32,600 miles</td>
+  <td>1784 million miles</td>
+  <td>84 Earth years</td>
+  <td>Miranda:
+  
+     Diameter: 293.04 miles
+     
+     Distance from Uranus: 80,685 miles
+     
+     Period of Orbit: 1.413 Earth days
+    
+Ariel: 
+    
+    Diameter: 720 miles
+    
+    Distance from Uranus: 118,638 miles
+    
+    Period of Orbit: 2.5 Earth days
+    
+</td>
+</tr>
+  <td>Neptune</td>
+  <td>30,200 miles</td>
+  <td>2794.4 million miles</td>
+  <td>165 Earth years</td>
+  <td>Triton:
+  
+      Diameter: 1,682 miles
+      
+      Distance from Neptune: 220,438 miles
+      
+      Period of Orbit: 5.877 Earth days
+ </td>
+ </tr>
+  <td>Pluto</td>
+  <td>1413 miles</td>
+  <td>3674.5 million miles</td>
+  <td>248 Earth years</td>
+  <td>None</td>
+  </tr>
+  
