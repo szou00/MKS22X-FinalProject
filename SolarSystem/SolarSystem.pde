@@ -36,15 +36,11 @@ float mX, mY;
     return radius/(4321.7/7);
   }
   
+  //creating a legend/key
   void infoBox() {
-    //PImage infoImage = loadImage("button.jpg"); //orginally was for button but changed to use for this instead
     String s = "LEGEND\n\nSPACE = movement\nU = scale up; Y = scale down\n   Select the objects you want to scale:\n   N = Sun, M = moons, P = planets\nRIGHT arrow = switch between planets' orbits\nZ = system mimics orbit\nI = zoom in; O = zoom out\nA, D, W, S = shift screen left, right, up, and down\nHOVER the mouse over an object to see its info\n   (RESET each time)\nR = reset";
     fill(200);
-    PShape box = createShape(RECT,70,10,320,190);
-    //box.setTexture(infoImage);
-    shape(box);
-    //rect(70,10,320,185);
-    //endShape();
+    rect(70,10,320,190);
     fill(0);//set the text color to black
     text(s, 90, 25);  
   }
@@ -56,7 +52,6 @@ void setup(){
   bg = loadImage("background.jpeg");
   bg.resize(width,height);
   background(bg);
-  //background(51);
   time = millis();
   scaleFactor = 1;
   
@@ -205,18 +200,15 @@ void setup(){
     p.reset();
     p.setScale(1);
     p.display();
-    p.infoText();
     if (p.hasMoon()) {
       p.displayEach();
       p.scaleEach(1);
-      p.infoEach();
     }
   }
-  //for (int i = 0; i < stars.size(); i++) {
-  //  stars.get(i).display();
-  //}
+
   time = millis();
   infoBox();
+  
 }
 
 void draw(){
@@ -341,13 +333,13 @@ void draw(){
     
     infoBox();
     
+    //moving according to inputs of user
     translate(leftFactor,0);
     translate(-rightFactor,0);
     translate(0,upFactor);
     translate(0,-downFactor);
-    //for (int i = 0; i < stars.size(); i++) {
-    //  stars.get(i).display();
-    //}
+    
+    //keeping track of time
     totaltime = millis() - difference + passedtime;
     fill(255);
     text("Years passed: " + totaltime/1000/8/*totaltime*1/365*/,100-leftFactor+rightFactor,250-upFactor+downFactor);
@@ -404,8 +396,6 @@ void draw(){
     scaleD = false;
   }
   
-  //text("" + zoomNum, 100-leftFactor+rightFactor, 200-upFactor+downFactor);
-  //System.out.println("" + mouseX + " " + mouseY);
 }
 
 
