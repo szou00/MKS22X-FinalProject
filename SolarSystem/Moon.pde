@@ -116,4 +116,11 @@ class Moon extends Celesties {
     text(s, 100, 500, 200, 400);
   }
   
+  /**A method that displays the info
+  *@return String
+  */
+  String getInfo() {
+    return this.info;
+  }
+  
 }

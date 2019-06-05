@@ -68,36 +68,36 @@ void setup(){
   PImage mercuryImage = loadImage("mercury.jpeg");
   Planet mercury = new Planet(width/2+60, height/2, resize(1516), 800-720, 1 * 2 * 2,mercuryImage);
   planets.add(mercury);
-  mercury.setInfo("Mercury\nDiameter: 3031 miles\nDistance from the Sun: 36 million miles\nPeriod of Orbit: 88 Earth days");
+  mercury.setInfo("Mercury\n\nDiameter: 3031 miles\nDistance from the Sun: 36 million miles\nPeriod of Orbit: 88 Earth days");
 
   PImage venusImage = loadImage("venus.jpg");
   Planet venus = new Planet(width/2+93, height/2, resize(3760.4), 832-720, 0.4 * 2 * 2,venusImage);
   planets.add(venus);
-  venus.setInfo("Venus\nDiameter: 7521 miles\nDistance from the Sun: 67.2 million miles\nPeriod of Orbit: 225 Earth days");
+  venus.setInfo("Venus\n\nDiameter: 7521 miles\nDistance from the Sun: 67.2 million miles\nPeriod of Orbit: 225 Earth days");
   
   PImage earthImage = loadImage("earth.jpeg");
   PImage moonImage = loadImage("moon.jpeg");
   Planet earth = new Planet(width/2+155, height/2, resize(3958.8), width/2+155-width/2, 0.25 * 2 * 2, earthImage);
-  earth.setInfo("Earth\nDiameter: 7926 miles\nDistance from the Sun: 93 million miles\nPeriod of Orbit: 365 Earth days");
+  earth.setInfo("Earth\n\nDiameter: 7926 miles\nDistance from the Sun: 93 million miles\nPeriod of Orbit: 365 Earth days");
   planets.add(earth);
   Moon earthMoon = new Moon(875, height/2+10, resize(1079.4), 10, 2, 4,moonImage);
-  earthMoon.setInfo("Moon\nDiameter: 2159 miles\nDistance from Earth: 238,900 miles\nPeriod of Orbit: 27 Earth days");
+  earthMoon.setInfo("Moon\n\nDiameter: 2159 miles\nDistance from Earth: 238,900 miles\nPeriod of Orbit: 27 Earth days");
   earth.addMoon(earthMoon);
   
   PImage marsImage = loadImage("mars.jpeg");
   Planet mars = new Planet(width/2+200, height/2, resize(2106.1), width/2+200-width/2, 0.138 * 2 * 2,marsImage);
-  mars.setInfo("Mars\nDiameter: 4222 miles\nDistance from the Sun: 141.6 million miles\nPeriod of Orbit: 687 Earth days\nMoons: Phobos, Deimos");
+  mars.setInfo("Mars\n\nDiameter: 4222 miles\nDistance from the Sun: 141.6 million miles\nPeriod of Orbit: 687 Earth days\nMoons: Phobos, Deimos");
   planets.add(mars);
   Moon phobos = new Moon(width/2+200,  height/2+10, 0.6, height/2+10-height/2, 3, 10,moonImage);
-  phobos.setInfo("Phobos\nDiameter: 14 miles\nDistance from Mars: 5826 miles\nPeriod of Orbit: 8 hours"); 
+  phobos.setInfo("Phobos\n\nDiameter: 14 miles\nDistance from Mars: 5826 miles\nPeriod of Orbit: 8 hours"); 
   Moon deimos = new Moon(height/2+200, height/2-10, 0.5, height/2-440, 3, 9,moonImage);
-  deimos.setInfo("Deimos\nDiameter: 7.7 miles\nDistance from Mars: 14,573 miles\nPeriod of Orbit: 30 hours");
+  deimos.setInfo("Deimos\n\nDiameter: 7.7 miles\nDistance from Mars: 14,573 miles\nPeriod of Orbit: 30 hours");
   mars.addMoon(phobos);
   mars.addMoon(deimos);
  
   PImage jupiterImage = loadImage("jupiter.jpeg");
   Planet jupiter = new Planet(width/2+280, height/2, 28,280, 0.021 * 2 * 2,jupiterImage);
-  jupiter.setInfo("Jupiter\nDiameter: 88,729 miles\nDistance from the Sun: 483.6 million miles\nPeriod of Orbit: 11.862 Earth years\nMoons (displayed): Io, Europa, Ganymede, Callisto");
+  jupiter.setInfo("Jupiter\n\nDiameter: 88,729 miles\nDistance from the Sun: 483.6 million miles\nPeriod of Orbit: 11.862 Earth years\nMoons (displayed): Io, Europa, Ganymede, Callisto");
   planets.add(jupiter);
   Moon io = new Moon(width/2+280, height/2-40, 1.7, 40, 4, 8.9,moonImage);
   io.setInfo("Io\nDiameter: 2,263.8 miles\nDistance from Jupiter: 262,000 miles\nPeriod of Orbit: 42 hours");
@@ -114,7 +114,7 @@ void setup(){
   
   PImage saturnImage = loadImage("saturn.jpg");
   Planet saturn = new Planet(width/2+360, height/2, 20, 360, 0.0175 * 2,saturnImage);
-  saturn.setInfo("Saturn\nDiameter: 74,600 miles\nDistance from the Sun: 886.7 million miles\nPeriod of Orbit: 29.5 Earth years\nMoons (displayed): Titan, Dione");
+  saturn.setInfo("Saturn\n\nDiameter: 74,600 miles\nDistance from the Sun: 886.7 million miles\nPeriod of Orbit: 29.5 Earth years\nMoons (displayed): Titan, Dione");
   planets.add(saturn);
   Moon titan = new Moon(width/2+360, height/2+30, 2.4, 30, 5, 8,moonImage);
   titan.setInfo("Titan\nDiameter: 3,199.7 miles\nDistance from Saturn: 759,220 miles\nPeriod of Orbit: 16 Earth days");
@@ -125,7 +125,7 @@ void setup(){
 
   PImage uranusImage = loadImage("uranus.jpeg");
   Planet uranus = new Planet(width/2+430, height/2, 11, 430, 0.01 * 2,uranusImage);
-  uranus.setInfo("Uranus\nDiameter: 32,600 miles\nDistance from the Sun: 1784 million miles\nPeriod of Orbit: 84 Earth years\nMoons (displayed): Miranda, Ariel");
+  uranus.setInfo("Uranus\n\nDiameter: 32,600 miles\nDistance from the Sun: 1784 million miles\nPeriod of Orbit: 84 Earth years\nMoons (displayed): Miranda, Ariel");
   planets.add(uranus);
   Moon miranda = new Moon(width/2+430, height/2-15, .4, 15, 6, 8.85,moonImage);
   miranda.setInfo("Miranda\nDiameter: 293.04 miles\nDistance from Uranus: 80,685 miles\nPeriod of Orbit: 1.413 Earth days");
@@ -136,7 +136,7 @@ void setup(){
   
   PImage neptuneImage = loadImage("neptune.jpg");
   Planet neptune = new Planet(width/2+480, height/2, 10, 470, 0.005 * 2,neptuneImage);
-  neptune.setInfo("Neptune\nDiameter: 30,200 miles\nDistance from the Sun: 2794.4 million miles\nPeriod of Orbit: 165 Earth years\nMoons (displayed): Triton");
+  neptune.setInfo("Neptune\n\nDiameter: 30,200 miles\nDistance from the Sun: 2794.4 million miles\nPeriod of Orbit: 165 Earth years\nMoons (displayed): Triton");
   planets.add(neptune);
   Moon triton = new Moon(width/2+480, height/2-15, 1.3, 15, 7, 8.6,moonImage);
   triton.setInfo("Triton\nDiameter: 1,682 miles\nDistance from Neptune: 220,438 miles\nPeriod of Orbit: 5.877 Earth days");
@@ -144,9 +144,10 @@ void setup(){
 
   PImage plutoImage = loadImage("pluto.jpg");
   Planet pluto = new Planet(width/2+540, height/2, 1, 540, 0.0035 * 2,plutoImage);
-  pluto.setInfo("Pluto\nDiameter: 1413 miles\nDistance from the Sun: 3674.5 million miles\nPeriod of Orbit: 248 Earth years");
+  pluto.setInfo("Pluto\n\nDiameter: 1413 miles\nDistance from the Sun: 3674.5 million miles\nPeriod of Orbit: 248 Earth years");
   planets.add(pluto);
   
+  //creating buttons
   Button info = new Button(100,300,190,20);
   info.setText("Click for More Information");
   buttons.add(info);
@@ -332,10 +333,11 @@ void draw(){
         }
         if (over && i > 1) {
           planets.get(i-2).displayInfo();
+          //for (int x = 0; x < planets.getMoons().size//  planets.getMoons().get(x).displayInfo(
+          planets.get(i-2).showOrbit();
         }
       }
     }
-    planets.get(3).showOrbit();
     
     infoBox();
     

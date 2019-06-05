@@ -30,6 +30,9 @@ abstract class Celesties{
     return centerY;
   }
   
+  /**A method that returns info
+  *@return String
+  */
   String getInfo() {
     return info;
   }

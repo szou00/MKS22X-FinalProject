@@ -178,7 +178,8 @@ class Planet extends Celesties{
   void showOrbit() {
     stroke(255,255,0);
     noFill();
-    circle(centerX,centerY,radius);
+    circle(width/2,height/2,orbit*2);
+    noStroke();
   }
   
   /**A method for zooming in
@@ -189,9 +190,14 @@ class Planet extends Celesties{
     popMatrix();
   }
   
+  /**A method for displaying the information**/
   void displayInfo() {
-    String s = this.info;
+    String s = "Planet: " + this.info;
+    for (int i = 0; i<moons.size(); i++) {
+      s += "\n\n" + moons.get(i).getInfo();
+    }
     fill(255);
-    text(s, 200, 500, 200, 400);
+    text(s, 200, 340, 200, 500);
   }
+  
 }

@@ -61,15 +61,15 @@ class Sun extends Celesties{
   }
   
   void displayInfo() {
-    String s = "Sun\nDiameter: 864,340 miles\nAge: 4.5 billion years";
+    String s = "Sun\n\nDiameter: 864,340 miles\nAge: 4.5 billion years";
     fill(255);
-    text(s, 200,500, 200, 120);
+    text(s, 200,340, 200, 120);
   }
   
   void displayInfo(float x, float y) {
-    String s = "Sun\nDiameter: 864,340 miles\nAge: 4.5 billion years";
+    String s = "Sun\n\nDiameter: 864,340 miles\nAge: 4.5 billion years";
     fill(255);
-    text(s, x,y, 200, 120);
+    text(s, x,y, 200, 520);
   }
   
   
