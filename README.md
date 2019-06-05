@@ -111,6 +111,7 @@ Sharon: fixed prototype; tried implementing a button that would display the orbi
     <td>1 year</td>
     <td>8 seconds</td>
   </tr>
+  </table>
   
 ## Information
 <table>
@@ -266,4 +267,5 @@ Ariel:
   <td>248 Earth years</td>
   <td>None</td>
   </tr>
+  </table>
   
