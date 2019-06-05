@@ -326,7 +326,7 @@ void draw(){
         if (over && i > 1) {
           planets.get(i-2).displayInfo();
           //for (int x = 0; x < planets.getMoons().size//  planets.getMoons().get(x).displayInfo(
-          planets.get(i-2).showOrbit();
+          planets.get(i-2).showOrbit(width/2+leftFactor-rightFactor, height/2+upFactor-downFactor,scaleFactor);
         }
       }
     }

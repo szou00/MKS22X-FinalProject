@@ -175,10 +175,10 @@ class Planet extends Celesties{
   }
   
   /**A method that highlights the orbit of the planet**/
-  void showOrbit() {
+  void showOrbit(float x, float y, float scaleFactor) {
     stroke(255,255,0);
     noFill();
-    circle(width/2,height/2,orbit*2);
+    circle(x,y,orbit*2*scaleFactor);
     noStroke();
   }
   
