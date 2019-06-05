@@ -95,7 +95,9 @@ Sharon: worked on creating a zoom in and zoom out feature of the solar system an
     <td>6/4/19</td>
     <td>Tiffany: fixed uml diagram; made scaling of objects separate; added a legend box at the top of the screen
 
-Sharon: fixed prototype
+Sharon: fixed prototype; tried implementing a button that would display the orbits via a button class
+</td>
+</tr>
 </table>
 
 ## Formulas
@@ -108,3 +110,13 @@ Sharon: fixed prototype
   </tr>
     <td>1 year</td>
     <td>8 seconds</td>
+  </tr>
+    <td>Mercury</td>
+    <td>Diameter: 3031 miles\nDistance from the Sun: 36 million miles\nPeriod of Orbit: 88 Earth days --> 2 seconds</td>
+  </tr>
+    <td>Venus</td>
+    <td>Diameter: 7521 miles\nDistance from the Sun: 67.2 million miles\nPeriod of Orbit: 225 Earth days --> 5 seconds</td>
+  </tr>
+    <td>Earth</td>
+    <td>Diameter: 7926 miles\nDistance from the Sun: 93 million miles\nPeriod of Orbit: 365 Earth days --> 8 seconds</td>
+    </tr>
