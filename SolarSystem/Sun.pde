@@ -50,19 +50,26 @@ class Sun extends Celesties{
   boolean infoText(){
     
     float disX = centerX - mouseX;
-    float disY = centerY - mouseY-105;
+    float disY = centerY - mouseY;//-105;
     if (sqrt(sq(disX) + sq(disY)) < radius ) {
-    String s = "Sun\nDiameter: 864,340 miles\nAge: 4.5 billion years";
-    fill(255);
-    text(s, 100, 500, 200, 100);
-    return true;
+
+      String s = "Sun\nDiameter: 864,340 miles\nAge: 4.5 billion years";
+      fill(255);
+      text(s, 100, 500, 200, 120);
+      return true;
     } return false;
   }
   
   void displayInfo() {
     String s = "Sun\nDiameter: 864,340 miles\nAge: 4.5 billion years";
     fill(255);
-    text(s, 100, 500, 200, 400);
+    text(s, 200,500, 200, 120);
+  }
+  
+  void displayInfo(float x, float y) {
+    String s = "Sun\nDiameter: 864,340 miles\nAge: 4.5 billion years";
+    fill(255);
+    text(s, x,y, 200, 120);
   }
   
   

@@ -105,7 +105,7 @@ class Moon extends Celesties {
       && mouseY >= centerY - radius && mouseY <= centerY + radius){
     String s = this.info;
     fill(255);
-    text(s, -700,-450, 200, 100);
+    text(s, 100, 500, 200, 120);
     return true;
     } return false;
   }

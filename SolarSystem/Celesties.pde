@@ -4,7 +4,7 @@ abstract class Celesties{
   float rotateF; //rotation factor
   float speed;
   PImage image;
-  String info;
+  String info = " ";
   float scale = 1;
   
   /**A method for obtaining the radius

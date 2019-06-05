@@ -47,9 +47,9 @@ void setup(){
   
   //setting up the sun, planets, moons, and information
   bg = loadImage("background.jpeg");
-  //bg.resize(1440,900);
+  //bg.resize(1440,700);
   //background(bg);
-  //background(51);
+  background(51);
   time = millis();
   scaleFactor = 1;
   
@@ -144,47 +144,27 @@ void setup(){
   info.setText("Click for More Information");
   buttons.add(info);
   
-  Button sunB = new Button(100,330,60,20);
-  sunB.setText("Sun");
-  buttons.add(sunB);
-  
-  Button mercuryB = new Button(100,360,60,20);
-  mercuryB.setText("Mercury");
-  buttons.add(mercuryB);
-  
-  Button venusB = new Button(100,390,60,20);
-  venusB.setText("Venus");
-  buttons.add(venusB);
-  
-  Button earthB = new Button(100,420,60,20);
-  earthB.setText("Earth");
-  buttons.add(earthB);
-  
-  Button marsB = new Button(100,450,60,20);
-  marsB.setText("Mars");
-  buttons.add(marsB);
-  
-  Button jupiterB = new Button(100,480,60,20);
-  jupiterB.setText("Jupiter");
-  buttons.add(jupiterB);
-  
-  Button saturnB = new Button(100,510,60,20);
-  saturnB.setText("Saturn");
-  buttons.add(saturnB);
-  
-  Button uranusB = new Button(100,540,60,20);
-  uranusB.setText("Uranus");
-  buttons.add(uranusB);
-
-  Button neptuneB = new Button(100,570,60,20);
-  neptuneB.setText("Saturn");
-  buttons.add(neptuneB);
-  
-  Button plutoB = new Button(100,600,60,20);
-  plutoB.setText("Pluto");
-  buttons.add(plutoB);
+  Button sunB = new Button(250,330,100,20);
+  sunB.setText(sun.getInfo());
   
   Celesties c = notPlanets.get(0);
+  //hi sorry i commented this out bc i wasn't sure how it should look like and it 
+  //generated the planets in a weird position in the beg 
+  //pushMatrix();
+  //if(c.camera == true){
+  //  camera(c.centerX-200, c.centerY-200, 0, c.centerX, c.centerY, 0, 1.0, 1.0, 1.0);
+  //}
+  //for(int i = 0; i < planets.size(); i++){
+  //  Planet p = planets.get(i);
+  //  if(p.camera == true){
+  //    camera(p.centerX-200, p.centerY-200, 0, p.centerX, p.centerY, 0, 1.0, 1.0, 1.0);
+  //  }
+  //  p.display();
+  //  if (p.hasMoon()) {
+  //    p.displayEach();
+  //  }
+  //}
+  //popMatrix();
 
   for(int i = 0; i < notPlanets.size(); i++){
     //Celesties c = notPlanets.get(i);
@@ -257,7 +237,7 @@ void draw(){
     leftFactor = rightFactor = upFactor = downFactor = 0;
     scale(scaleFactor);
     //background(bg);
-    //background(51);
+    background(51);
     //reset all objects
     for(int i = 0; i < notPlanets.size(); i++){
       Celesties c = notPlanets.get(i);
@@ -320,16 +300,10 @@ void draw(){
     //background(bg);
     background(51);
     //text("mouseX mouseY" + mouseX + " " + mouseY,200,620);
-    for (int i = 0; i< buttons.size(); i++) {
-      buttons.get(i).changeButton(mouseX, mouseY);
-      boolean over = buttons.get(i).hovering();
-      
-      if (over && i == 1) {
-        notPlanets.get(0).displayInfo();
-      }
-      if (over && i > 1) {
-        planets.get(i-2).displayInfo();
-      }
+    buttons.get(0).changeButton(mouseX, mouseY);
+    boolean over = buttons.get(0).hovering();
+    if (over) {
+      notPlanets.get(0).displayInfo();
     }
     
     
@@ -400,11 +374,11 @@ void draw(){
   //display info
   for(int i = 0; i < notPlanets.size(); i++){
     Celesties c = notPlanets.get(i);
-    c.infoText();
+    //c.infoText();
   }
   for(int i = 0; i < planets.size(); i++){
     Planet p = planets.get(i);
-    p.infoText();
+    //p.infoText();
     if(p.hasMoon()){
       p.infoEach();
     }
