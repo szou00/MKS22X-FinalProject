@@ -140,7 +140,7 @@ void setup(){
   pluto.setInfo("Pluto\nDiameter: 1413 miles\nDistance from the Sun: 3674.5 million miles\nPeriod of Orbit: 248 Earth years");
   planets.add(pluto);
   
-  Button info = new Button(200,500);
+  Button info = new Button(100,300);
   buttons.add(info);
   
   Celesties c = notPlanets.get(0);
@@ -297,6 +297,11 @@ void draw(){
     background(51);
     text("mouseX mouseY" + mouseX + " " + mouseY,200,620);
     buttons.get(0).changeButton(mouseX, mouseY);
+    boolean over = buttons.get(0).pressed();
+    if (over) {
+      notPlanets.get(0).displayInfo();
+    }
+    text(""+ over,100,680);
     
     
     translate(leftFactor,0);

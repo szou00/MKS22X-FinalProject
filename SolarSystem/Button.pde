@@ -13,6 +13,7 @@ class Button {
   if (x >= bx && x <= bx+80 && 
       y >= by && y <= by+20) {
        display1();
+       over = true;
        //text("display1",200,670);
       }
     else {
@@ -22,6 +23,10 @@ class Button {
     //text("bx by " + bx + " " + by,200,650);
     //text("bx+bw and by+bl" + (bx+bw) + " " + (by+bl),200,690);
 
+  }
+  
+  boolean pressed() {
+    return over;
   }
   
   void display1() {

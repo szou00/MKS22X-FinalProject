@@ -21,6 +21,8 @@ abstract class Celesties{
     return centerX;
   }
   
+  abstract void displayInfo();
+  
   /**A method for obtaining the y coordinate
   *@return float
   */

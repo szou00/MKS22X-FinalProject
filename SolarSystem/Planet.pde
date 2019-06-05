@@ -181,4 +181,10 @@ class Planet extends Celesties{
     scale(2.5, 2.5, 2.5);
     popMatrix();
   }
+  
+  void displayInfo() {
+    String s = this.info;
+    fill(255);
+    text(s, 100, 500, 200, 400);
+  }
 }
