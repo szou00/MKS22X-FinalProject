@@ -112,6 +112,7 @@ Sharon: fixed prototype; tried implementing a button that would display the orbi
     <td>8 seconds</td>
   </tr>
   
+## Information
 <table>
   <th>Planet</th>
   <th>Diameter</th>
