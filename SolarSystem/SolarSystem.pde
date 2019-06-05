@@ -13,6 +13,7 @@ boolean Sun = false;
 int zoomNum = -1;
 boolean pushed = false;
 boolean zoom = false;
+boolean pressed = false;
 
 //variables for moving
 float scaleFactor,leftFactor, rightFactor, downFactor, upFactor;
@@ -140,7 +141,7 @@ void setup(){
   pluto.setInfo("Pluto\nDiameter: 1413 miles\nDistance from the Sun: 3674.5 million miles\nPeriod of Orbit: 248 Earth years");
   planets.add(pluto);
  
-  Button info = new Button(100,300,200,20);
+  Button info = new Button(100,300,190,20);
   info.setText("Click for More Information");
   buttons.add(info);
   
@@ -190,7 +191,7 @@ void setup(){
     //Celesties c = notPlanets.get(i);
     c.setScale(1);
     c.display();
-    c.infoText();
+    
   }
   for(int i = 0; i < planets.size(); i++){
     Planet p = planets.get(i);
@@ -212,7 +213,7 @@ void setup(){
 }
 
 void draw(){
-  infoBox();
+  
   if(!zoom){ //if don't mimic the orbit...
     if(pushed){ //just stay in orbit of planet using camera
       if(zoomNum >= 0 && zoomNum <= 9){
@@ -253,6 +254,7 @@ void draw(){
     Moons = false;
     Planets = false;
     Sun = false;
+    infoBox();
 
     leftFactor = rightFactor = upFactor = downFactor = 0;
     scale(scaleFactor);
@@ -288,19 +290,9 @@ void draw(){
     reset = false;
    }
   if (!move) { //if solar system is not in motion...
+    infoBox();
     passedtime = totaltime;
     difference = millis();
-    for(int i = 0; i < notPlanets.size(); i++){
-      Celesties c = notPlanets.get(i);
-      c.infoText();
-    }
-    for(int i = 0; i < planets.size(); i++){
-      Planet p = planets.get(i);
-      p.infoText();
-      if(p.hasMoon()){
-        p.infoEach();
-      }
-    }
   }
   if(move){ //if solar system is in motion...
     //toggles for movement of screen
@@ -321,17 +313,28 @@ void draw(){
     background(51);
     //text("mouseX mouseY" + mouseX + " " + mouseY,200,620);
     for (int i = 0; i< buttons.size(); i++) {
-      buttons.get(i).changeButton(mouseX, mouseY);
+      
+      //buttons.get(i).changeButton(mouseX, mouseY);
+      buttons.get(0).changeButton(mouseX, mouseY);
       boolean over = buttons.get(i).hovering();
       
-      if (over && i == 1) {
-        notPlanets.get(0).displayInfo();
+      if (over && i == 0) {
+        if (mousePressed) {
+          pressed = !pressed;
+        }
       }
-      if (over && i > 1) {
-        planets.get(i-2).displayInfo();
+      if (pressed) {
+        buttons.get(i).changeButton(mouseX, mouseY);
+        if (over && i == 1) {
+          notPlanets.get(0).displayInfo();
+        }
+        if (over && i > 1) {
+          planets.get(i-2).displayInfo();
+        }
       }
     }
     
+    infoBox();
     
     translate(leftFactor,0);
     translate(-rightFactor,0);
@@ -350,17 +353,15 @@ void draw(){
     for(int i = 0; i < notPlanets.size(); i++){
       Celesties c = notPlanets.get(i);
       c.display();
-      //c.infoText();
     }
     translate(width/2,height/2);
     for(int i = 0; i < planets.size(); i++){
       Planet p = planets.get(i);
       p.display();
-      //p.infoText();
       p.orbitSunSpeed();
       if(p.hasMoon()){
         p.displayEach();
-        //p.infoEach();
+        
       }
     }
     translate(-width/2,-height/2);

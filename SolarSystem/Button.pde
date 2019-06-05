@@ -37,14 +37,14 @@ class Button {
     fill(204);
     rect(bx,by,bw,bh);
     fill(0);
-    text(btext,bx+bw/5,by+12);
+    text(btext,bx+10,by+12);
   }
   
   void display2() {
     fill(255);
     rect(bx,by,bw,bh);
     fill(0);
-    text(btext,bx+bw/5,by+12);
+    text(btext,bx+10,by+12);
   }
   
 }
