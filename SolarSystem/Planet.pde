@@ -174,6 +174,13 @@ class Planet extends Celesties{
     return false;
   }
   
+  /**A method that highlights the orbit of the planet**/
+  void showOrbit() {
+    stroke(255,255,0);
+    noFill();
+    circle(centerX,centerY,radius);
+  }
+  
   /**A method for zooming in
   */
   void zoom() {

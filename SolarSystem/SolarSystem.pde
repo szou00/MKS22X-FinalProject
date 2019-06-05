@@ -14,6 +14,7 @@ int zoomNum = -1;
 boolean pushed = false;
 boolean zoom = false;
 boolean pressed = false;
+Table legend;
 
 //variables for moving
 float scaleFactor,leftFactor, rightFactor, downFactor, upFactor;
@@ -36,9 +37,14 @@ float mX, mY;
   }
   
   void infoBox() {
+    //PImage infoImage = loadImage("button.jpg"); //orginally was for button but changed to use for this instead
     String s = "LEGEND\n\nSPACE = movement\nU = scale up; Y = scale down\n   Select the objects you want to scale:\n   N = Sun, M = moons, P = planets\nRIGHT arrow = switch between planets' orbits\nZ = system mimics orbit\nI = zoom in; O = zoom out\nA, D, W, S = shift screen left, right, up, and down\nHOVER the mouse over an object to see its info\n   (RESET each time)\nR = reset";
-    fill(255);
-    rect(70,10,320,185);
+    fill(200);
+    PShape box = createShape(RECT,70,10,320,190);
+    //box.setTexture(infoImage);
+    shape(box);
+    //rect(70,10,320,185);
+    //endShape();
     fill(0);//set the text color to black
     text(s, 90, 25);  
   }
@@ -48,8 +54,8 @@ void setup(){
   
   //setting up the sun, planets, moons, and information
   bg = loadImage("background.jpeg");
-  //bg.resize(1440,900);
-  //background(bg);
+  bg.resize(width,height);
+  background(bg);
   //background(51);
   time = millis();
   scaleFactor = 1;
@@ -140,7 +146,7 @@ void setup(){
   Planet pluto = new Planet(width/2+540, height/2, 1, 540, 0.0035 * 2,plutoImage);
   pluto.setInfo("Pluto\nDiameter: 1413 miles\nDistance from the Sun: 3674.5 million miles\nPeriod of Orbit: 248 Earth years");
   planets.add(pluto);
- 
+  
   Button info = new Button(100,300,190,20);
   info.setText("Click for More Information");
   buttons.add(info);
@@ -258,7 +264,7 @@ void draw(){
 
     leftFactor = rightFactor = upFactor = downFactor = 0;
     scale(scaleFactor);
-    //background(bg);
+    background(bg);
     //background(51);
     //reset all objects
     for(int i = 0; i < notPlanets.size(); i++){
@@ -277,10 +283,6 @@ void draw(){
         p.scaleEach(1);
       }
     }
-    //for (int i = 0; i < stars.size(); i++) {
-    //  stars.get(i).display();
-    //}
-    //infoBox();
     
     //reset time
     totaltime = 0;
@@ -309,8 +311,8 @@ void draw(){
       if (key == 's') downFactor += 10;
     }
     
-    //background(bg);
-    background(51);
+    background(bg);
+    //background(51);
     //text("mouseX mouseY" + mouseX + " " + mouseY,200,620);
     for (int i = 0; i< buttons.size(); i++) {
       
@@ -333,6 +335,7 @@ void draw(){
         }
       }
     }
+    planets.get(3).showOrbit();
     
     infoBox();
     
@@ -398,18 +401,7 @@ void draw(){
     }
     scaleD = false;
   }
-  //display info
-  for(int i = 0; i < notPlanets.size(); i++){
-    Celesties c = notPlanets.get(i);
-    c.infoText();
-  }
-  for(int i = 0; i < planets.size(); i++){
-    Planet p = planets.get(i);
-    p.infoText();
-    if(p.hasMoon()){
-      p.infoEach();
-    }
-  }
+  
   //text("" + zoomNum, 100-leftFactor+rightFactor, 200-upFactor+downFactor);
   //System.out.println("" + mouseX + " " + mouseY);
 }

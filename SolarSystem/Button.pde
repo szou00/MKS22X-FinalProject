@@ -10,7 +10,6 @@ class Button {
     bw = w;
     bh = h;
   }
-  
     
   void changeButton(int x, int y)  {
     if (x >= bx && x <= bx+bw && 
