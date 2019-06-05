@@ -43,7 +43,7 @@ float mX, mY;
   }
 
 void setup(){
-  size(1440,700, P3D);
+  size(1440,900, P3D);
   
   //setting up the sun, planets, moons, and information
   bg = loadImage("background.jpeg");
@@ -144,23 +144,6 @@ void setup(){
   buttons.add(info);
   
   Celesties c = notPlanets.get(0);
-  //hi sorry i commented this out bc i wasn't sure how it should look like and it 
-  //generated the planets in a weird position in the beg 
-  //pushMatrix();
-  //if(c.camera == true){
-  //  camera(c.centerX-200, c.centerY-200, 0, c.centerX, c.centerY, 0, 1.0, 1.0, 1.0);
-  //}
-  //for(int i = 0; i < planets.size(); i++){
-  //  Planet p = planets.get(i);
-  //  if(p.camera == true){
-  //    camera(p.centerX-200, p.centerY-200, 0, p.centerX, p.centerY, 0, 1.0, 1.0, 1.0);
-  //  }
-  //  p.display();
-  //  if (p.hasMoon()) {
-  //    p.displayEach();
-  //  }
-  //}
-  //popMatrix();
 
   for(int i = 0; i < notPlanets.size(); i++){
     //Celesties c = notPlanets.get(i);
@@ -295,7 +278,7 @@ void draw(){
     
     //background(bg);
     background(51);
-    text("mouseX mouseY" + mouseX + " " + mouseY,200,620);
+    text("mouseX mouseY " + mouseX + " " + mouseY,200,620);
     buttons.get(0).changeButton(mouseX, mouseY);
     
     
@@ -366,11 +349,11 @@ void draw(){
   //display info
   for(int i = 0; i < notPlanets.size(); i++){
     Celesties c = notPlanets.get(i);
-    //c.infoText();
+    c.infoText();
   }
   for(int i = 0; i < planets.size(); i++){
     Planet p = planets.get(i);
-    //p.infoText();
+    p.infoText();
     if(p.hasMoon()){
       p.infoEach();
     }

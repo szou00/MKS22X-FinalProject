@@ -168,7 +168,7 @@ class Planet extends Celesties{
 
     String s = this.info;
     fill(255);
-    text(s, 100, 500, 200, 100);
+    text(s, 100, 500, 200, 120);
     return true;
     }
     return false;
