@@ -47,9 +47,9 @@ void setup(){
   
   //setting up the sun, planets, moons, and information
   bg = loadImage("background.jpeg");
-  //bg.resize(1440,700);
-  //background(bg);
-  background(51);
+  bg.resize(1440,900);
+  background(bg);
+  //background(51);
   time = millis();
   scaleFactor = 1;
   
@@ -215,8 +215,8 @@ void draw(){
 
     leftFactor = rightFactor = upFactor = downFactor = 0;
     scale(scaleFactor);
-    //background(bg);
-    background(51);
+    background(bg);
+    //background(51);
     //reset all objects
     for(int i = 0; i < notPlanets.size(); i++){
       Celesties c = notPlanets.get(i);
@@ -276,8 +276,8 @@ void draw(){
       if (key == 's') downFactor += 10;
     }
     
-    //background(bg);
-    background(51);
+    background(bg);
+    //background(51);
     text("mouseX mouseY " + mouseX + " " + mouseY,200,620);
     buttons.get(0).changeButton(mouseX, mouseY);
     

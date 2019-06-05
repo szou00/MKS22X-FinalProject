@@ -164,12 +164,12 @@ class Planet extends Celesties{
   */
   boolean infoText(){
     if((mouseX >= this.centerX - this.radius) && (mouseX <= this.centerX + this.radius)
-      && (mouseY >= this.centerY - this.radius) && (mouseY <= this.centerY + this.radius)){
-
-    String s = this.info;
-    fill(255);
-    text(s, 100, 500, 200, 120);
-    return true;
+      && (mouseY >= this.centerY - this.radius) && (mouseY <= this.centerY + this.radius)){                
+    
+      String s = this.info;
+      fill(255);
+      text(s, 100, 500, 200, 120);
+      return true;
     }
     return false;
   }
