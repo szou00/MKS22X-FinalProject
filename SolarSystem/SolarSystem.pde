@@ -43,12 +43,13 @@ float mX, mY;
   }
 
 void setup(){
-  size(300, 500, P3D);
+  size(1440,700, P3D);
   
   //setting up the sun, planets, moons, and information
   bg = loadImage("background.jpeg");
-  bg.resize(300,500);
-  background(bg);
+  //bg.resize(1440,700);
+  //background(bg);
+  background(51);
   time = millis();
   scaleFactor = 1;
   
@@ -162,7 +163,7 @@ void setup(){
   //popMatrix();
 
   for(int i = 0; i < notPlanets.size(); i++){
-    Celesties c = notPlanets.get(i);
+    //Celesties c = notPlanets.get(i);
     c.setScale(1);
     c.display();
     c.infoText();
@@ -231,7 +232,8 @@ void draw(){
 
     leftFactor = rightFactor = upFactor = downFactor = 0;
     scale(scaleFactor);
-    background(bg);
+    //background(bg);
+    background(51);
     //reset all objects
     for(int i = 0; i < notPlanets.size(); i++){
       Celesties c = notPlanets.get(i);
@@ -291,9 +293,10 @@ void draw(){
       if (key == 's') downFactor += 10;
     }
     
-    background(bg);
+    //background(bg);
+    background(51);
     boolean over = buttons.get(0).overButton(mouseX,mouseY);
-    text("mouseX mouseY" + mouseX + " " + mouseY,200,820);
+    text("mouseX mouseY" + mouseX + " " + mouseY,200,620);
     if (over) {
       fill(50);
       buttons.get(0).display();
